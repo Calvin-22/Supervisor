@@ -1,0 +1,191 @@
+﻿namespace Supervisor.View
+{
+    partial class FrmAuthentification
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            BtnSeConnecter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            txtIdentifiant = new TextBox();
+            txtMdp = new TextBox();
+            lblidentifiant = new Label();
+            lblmotdepasse = new Label();
+            label3 = new Label();
+            fakebutton = new Button();
+            SuspendLayout();
+            // 
+            // BtnSeConnecter
+            // 
+            BtnSeConnecter.BackColor = Color.Transparent;
+            BtnSeConnecter.BadgeBackColor = Color.Red;
+            BtnSeConnecter.BadgeForeColor = Color.White;
+            BtnSeConnecter.BadgeRadius = 8;
+            BtnSeConnecter.BadgeRightMargin = 10;
+            BtnSeConnecter.BadgeValue = 0;
+            BtnSeConnecter.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnSeConnecter.BorderColorEnd = Color.Gray;
+            BtnSeConnecter.BorderColorStart = Color.White;
+            BtnSeConnecter.BorderRadiusBottomLeft = 35;
+            BtnSeConnecter.BorderRadiusBottomRight = 35;
+            BtnSeConnecter.BorderRadiusTopLeft = 35;
+            BtnSeConnecter.BorderRadiusTopRight = 35;
+            BtnSeConnecter.BorderThickness = 1;
+            BtnSeConnecter.ButtonColorEnd = Color.Green;
+            BtnSeConnecter.ButtonColorStart = Color.LimeGreen;
+            BtnSeConnecter.ButtonImage = null;
+            BtnSeConnecter.CanBeep = false;
+            BtnSeConnecter.CanShake = false;
+            BtnSeConnecter.ClickSoundPath = null;
+            BtnSeConnecter.DisabledOverlayOpacity = 0.5F;
+            BtnSeConnecter.EnableBorderGradient = false;
+            BtnSeConnecter.EnableClickSound = false;
+            BtnSeConnecter.EnableFocusBorder = false;
+            BtnSeConnecter.EnableHoverSound = false;
+            BtnSeConnecter.EnablePressScale = false;
+            BtnSeConnecter.EnableTextShadow = false;
+            BtnSeConnecter.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnSeConnecter.FocusBorderThickness = 2;
+            BtnSeConnecter.Font = new Font("Segoe UI", 9F);
+            BtnSeConnecter.ForeColor = Color.White;
+            BtnSeConnecter.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnSeConnecter.HoverSoundPath = null;
+            BtnSeConnecter.HoverTransitionSpeed = 0.08F;
+            BtnSeConnecter.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnSeConnecter.ImageLeftMargin = 5;
+            BtnSeConnecter.ImageRightMargin = 8;
+            BtnSeConnecter.ImageSize = 24;
+            BtnSeConnecter.IsReadOnly = false;
+            BtnSeConnecter.Location = new Point(247, 378);
+            BtnSeConnecter.MakeRadial = false;
+            BtnSeConnecter.Name = "BtnSeConnecter";
+            BtnSeConnecter.PressAnimationSpeed = 0.2F;
+            BtnSeConnecter.PressDepth = 1;
+            BtnSeConnecter.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            BtnSeConnecter.RippleExpandSpeedFactor = 0.05F;
+            BtnSeConnecter.RippleFadeSpeedFactor = 0.03F;
+            BtnSeConnecter.ShadowBlurFactor = 0.85F;
+            BtnSeConnecter.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            BtnSeConnecter.ShadowOffsetX = 3;
+            BtnSeConnecter.ShadowOffsetY = 3;
+            BtnSeConnecter.Size = new Size(145, 52);
+            BtnSeConnecter.TabIndex = 0;
+            BtnSeConnecter.Text = "Se connecter";
+            BtnSeConnecter.TextAlign = ContentAlignment.MiddleCenter;
+            BtnSeConnecter.TextPaddingBottom = 0;
+            BtnSeConnecter.TextPaddingLeft = 0;
+            BtnSeConnecter.TextPaddingRight = 0;
+            BtnSeConnecter.TextPaddingTop = 0;
+            BtnSeConnecter.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            BtnSeConnecter.TextShadowOffsetX = 1;
+            BtnSeConnecter.TextShadowOffsetY = 1;
+            BtnSeConnecter.Click += BtnSeConnecter_Click;
+            // 
+            // txtIdentifiant
+            // 
+            txtIdentifiant.Location = new Point(201, 284);
+            txtIdentifiant.Name = "txtIdentifiant";
+            txtIdentifiant.Size = new Size(191, 31);
+            txtIdentifiant.TabIndex = 1;
+            // 
+            // txtMdp
+            // 
+            txtMdp.Location = new Point(201, 333);
+            txtMdp.Name = "txtMdp";
+            txtMdp.Size = new Size(191, 31);
+            txtMdp.TabIndex = 2;
+            // 
+            // lblidentifiant
+            // 
+            lblidentifiant.AutoSize = true;
+            lblidentifiant.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblidentifiant.Location = new Point(22, 288);
+            lblidentifiant.Name = "lblidentifiant";
+            lblidentifiant.Size = new Size(129, 27);
+            lblidentifiant.TabIndex = 3;
+            lblidentifiant.Text = "Identifiant : ";
+            // 
+            // lblmotdepasse
+            // 
+            lblmotdepasse.AutoSize = true;
+            lblmotdepasse.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblmotdepasse.Location = new Point(22, 337);
+            lblmotdepasse.Name = "lblmotdepasse";
+            lblmotdepasse.Size = new Size(149, 27);
+            lblmotdepasse.TabIndex = 4;
+            lblmotdepasse.Text = "Mot de passe :";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.LightSlateGray;
+            label3.Location = new Point(22, 236);
+            label3.Name = "label3";
+            label3.Size = new Size(272, 27);
+            label3.TabIndex = 5;
+            label3.Text = "Veuillez vous authentifier : ";
+            // 
+            // fakebutton
+            // 
+            fakebutton.FlatStyle = FlatStyle.Flat;
+            fakebutton.ForeColor = Color.White;
+            fakebutton.Location = new Point(13, 444);
+            fakebutton.Name = "fakebutton";
+            fakebutton.Size = new Size(10, 11);
+            fakebutton.TabIndex = 6;
+            fakebutton.UseVisualStyleBackColor = true;
+            fakebutton.Click += FakeAcceptButton_Click;
+            // 
+            // FrmAuthentification
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(424, 453);
+            Controls.Add(fakebutton);
+            Controls.Add(label3);
+            Controls.Add(lblmotdepasse);
+            Controls.Add(lblidentifiant);
+            Controls.Add(txtMdp);
+            Controls.Add(txtIdentifiant);
+            Controls.Add(BtnSeConnecter);
+            Name = "FrmAuthentification";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnSeConnecter;
+        private TextBox txtIdentifiant;
+        private TextBox txtMdp;
+        private Label lblidentifiant;
+        private Label lblmotdepasse;
+        private Label label3;
+        private Button fakebutton;
+    }
+}
