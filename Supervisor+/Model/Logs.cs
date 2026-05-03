@@ -14,7 +14,7 @@ namespace Supervisor.Model
         [DisplayName("Résultat de la tentative")]
         public string Resultat_tentative { get; set; }
 
-        [DisplayName("Quantité commandé")]
+        [DisplayName("Date de sortie")]
         public DateTime? Date_heure_sortie { get; set; }
 
         [DisplayName("Présence")]
