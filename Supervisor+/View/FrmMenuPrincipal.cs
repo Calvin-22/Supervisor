@@ -12,10 +12,20 @@ using MySqlX.XDevAPI.Common;
 using Supervisor.Controller;
 using Supervisor.Model;
 
+
+
+
+
 namespace Supervisor.View
 {
     public partial class FrmMenuPrincipal : Form
     {
+        // Timer pour la supervision en temps réel
+        System.Windows.Forms.Timer timerSupervision;
+
+        // Dernière date de log connue pour détecter les nouvelles entrées automatiquement
+        private DateTime derniereDateConnue = DateTime.MinValue;
+
         /// <summary>
         /// Objet pour gérer la liste des mutations
         /// </summary>
@@ -32,6 +42,8 @@ namespace Supervisor.View
             BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
             null, dgvlogs, new object[] { true });
 
+            timerSupervision = new System.Windows.Forms.Timer();
+
             // Appel de la méthode d'initialisation
             Init();
         }
@@ -44,6 +56,14 @@ namespace Supervisor.View
             controller = new FrmLogsController();
             RemplirListeLogs();
             StatistiquesLogs();
+
+            // Supervision initiale
+            var derniere = controller.GetDerniereLog();
+            if (derniere != null)
+            {
+                derniereDateConnue = derniere.Date_heure_entree;
+                MettreAJourEtatLocal(derniere);
+            }
 
             // Initialisation du ComboBox pour le filtre Résultat
             cbResultat.Items.Add("Tous");
@@ -58,8 +78,70 @@ namespace Supervisor.View
             // Abonnement à l'événement de formatage des cellules du DataGridView pour formater la colonne "Etat de la porte"
             dgvlogs.CellFormatting += dgvlogs_CellFormatting;
 
+            timerSupervision.Interval = 3000; // 3 secondes
+            timerSupervision.Tick += TimerSupervision_Tick;
+            timerSupervision.Start();
 
         }
+
+        /// <summary>
+        /// Méthode appelée à chaque tick du timer pour superviser les nouvelles entrées de logs en temps réel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TimerSupervision_Tick(object sender, EventArgs e)
+        {
+            var derniere = controller.GetDerniereLog();
+            if (derniere == null) return;
+
+            // Si nouvelle log détectée
+            if (derniere.Date_heure_entree > derniereDateConnue)
+            {
+                derniereDateConnue = derniere.Date_heure_entree;
+
+                // Mise à jour de l'état du local
+                MettreAJourEtatLocal(derniere);
+
+                // Ajout dans le DataGridView
+                AjouterNouvelleLog(derniere);
+
+                // Mise à jour des statistiques
+                StatistiquesLogs();
+            }
+        }
+
+        /// <summary>
+        /// Méthode pour ajouter une nouvelle log en haut du DataGridView (pour la supervision en temps réel)
+        /// </summary>
+        /// <param name="log"></param>
+        private void AjouterNouvelleLog(Logs log)
+        {
+            var liste = bdglogs.List.Cast<Logs>().ToList();
+            liste.Insert(0, log); // en haut du tableau
+
+            bdglogs.DataSource = new SortableBindingList<Logs>(liste);
+            dgvlogs.DataSource = bdglogs;
+        }
+
+        /// <summary>
+        /// Méthode pour mettre à jour les labels d'état du local (porte, présence, dernier UID, résultat, date/heure) à partir d'une log
+        /// </summary>
+        /// <param name="log"></param>
+        private void MettreAJourEtatLocal(Logs log)
+        {
+            lblPorte.Text = log.Etat_porte == 1 ? "Ouverte" : "Fermée";
+            lblPresence.Text = log.Presence == 1 ? "Présence détectée" : "Aucune présence";
+            lblDernierUID.Text = log.UID;
+            lblDernierResultat.Text = log.Resultat_tentative;
+            lblDernierEvenement.Text = log.Date_heure_entree.ToString("dd/MM/yyyy HH:mm:ss");
+
+            lblPorte.BackColor = log.Etat_porte == 1 ? Color.OrangeRed : Color.LightGreen;
+            lblPresence.BackColor = log.Presence == 1 ? Color.Gold : Color.LightGray;
+
+            lblDernierResultat.BackColor =
+                log.Resultat_tentative == "ACCES" ? Color.LightGreen : Color.LightCoral;
+        }
+
 
         /// Méthode appelée lors du changement de sélection dans le ComboBox pour appliquer les filtres
         private void cbResultat_SelectedIndexChanged(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Supervisor.Dal;
 using Supervisor.Model;
 
@@ -32,5 +33,11 @@ namespace Supervisor.Controller
         {
             return access.GetLesLogs();
         }
+
+        public Logs GetDerniereLog()
+        {
+            return access.GetDerniereLog();
+        }
+
     }
 }

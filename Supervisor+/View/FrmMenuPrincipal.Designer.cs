@@ -43,8 +43,6 @@
             label5 = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
             label4 = new Label();
-            siticoneButtonAdvanced1 = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            BtnSeConnecter = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             lblidentifiant = new Label();
             label3 = new Label();
             label1 = new Label();
@@ -62,12 +60,24 @@
             BtnRechercher = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label2 = new Label();
             txtRechercheUID = new TextBox();
+            siticoneGroupBox4 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            lblDernierEvenement = new Label();
+            label17 = new Label();
+            lblDernierResultat = new Label();
+            label15 = new Label();
+            lblDernierUID = new Label();
+            label14 = new Label();
+            lblPresence = new Label();
+            lblPorte = new Label();
+            label12 = new Label();
+            label13 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             siticoneGroupBox1.SuspendLayout();
             siticoneGroupBox2.SuspendLayout();
             siticoneGroupBox3.SuspendLayout();
+            siticoneGroupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // dgvlogs
@@ -110,7 +120,7 @@
             // 
             grbox.Controls.Add(dgvlogs);
             grbox.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            grbox.Location = new Point(12, 25);
+            grbox.Location = new Point(12, 27);
             grbox.Name = "grbox";
             grbox.Size = new Size(1365, 657);
             grbox.TabIndex = 1;
@@ -163,14 +173,14 @@
             siticoneGroupBox1.HoveredBorderColor = Color.Green;
             siticoneGroupBox1.HoveredTitleColor = Color.Black;
             siticoneGroupBox1.IsCollapsible = false;
-            siticoneGroupBox1.Location = new Point(12, 724);
+            siticoneGroupBox1.Location = new Point(12, 736);
             siticoneGroupBox1.MaxBlinkCount = 3;
             siticoneGroupBox1.Name = "siticoneGroupBox1";
             siticoneGroupBox1.PressedBorderColor = Color.FromArgb(0, 84, 153);
             siticoneGroupBox1.ShadowColor = Color.FromArgb(20, 0, 0, 0);
             siticoneGroupBox1.ShadowDepth = 1;
             siticoneGroupBox1.ShowShadow = true;
-            siticoneGroupBox1.Size = new Size(526, 288);
+            siticoneGroupBox1.Size = new Size(473, 288);
             siticoneGroupBox1.SolidFillColor = Color.White;
             siticoneGroupBox1.StatusIcon = null;
             siticoneGroupBox1.StatusText = "";
@@ -260,8 +270,6 @@
             siticoneGroupBox2.ChevronThickness = 2F;
             siticoneGroupBox2.ContentPadding = 5;
             siticoneGroupBox2.Controls.Add(label4);
-            siticoneGroupBox2.Controls.Add(siticoneButtonAdvanced1);
-            siticoneGroupBox2.Controls.Add(BtnSeConnecter);
             siticoneGroupBox2.CornerRadius = 15;
             siticoneGroupBox2.EnableBlinking = false;
             siticoneGroupBox2.EnableHoverAnimation = true;
@@ -274,14 +282,14 @@
             siticoneGroupBox2.HoveredBorderColor = Color.Crimson;
             siticoneGroupBox2.HoveredTitleColor = Color.Black;
             siticoneGroupBox2.IsCollapsible = false;
-            siticoneGroupBox2.Location = new Point(1430, 724);
+            siticoneGroupBox2.Location = new Point(1383, 736);
             siticoneGroupBox2.MaxBlinkCount = 3;
             siticoneGroupBox2.Name = "siticoneGroupBox2";
             siticoneGroupBox2.PressedBorderColor = Color.FromArgb(0, 84, 153);
             siticoneGroupBox2.ShadowColor = Color.FromArgb(20, 0, 0, 0);
             siticoneGroupBox2.ShadowDepth = 1;
             siticoneGroupBox2.ShowShadow = true;
-            siticoneGroupBox2.Size = new Size(456, 288);
+            siticoneGroupBox2.Size = new Size(503, 288);
             siticoneGroupBox2.SolidFillColor = Color.White;
             siticoneGroupBox2.StatusIcon = null;
             siticoneGroupBox2.StatusText = "";
@@ -302,141 +310,11 @@
             label4.TabIndex = 10;
             label4.Text = "Exporter vers PDF :";
             // 
-            // siticoneButtonAdvanced1
-            // 
-            siticoneButtonAdvanced1.BackColor = Color.Transparent;
-            siticoneButtonAdvanced1.BadgeBackColor = Color.Red;
-            siticoneButtonAdvanced1.BadgeForeColor = Color.White;
-            siticoneButtonAdvanced1.BadgeRadius = 8;
-            siticoneButtonAdvanced1.BadgeRightMargin = 10;
-            siticoneButtonAdvanced1.BadgeValue = 0;
-            siticoneButtonAdvanced1.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            siticoneButtonAdvanced1.BorderColorEnd = Color.Gray;
-            siticoneButtonAdvanced1.BorderColorStart = Color.White;
-            siticoneButtonAdvanced1.BorderRadiusBottomLeft = 35;
-            siticoneButtonAdvanced1.BorderRadiusBottomRight = 35;
-            siticoneButtonAdvanced1.BorderRadiusTopLeft = 35;
-            siticoneButtonAdvanced1.BorderRadiusTopRight = 35;
-            siticoneButtonAdvanced1.BorderThickness = 1;
-            siticoneButtonAdvanced1.ButtonColorEnd = Color.DarkBlue;
-            siticoneButtonAdvanced1.ButtonColorStart = Color.RoyalBlue;
-            siticoneButtonAdvanced1.ButtonImage = null;
-            siticoneButtonAdvanced1.CanBeep = false;
-            siticoneButtonAdvanced1.CanShake = false;
-            siticoneButtonAdvanced1.ClickSoundPath = null;
-            siticoneButtonAdvanced1.DisabledOverlayOpacity = 0.5F;
-            siticoneButtonAdvanced1.EnableBorderGradient = false;
-            siticoneButtonAdvanced1.EnableClickSound = false;
-            siticoneButtonAdvanced1.EnableFocusBorder = false;
-            siticoneButtonAdvanced1.EnableHoverSound = false;
-            siticoneButtonAdvanced1.EnablePressScale = false;
-            siticoneButtonAdvanced1.EnableTextShadow = false;
-            siticoneButtonAdvanced1.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            siticoneButtonAdvanced1.FocusBorderThickness = 2;
-            siticoneButtonAdvanced1.Font = new Font("Segoe UI", 9F);
-            siticoneButtonAdvanced1.ForeColor = Color.White;
-            siticoneButtonAdvanced1.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            siticoneButtonAdvanced1.HoverSoundPath = null;
-            siticoneButtonAdvanced1.HoverTransitionSpeed = 0.08F;
-            siticoneButtonAdvanced1.ImageAlign = ContentAlignment.MiddleLeft;
-            siticoneButtonAdvanced1.ImageLeftMargin = 5;
-            siticoneButtonAdvanced1.ImageRightMargin = 8;
-            siticoneButtonAdvanced1.ImageSize = 24;
-            siticoneButtonAdvanced1.IsReadOnly = false;
-            siticoneButtonAdvanced1.Location = new Point(53, 161);
-            siticoneButtonAdvanced1.MakeRadial = false;
-            siticoneButtonAdvanced1.Name = "siticoneButtonAdvanced1";
-            siticoneButtonAdvanced1.PressAnimationSpeed = 0.2F;
-            siticoneButtonAdvanced1.PressDepth = 1;
-            siticoneButtonAdvanced1.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            siticoneButtonAdvanced1.RippleExpandSpeedFactor = 0.05F;
-            siticoneButtonAdvanced1.RippleFadeSpeedFactor = 0.03F;
-            siticoneButtonAdvanced1.ShadowBlurFactor = 0.85F;
-            siticoneButtonAdvanced1.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            siticoneButtonAdvanced1.ShadowOffsetX = 3;
-            siticoneButtonAdvanced1.ShadowOffsetY = 3;
-            siticoneButtonAdvanced1.Size = new Size(145, 52);
-            siticoneButtonAdvanced1.TabIndex = 9;
-            siticoneButtonAdvanced1.Text = "Statistiques";
-            siticoneButtonAdvanced1.TextAlign = ContentAlignment.MiddleCenter;
-            siticoneButtonAdvanced1.TextPaddingBottom = 0;
-            siticoneButtonAdvanced1.TextPaddingLeft = 0;
-            siticoneButtonAdvanced1.TextPaddingRight = 0;
-            siticoneButtonAdvanced1.TextPaddingTop = 0;
-            siticoneButtonAdvanced1.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            siticoneButtonAdvanced1.TextShadowOffsetX = 1;
-            siticoneButtonAdvanced1.TextShadowOffsetY = 1;
-            // 
-            // BtnSeConnecter
-            // 
-            BtnSeConnecter.BackColor = Color.Transparent;
-            BtnSeConnecter.BadgeBackColor = Color.Red;
-            BtnSeConnecter.BadgeForeColor = Color.White;
-            BtnSeConnecter.BadgeRadius = 8;
-            BtnSeConnecter.BadgeRightMargin = 10;
-            BtnSeConnecter.BadgeValue = 0;
-            BtnSeConnecter.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            BtnSeConnecter.BorderColorEnd = Color.Gray;
-            BtnSeConnecter.BorderColorStart = Color.White;
-            BtnSeConnecter.BorderRadiusBottomLeft = 35;
-            BtnSeConnecter.BorderRadiusBottomRight = 35;
-            BtnSeConnecter.BorderRadiusTopLeft = 35;
-            BtnSeConnecter.BorderRadiusTopRight = 35;
-            BtnSeConnecter.BorderThickness = 1;
-            BtnSeConnecter.ButtonColorEnd = Color.DarkBlue;
-            BtnSeConnecter.ButtonColorStart = Color.RoyalBlue;
-            BtnSeConnecter.ButtonImage = null;
-            BtnSeConnecter.CanBeep = false;
-            BtnSeConnecter.CanShake = false;
-            BtnSeConnecter.ClickSoundPath = null;
-            BtnSeConnecter.DisabledOverlayOpacity = 0.5F;
-            BtnSeConnecter.EnableBorderGradient = false;
-            BtnSeConnecter.EnableClickSound = false;
-            BtnSeConnecter.EnableFocusBorder = false;
-            BtnSeConnecter.EnableHoverSound = false;
-            BtnSeConnecter.EnablePressScale = false;
-            BtnSeConnecter.EnableTextShadow = false;
-            BtnSeConnecter.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            BtnSeConnecter.FocusBorderThickness = 2;
-            BtnSeConnecter.Font = new Font("Segoe UI", 9F);
-            BtnSeConnecter.ForeColor = Color.White;
-            BtnSeConnecter.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            BtnSeConnecter.HoverSoundPath = null;
-            BtnSeConnecter.HoverTransitionSpeed = 0.08F;
-            BtnSeConnecter.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnSeConnecter.ImageLeftMargin = 5;
-            BtnSeConnecter.ImageRightMargin = 8;
-            BtnSeConnecter.ImageSize = 24;
-            BtnSeConnecter.IsReadOnly = false;
-            BtnSeConnecter.Location = new Point(72, 219);
-            BtnSeConnecter.MakeRadial = false;
-            BtnSeConnecter.Name = "BtnSeConnecter";
-            BtnSeConnecter.PressAnimationSpeed = 0.2F;
-            BtnSeConnecter.PressDepth = 1;
-            BtnSeConnecter.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            BtnSeConnecter.RippleExpandSpeedFactor = 0.05F;
-            BtnSeConnecter.RippleFadeSpeedFactor = 0.03F;
-            BtnSeConnecter.ShadowBlurFactor = 0.85F;
-            BtnSeConnecter.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            BtnSeConnecter.ShadowOffsetX = 3;
-            BtnSeConnecter.ShadowOffsetY = 3;
-            BtnSeConnecter.Size = new Size(145, 52);
-            BtnSeConnecter.TabIndex = 1;
-            BtnSeConnecter.Text = "Se connecter";
-            BtnSeConnecter.TextAlign = ContentAlignment.MiddleCenter;
-            BtnSeConnecter.TextPaddingBottom = 0;
-            BtnSeConnecter.TextPaddingLeft = 0;
-            BtnSeConnecter.TextPaddingRight = 0;
-            BtnSeConnecter.TextPaddingTop = 0;
-            BtnSeConnecter.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            BtnSeConnecter.TextShadowOffsetX = 1;
-            BtnSeConnecter.TextShadowOffsetY = 1;
-            // 
             // lblidentifiant
             // 
             lblidentifiant.AutoSize = true;
             lblidentifiant.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblidentifiant.Location = new Point(1502, 417);
+            lblidentifiant.Location = new Point(1502, 408);
             lblidentifiant.Name = "lblidentifiant";
             lblidentifiant.Size = new Size(266, 27);
             lblidentifiant.TabIndex = 5;
@@ -447,7 +325,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.LightSlateGray;
-            label3.Location = new Point(1430, 448);
+            label3.Location = new Point(1430, 439);
             label3.Name = "label3";
             label3.Size = new Size(302, 27);
             label3.TabIndex = 6;
@@ -458,7 +336,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.LightSlateGray;
-            label1.Location = new Point(1430, 475);
+            label1.Location = new Point(1430, 466);
             label1.Name = "label1";
             label1.Size = new Size(427, 27);
             label1.TabIndex = 7;
@@ -507,7 +385,7 @@
             siticoneGroupBox3.HoveredBorderColor = Color.DarkBlue;
             siticoneGroupBox3.HoveredTitleColor = Color.Black;
             siticoneGroupBox3.IsCollapsible = false;
-            siticoneGroupBox3.Location = new Point(538, 724);
+            siticoneGroupBox3.Location = new Point(491, 736);
             siticoneGroupBox3.MaxBlinkCount = 3;
             siticoneGroupBox3.Name = "siticoneGroupBox3";
             siticoneGroupBox3.PressedBorderColor = Color.FromArgb(0, 84, 153);
@@ -824,12 +702,171 @@
             txtRechercheUID.Size = new Size(227, 31);
             txtRechercheUID.TabIndex = 2;
             // 
+            // siticoneGroupBox4
+            // 
+            siticoneGroupBox4.BackColor = Color.Transparent;
+            siticoneGroupBox4.BadgeColor = Color.Red;
+            siticoneGroupBox4.BadgeFont = new Font("Segoe UI", 8F, FontStyle.Bold);
+            siticoneGroupBox4.BadgeLeftPadding = 12;
+            siticoneGroupBox4.BadgeValue = 0;
+            siticoneGroupBox4.BadgeVisible = false;
+            siticoneGroupBox4.BlinkInterval = 500;
+            siticoneGroupBox4.BlinkMinOpacity = 0.3F;
+            siticoneGroupBox4.BlinkOpacityStep = 0.05F;
+            siticoneGroupBox4.BorderColor = Color.FromArgb(220, 222, 224);
+            siticoneGroupBox4.BorderWidth = 3F;
+            siticoneGroupBox4.ChevronColor = Color.FromArgb(90, 90, 90);
+            siticoneGroupBox4.ChevronLeftSpacing = 4F;
+            siticoneGroupBox4.ChevronSize = 10F;
+            siticoneGroupBox4.ChevronThickness = 2F;
+            siticoneGroupBox4.ContentPadding = 5;
+            siticoneGroupBox4.Controls.Add(lblDernierEvenement);
+            siticoneGroupBox4.Controls.Add(label17);
+            siticoneGroupBox4.Controls.Add(lblDernierResultat);
+            siticoneGroupBox4.Controls.Add(label15);
+            siticoneGroupBox4.Controls.Add(lblDernierUID);
+            siticoneGroupBox4.Controls.Add(label14);
+            siticoneGroupBox4.Controls.Add(lblPresence);
+            siticoneGroupBox4.Controls.Add(lblPorte);
+            siticoneGroupBox4.Controls.Add(label12);
+            siticoneGroupBox4.Controls.Add(label13);
+            siticoneGroupBox4.CornerRadius = 15;
+            siticoneGroupBox4.EnableBlinking = false;
+            siticoneGroupBox4.EnableHoverAnimation = true;
+            siticoneGroupBox4.EnableHoverHighlight = true;
+            siticoneGroupBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            siticoneGroupBox4.GradientEndColor = Color.LightGray;
+            siticoneGroupBox4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
+            siticoneGroupBox4.GradientStartColor = Color.White;
+            siticoneGroupBox4.GroupTitle = "Etat du système (en live)";
+            siticoneGroupBox4.HoveredBorderColor = Color.Crimson;
+            siticoneGroupBox4.HoveredTitleColor = Color.Black;
+            siticoneGroupBox4.IsCollapsible = false;
+            siticoneGroupBox4.Location = new Point(1383, 505);
+            siticoneGroupBox4.MaxBlinkCount = 3;
+            siticoneGroupBox4.Name = "siticoneGroupBox4";
+            siticoneGroupBox4.PressedBorderColor = Color.FromArgb(0, 84, 153);
+            siticoneGroupBox4.ShadowColor = Color.FromArgb(20, 0, 0, 0);
+            siticoneGroupBox4.ShadowDepth = 1;
+            siticoneGroupBox4.ShowShadow = true;
+            siticoneGroupBox4.Size = new Size(503, 241);
+            siticoneGroupBox4.SolidFillColor = Color.White;
+            siticoneGroupBox4.StatusIcon = null;
+            siticoneGroupBox4.StatusText = "";
+            siticoneGroupBox4.TabIndex = 11;
+            siticoneGroupBox4.TitleBackColor = Color.Transparent;
+            siticoneGroupBox4.TitleColor = Color.FromArgb(30, 30, 30);
+            siticoneGroupBox4.TitlePadding = new Padding(10, 8, 10, 12);
+            siticoneGroupBox4.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
+            siticoneGroupBox4.UseGradient = false;
+            // 
+            // lblDernierEvenement
+            // 
+            lblDernierEvenement.AutoSize = true;
+            lblDernierEvenement.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDernierEvenement.Location = new Point(270, 188);
+            lblDernierEvenement.Name = "lblDernierEvenement";
+            lblDernierEvenement.Size = new Size(23, 27);
+            lblDernierEvenement.TabIndex = 19;
+            lblDernierEvenement.Text = "a";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(25, 188);
+            label17.Name = "label17";
+            label17.Size = new Size(239, 27);
+            label17.TabIndex = 18;
+            label17.Text = "Plus récent évènement :";
+            // 
+            // lblDernierResultat
+            // 
+            lblDernierResultat.AutoSize = true;
+            lblDernierResultat.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDernierResultat.Location = new Point(302, 154);
+            lblDernierResultat.Name = "lblDernierResultat";
+            lblDernierResultat.Size = new Size(23, 27);
+            lblDernierResultat.TabIndex = 17;
+            lblDernierResultat.Text = "a";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(24, 154);
+            label15.Name = "label15";
+            label15.Size = new Size(272, 27);
+            label15.TabIndex = 16;
+            label15.Text = "Dernière tentative d'accès :";
+            // 
+            // lblDernierUID
+            // 
+            lblDernierUID.AutoSize = true;
+            lblDernierUID.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDernierUID.Location = new Point(242, 120);
+            lblDernierUID.Name = "lblDernierUID";
+            lblDernierUID.Size = new Size(23, 27);
+            lblDernierUID.TabIndex = 15;
+            lblDernierUID.Text = "a";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(24, 120);
+            label14.Name = "label14";
+            label14.Size = new Size(212, 27);
+            label14.TabIndex = 14;
+            label14.Text = "Dernier UID détecté :";
+            // 
+            // lblPresence
+            // 
+            lblPresence.AutoSize = true;
+            lblPresence.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPresence.Location = new Point(138, 87);
+            lblPresence.Name = "lblPresence";
+            lblPresence.Size = new Size(23, 27);
+            lblPresence.TabIndex = 13;
+            lblPresence.Text = "a";
+            // 
+            // lblPorte
+            // 
+            lblPorte.AutoSize = true;
+            lblPorte.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPorte.Location = new Point(148, 56);
+            lblPorte.Name = "lblPorte";
+            lblPorte.Size = new Size(23, 27);
+            lblPorte.TabIndex = 12;
+            lblPorte.Text = "a";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(25, 87);
+            label12.Name = "label12";
+            label12.Size = new Size(107, 27);
+            label12.TabIndex = 11;
+            label12.Text = "Présence :";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(24, 56);
+            label13.Name = "label13";
+            label13.Size = new Size(118, 27);
+            label13.TabIndex = 10;
+            label13.Text = "Etat porte :";
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
+            Controls.Add(siticoneGroupBox4);
             Controls.Add(siticoneGroupBox3);
             Controls.Add(label1);
             Controls.Add(label3);
@@ -852,6 +889,8 @@
             siticoneGroupBox2.PerformLayout();
             siticoneGroupBox3.ResumeLayout(false);
             siticoneGroupBox3.PerformLayout();
+            siticoneGroupBox4.ResumeLayout(false);
+            siticoneGroupBox4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -866,10 +905,8 @@
         private Label lblidentifiant;
         private Label label3;
         private Label label1;
-        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnSeConnecter;
         private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox3;
         private Label label4;
-        private SiticoneNetCoreUI.SiticoneButtonAdvanced siticoneButtonAdvanced1;
         private Label label2;
         private TextBox txtRechercheUID;
         private Label lblAccesRefuses;
@@ -889,5 +926,16 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnReset;
         private Label label11;
         private SiticoneNetCoreUI.SiticoneiOSSwitch switchCouleur;
+        private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox4;
+        private Label label13;
+        private Label lblPorte;
+        private Label label12;
+        private Label lblPresence;
+        private Label label14;
+        private Label lblDernierUID;
+        private Label label15;
+        private Label label17;
+        private Label lblDernierResultat;
+        private Label lblDernierEvenement;
     }
 }

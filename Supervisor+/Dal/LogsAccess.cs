@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using Supervisor.Model; 
 
 namespace Supervisor.Dal
@@ -81,6 +82,65 @@ namespace Supervisor.Dal
             }
             return lesLogs;
         }
+
+        /// <summary>
+        /// Récupère la dernière entrée de acces_log (supervision temps réel)
+        /// </summary>
+        /// <returns>Dernière log ou null</returns>
+        public Logs GetDerniereLog()
+        {
+            Logs log = null;
+
+            if (access.Manager != null)
+            {
+                string req = "SELECT idAcces, Date_heure_entree, Resultat_tentative, " +
+                             "Date_heure_sortie, Presence, Etat_porte, idUser, UID " +
+                             "FROM acces_log " +
+                             "ORDER BY Date_heure_entree DESC " +
+                             "LIMIT 1";
+
+                try
+                {
+                    List<object[]> records = access.Manager.ReqSelect(req);
+
+                    if (records != null && records.Count > 0)
+                    {
+                        object[] record = records[0];
+
+                        int idAcces = Convert.ToInt32(record[0]);
+                        DateTime dateEntree = Convert.ToDateTime(record[1]);
+                        string resultat = (string)record[2];
+
+                        DateTime? dateSortie = record[3] == DBNull.Value
+                            ? (DateTime?)null
+                            : Convert.ToDateTime(record[3]);
+
+                        int presence = Convert.ToInt32(record[4]);
+                        int etatPorte = Convert.ToInt32(record[5]);
+                        int idUser = Convert.ToInt32(record[6]);
+                        string uid = (string)record[7];
+
+                        log = new Logs(
+                            idAcces,
+                            dateEntree,
+                            resultat,
+                            dateSortie,
+                            presence,
+                            etatPorte,
+                            idUser,
+                            uid
+                        );
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Erreur GetDerniereLog : " + e.Message);
+                }
+            }
+
+            return log;
+        }
+
     }
 
 }
