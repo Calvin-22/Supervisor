@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +26,12 @@ namespace Supervisor.View
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+
+            // Activation du double buffered pour la fluidité du défilement du dgvMutation
+            typeof(DataGridView).InvokeMember("DoubleBuffered",
+            BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
+            null, dgvlogs, new object[] { true });
+
             // Appel de la méthode d'initialisation
             Init();
         }
@@ -211,9 +218,6 @@ namespace Supervisor.View
             }
         }
 
-
-
-
         /// <summary>
         /// Méthode pour se déconnecter et revenir à l'écran d'authentification
         /// </summary>
@@ -308,5 +312,55 @@ namespace Supervisor.View
 
             txtRechercheUID.Clear();
         }
+
+        private void switchCouleur_StateChanged(object sender, SiticoneNetCoreUI.StateChangedEventArgs e)
+        {
+            if (switchCouleur.Checked)
+            {
+                // Active la colorisation
+                dgvlogs.CellFormatting += dgvlogs_CellFormatting_Couleurs;
+
+                // Force un redraw
+                dgvlogs.Refresh();
+            }
+            else
+            {
+                // Désactive la colorisation
+                dgvlogs.CellFormatting -= dgvlogs_CellFormatting_Couleurs;
+
+                // Remet tout en blanc
+                foreach (DataGridViewRow row in dgvlogs.Rows)
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+
+                dgvlogs.Refresh();
+            }
+        }
+
+        /// <summary>
+        /// Méthode pour coloriser les lignes du DataGridView selon le résultat de la tentative d'accès (ACCES en vert, REFUS en rouge)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvlogs_CellFormatting_Couleurs(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvlogs.Rows[e.RowIndex].DataBoundItem is Logs log)
+            {
+                // Colorisation selon le résultat
+                if (log.Resultat_tentative == "ACCES")
+                {
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                }
+                else if (log.Resultat_tentative == "REFUS")
+                {
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Firebrick;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+        }
+
     }
 }

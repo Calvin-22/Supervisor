@@ -49,6 +49,8 @@
             label3 = new Label();
             label1 = new Label();
             siticoneGroupBox3 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            label11 = new Label();
+            switchCouleur = new SiticoneNetCoreUI.SiticoneiOSSwitch();
             BtnReset = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnFiltrerDates = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label10 = new Label();
@@ -480,6 +482,8 @@
             siticoneGroupBox3.ChevronSize = 10F;
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
+            siticoneGroupBox3.Controls.Add(label11);
+            siticoneGroupBox3.Controls.Add(switchCouleur);
             siticoneGroupBox3.Controls.Add(BtnReset);
             siticoneGroupBox3.Controls.Add(btnFiltrerDates);
             siticoneGroupBox3.Controls.Add(label10);
@@ -520,6 +524,36 @@
             siticoneGroupBox3.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox3.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox3.UseGradient = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(28, 227);
+            label11.Name = "label11";
+            label11.Size = new Size(300, 27);
+            label11.TabIndex = 20;
+            label11.Text = "Activer les filtres de couleurs :";
+            // 
+            // switchCouleur
+            // 
+            switchCouleur.DisabledOffBackColor = Color.FromArgb(229, 229, 234);
+            switchCouleur.DisabledOnBackColor = Color.FromArgb(174, 223, 189);
+            switchCouleur.DisabledThumbColor = Color.FromArgb(240, 240, 240);
+            switchCouleur.Location = new Point(330, 225);
+            switchCouleur.Name = "switchCouleur";
+            switchCouleur.OffBackColor = Color.FromArgb(229, 229, 234);
+            switchCouleur.OnBackColor = Color.FromArgb(52, 199, 89);
+            switchCouleur.ReadOnlyOffBackColor = Color.FromArgb(215, 215, 220);
+            switchCouleur.ReadOnlyOnBackColor = Color.FromArgb(130, 210, 150);
+            switchCouleur.ReadOnlyThumbColor = Color.FromArgb(245, 245, 245);
+            switchCouleur.Size = new Size(76, 36);
+            switchCouleur.TabIndex = 19;
+            switchCouleur.Text = "siticoneiosSwitch1";
+            switchCouleur.ThumbBorderColor = Color.Transparent;
+            switchCouleur.ThumbColor = Color.White;
+            switchCouleur.ThumbShadowColor = Color.FromArgb(60, 0, 0, 0);
+            switchCouleur.StateChanged += switchCouleur_StateChanged;
             // 
             // BtnReset
             // 
@@ -853,5 +887,7 @@
         private DateTimePicker dtpDebut;
         private Label label9;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnReset;
+        private Label label11;
+        private SiticoneNetCoreUI.SiticoneiOSSwitch switchCouleur;
     }
 }
