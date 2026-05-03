@@ -35,6 +35,25 @@ namespace Supervisor.View
         {
             controller = new FrmLogsController();
             RemplirListeLogs();
+            StatistiquesLogs();
+        }
+
+        /// <summary>
+        /// Méthode pour calculer et afficher les statistiques des logs de bases.
+        /// </summary>
+        private void StatistiquesLogs()
+        {
+            int total = bdglogs.Count;
+
+            int autorises = bdglogs.List.Cast<Logs>()
+                .Count(l => l.Resultat_tentative == "ACCES");
+
+            int refuses = bdglogs.List.Cast<Logs>()
+                .Count(l => l.Resultat_tentative == "REFUS");
+
+            lblTotalTentatives.Text = total.ToString();
+            lblAccesAutorise.Text = autorises.ToString();
+            lblAccesRefuses.Text = refuses.ToString();
         }
 
         /// <summary>
@@ -120,5 +139,17 @@ namespace Supervisor.View
 
         }
 
+        /// <summary>
+        /// Méthode pour se déconnecter et revenir à l'écran d'authentification
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // cacher le formulaire précédent 
+            FrmAuthentification frm = new FrmAuthentification(); // ouvrir nouveau formulaire
+            frm.ShowDialog(); // ouverture 
+            this.Close(); // fermeture du formulaire caché 
+        }
     }
 }

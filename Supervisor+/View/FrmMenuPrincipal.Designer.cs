@@ -35,6 +35,12 @@
             grbox = new GroupBox();
             pictureBox1 = new PictureBox();
             siticoneGroupBox1 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            lblAccesRefuses = new Label();
+            lblAccesAutorise = new Label();
+            lblTotalTentatives = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
             label4 = new Label();
             lblidentifiant = new Label();
@@ -45,9 +51,11 @@
             siticoneButtonAdvanced1 = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label2 = new Label();
             textBox1 = new TextBox();
+            siticoneButtonAdvanced2 = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            siticoneGroupBox1.SuspendLayout();
             siticoneGroupBox2.SuspendLayout();
             siticoneGroupBox3.SuspendLayout();
             SuspendLayout();
@@ -127,6 +135,12 @@
             siticoneGroupBox1.ChevronSize = 10F;
             siticoneGroupBox1.ChevronThickness = 2F;
             siticoneGroupBox1.ContentPadding = 5;
+            siticoneGroupBox1.Controls.Add(lblAccesRefuses);
+            siticoneGroupBox1.Controls.Add(lblAccesAutorise);
+            siticoneGroupBox1.Controls.Add(lblTotalTentatives);
+            siticoneGroupBox1.Controls.Add(label7);
+            siticoneGroupBox1.Controls.Add(label6);
+            siticoneGroupBox1.Controls.Add(label5);
             siticoneGroupBox1.CornerRadius = 15;
             siticoneGroupBox1.EnableBlinking = false;
             siticoneGroupBox1.EnableHoverAnimation = true;
@@ -156,6 +170,66 @@
             siticoneGroupBox1.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox1.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox1.UseGradient = false;
+            // 
+            // lblAccesRefuses
+            // 
+            lblAccesRefuses.AutoSize = true;
+            lblAccesRefuses.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAccesRefuses.Location = new Point(259, 169);
+            lblAccesRefuses.Name = "lblAccesRefuses";
+            lblAccesRefuses.Size = new Size(23, 27);
+            lblAccesRefuses.TabIndex = 12;
+            lblAccesRefuses.Text = "a";
+            // 
+            // lblAccesAutorise
+            // 
+            lblAccesAutorise.AutoSize = true;
+            lblAccesAutorise.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAccesAutorise.Location = new Point(276, 133);
+            lblAccesAutorise.Name = "lblAccesAutorise";
+            lblAccesAutorise.Size = new Size(23, 27);
+            lblAccesAutorise.TabIndex = 11;
+            lblAccesAutorise.Text = "a";
+            // 
+            // lblTotalTentatives
+            // 
+            lblTotalTentatives.AutoSize = true;
+            lblTotalTentatives.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalTentatives.Location = new Point(323, 94);
+            lblTotalTentatives.Name = "lblTotalTentatives";
+            lblTotalTentatives.Size = new Size(23, 27);
+            lblTotalTentatives.TabIndex = 8;
+            lblTotalTentatives.Text = "a";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(20, 169);
+            label7.Name = "label7";
+            label7.Size = new Size(240, 27);
+            label7.TabIndex = 10;
+            label7.Text = "Nombre d'accès refusé :";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(20, 133);
+            label6.Name = "label6";
+            label6.Size = new Size(258, 27);
+            label6.TabIndex = 9;
+            label6.Text = "Nombre d'accès autorisé :";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(20, 95);
+            label5.Name = "label5";
+            label5.Size = new Size(311, 27);
+            label5.TabIndex = 8;
+            label5.Text = "Nombre de tentatives d'accès : ";
             // 
             // siticoneGroupBox2
             // 
@@ -331,6 +405,7 @@
             siticoneGroupBox3.ChevronSize = 10F;
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
+            siticoneGroupBox3.Controls.Add(siticoneButtonAdvanced2);
             siticoneGroupBox3.Controls.Add(siticoneButtonAdvanced1);
             siticoneGroupBox3.Controls.Add(label2);
             siticoneGroupBox3.Controls.Add(textBox1);
@@ -447,6 +522,71 @@
             textBox1.Size = new Size(150, 31);
             textBox1.TabIndex = 2;
             // 
+            // siticoneButtonAdvanced2
+            // 
+            siticoneButtonAdvanced2.BackColor = Color.Transparent;
+            siticoneButtonAdvanced2.BadgeBackColor = Color.Red;
+            siticoneButtonAdvanced2.BadgeForeColor = Color.White;
+            siticoneButtonAdvanced2.BadgeRadius = 8;
+            siticoneButtonAdvanced2.BadgeRightMargin = 10;
+            siticoneButtonAdvanced2.BadgeValue = 0;
+            siticoneButtonAdvanced2.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            siticoneButtonAdvanced2.BorderColorEnd = Color.Gray;
+            siticoneButtonAdvanced2.BorderColorStart = Color.White;
+            siticoneButtonAdvanced2.BorderRadiusBottomLeft = 35;
+            siticoneButtonAdvanced2.BorderRadiusBottomRight = 35;
+            siticoneButtonAdvanced2.BorderRadiusTopLeft = 35;
+            siticoneButtonAdvanced2.BorderRadiusTopRight = 35;
+            siticoneButtonAdvanced2.BorderThickness = 1;
+            siticoneButtonAdvanced2.ButtonColorEnd = Color.DimGray;
+            siticoneButtonAdvanced2.ButtonColorStart = Color.LightGray;
+            siticoneButtonAdvanced2.ButtonImage = null;
+            siticoneButtonAdvanced2.CanBeep = false;
+            siticoneButtonAdvanced2.CanShake = false;
+            siticoneButtonAdvanced2.ClickSoundPath = null;
+            siticoneButtonAdvanced2.DisabledOverlayOpacity = 0.5F;
+            siticoneButtonAdvanced2.EnableBorderGradient = false;
+            siticoneButtonAdvanced2.EnableClickSound = false;
+            siticoneButtonAdvanced2.EnableFocusBorder = false;
+            siticoneButtonAdvanced2.EnableHoverSound = false;
+            siticoneButtonAdvanced2.EnablePressScale = false;
+            siticoneButtonAdvanced2.EnableTextShadow = false;
+            siticoneButtonAdvanced2.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            siticoneButtonAdvanced2.FocusBorderThickness = 2;
+            siticoneButtonAdvanced2.Font = new Font("Segoe UI", 9F);
+            siticoneButtonAdvanced2.ForeColor = Color.White;
+            siticoneButtonAdvanced2.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            siticoneButtonAdvanced2.HoverSoundPath = null;
+            siticoneButtonAdvanced2.HoverTransitionSpeed = 0.08F;
+            siticoneButtonAdvanced2.ImageAlign = ContentAlignment.MiddleLeft;
+            siticoneButtonAdvanced2.ImageLeftMargin = 5;
+            siticoneButtonAdvanced2.ImageRightMargin = 8;
+            siticoneButtonAdvanced2.ImageSize = 24;
+            siticoneButtonAdvanced2.IsReadOnly = false;
+            siticoneButtonAdvanced2.Location = new Point(328, 84);
+            siticoneButtonAdvanced2.MakeRadial = false;
+            siticoneButtonAdvanced2.Name = "siticoneButtonAdvanced2";
+            siticoneButtonAdvanced2.PressAnimationSpeed = 0.2F;
+            siticoneButtonAdvanced2.PressDepth = 1;
+            siticoneButtonAdvanced2.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            siticoneButtonAdvanced2.RippleExpandSpeedFactor = 0.05F;
+            siticoneButtonAdvanced2.RippleFadeSpeedFactor = 0.03F;
+            siticoneButtonAdvanced2.ShadowBlurFactor = 0.85F;
+            siticoneButtonAdvanced2.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            siticoneButtonAdvanced2.ShadowOffsetX = 3;
+            siticoneButtonAdvanced2.ShadowOffsetY = 3;
+            siticoneButtonAdvanced2.Size = new Size(145, 52);
+            siticoneButtonAdvanced2.TabIndex = 10;
+            siticoneButtonAdvanced2.Text = "Chercher";
+            siticoneButtonAdvanced2.TextAlign = ContentAlignment.MiddleCenter;
+            siticoneButtonAdvanced2.TextPaddingBottom = 0;
+            siticoneButtonAdvanced2.TextPaddingLeft = 0;
+            siticoneButtonAdvanced2.TextPaddingRight = 0;
+            siticoneButtonAdvanced2.TextPaddingTop = 0;
+            siticoneButtonAdvanced2.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            siticoneButtonAdvanced2.TextShadowOffsetX = 1;
+            siticoneButtonAdvanced2.TextShadowOffsetY = 1;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
@@ -469,6 +609,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvlogs).EndInit();
             grbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            siticoneGroupBox1.ResumeLayout(false);
+            siticoneGroupBox1.PerformLayout();
             siticoneGroupBox2.ResumeLayout(false);
             siticoneGroupBox2.PerformLayout();
             siticoneGroupBox3.ResumeLayout(false);
@@ -493,5 +635,12 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced siticoneButtonAdvanced1;
         private Label label2;
         private TextBox textBox1;
+        private Label lblAccesRefuses;
+        private Label lblAccesAutorise;
+        private Label lblTotalTentatives;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced siticoneButtonAdvanced2;
     }
 }
