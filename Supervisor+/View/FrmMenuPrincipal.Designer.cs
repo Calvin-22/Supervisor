@@ -49,6 +49,7 @@
             label3 = new Label();
             label1 = new Label();
             siticoneGroupBox3 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            BtnReset = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnFiltrerDates = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label10 = new Label();
             dtpFin = new DateTimePicker();
@@ -168,7 +169,7 @@
             siticoneGroupBox1.ShadowDepth = 1;
             siticoneGroupBox1.ShowShadow = true;
             siticoneGroupBox1.Size = new Size(526, 288);
-            siticoneGroupBox1.SolidFillColor = Color.FromArgb(249, 249, 249);
+            siticoneGroupBox1.SolidFillColor = Color.White;
             siticoneGroupBox1.StatusIcon = null;
             siticoneGroupBox1.StatusText = "";
             siticoneGroupBox1.TabIndex = 3;
@@ -279,7 +280,7 @@
             siticoneGroupBox2.ShadowDepth = 1;
             siticoneGroupBox2.ShowShadow = true;
             siticoneGroupBox2.Size = new Size(456, 288);
-            siticoneGroupBox2.SolidFillColor = Color.FromArgb(249, 249, 249);
+            siticoneGroupBox2.SolidFillColor = Color.White;
             siticoneGroupBox2.StatusIcon = null;
             siticoneGroupBox2.StatusText = "";
             siticoneGroupBox2.TabIndex = 4;
@@ -479,6 +480,7 @@
             siticoneGroupBox3.ChevronSize = 10F;
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
+            siticoneGroupBox3.Controls.Add(BtnReset);
             siticoneGroupBox3.Controls.Add(btnFiltrerDates);
             siticoneGroupBox3.Controls.Add(label10);
             siticoneGroupBox3.Controls.Add(dtpFin);
@@ -494,7 +496,7 @@
             siticoneGroupBox3.EnableHoverAnimation = true;
             siticoneGroupBox3.EnableHoverHighlight = true;
             siticoneGroupBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            siticoneGroupBox3.GradientEndColor = Color.LightGray;
+            siticoneGroupBox3.GradientEndColor = Color.White;
             siticoneGroupBox3.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             siticoneGroupBox3.GradientStartColor = Color.White;
             siticoneGroupBox3.GroupTitle = "Interagir avec les logs";
@@ -505,11 +507,11 @@
             siticoneGroupBox3.MaxBlinkCount = 3;
             siticoneGroupBox3.Name = "siticoneGroupBox3";
             siticoneGroupBox3.PressedBorderColor = Color.FromArgb(0, 84, 153);
-            siticoneGroupBox3.ShadowColor = Color.FromArgb(20, 0, 0, 0);
+            siticoneGroupBox3.ShadowColor = Color.White;
             siticoneGroupBox3.ShadowDepth = 1;
             siticoneGroupBox3.ShowShadow = true;
             siticoneGroupBox3.Size = new Size(886, 288);
-            siticoneGroupBox3.SolidFillColor = Color.FromArgb(249, 249, 249);
+            siticoneGroupBox3.SolidFillColor = Color.White;
             siticoneGroupBox3.StatusIcon = null;
             siticoneGroupBox3.StatusText = "";
             siticoneGroupBox3.TabIndex = 4;
@@ -518,6 +520,73 @@
             siticoneGroupBox3.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox3.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox3.UseGradient = false;
+            // 
+            // BtnReset
+            // 
+            BtnReset.BackColor = Color.Transparent;
+            BtnReset.BackgroundImage = (Image)resources.GetObject("BtnReset.BackgroundImage");
+            BtnReset.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnReset.BadgeBackColor = Color.Red;
+            BtnReset.BadgeForeColor = Color.White;
+            BtnReset.BadgeRadius = 8;
+            BtnReset.BadgeRightMargin = 10;
+            BtnReset.BadgeValue = 0;
+            BtnReset.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnReset.BorderColorEnd = Color.Gray;
+            BtnReset.BorderColorStart = Color.White;
+            BtnReset.BorderRadiusBottomLeft = 35;
+            BtnReset.BorderRadiusBottomRight = 35;
+            BtnReset.BorderRadiusTopLeft = 35;
+            BtnReset.BorderRadiusTopRight = 35;
+            BtnReset.BorderThickness = 1;
+            BtnReset.ButtonColorEnd = Color.Transparent;
+            BtnReset.ButtonColorStart = Color.Transparent;
+            BtnReset.ButtonImage = null;
+            BtnReset.CanBeep = false;
+            BtnReset.CanShake = false;
+            BtnReset.ClickSoundPath = null;
+            BtnReset.DisabledOverlayOpacity = 0.5F;
+            BtnReset.EnableBorderGradient = false;
+            BtnReset.EnableClickSound = false;
+            BtnReset.EnableFocusBorder = false;
+            BtnReset.EnableHoverSound = false;
+            BtnReset.EnablePressScale = false;
+            BtnReset.EnableTextShadow = false;
+            BtnReset.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnReset.FocusBorderThickness = 2;
+            BtnReset.Font = new Font("Segoe UI", 9F);
+            BtnReset.ForeColor = Color.White;
+            BtnReset.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnReset.HoverSoundPath = null;
+            BtnReset.HoverTransitionSpeed = 0.08F;
+            BtnReset.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnReset.ImageLeftMargin = 5;
+            BtnReset.ImageRightMargin = 8;
+            BtnReset.ImageSize = 24;
+            BtnReset.IsReadOnly = false;
+            BtnReset.Location = new Point(791, 164);
+            BtnReset.MakeRadial = false;
+            BtnReset.Name = "BtnReset";
+            BtnReset.PressAnimationSpeed = 0.2F;
+            BtnReset.PressDepth = 1;
+            BtnReset.RippleColor = Color.Transparent;
+            BtnReset.RippleExpandSpeedFactor = 0.05F;
+            BtnReset.RippleFadeSpeedFactor = 0.03F;
+            BtnReset.ShadowBlurFactor = 0.85F;
+            BtnReset.ShadowColor = Color.Transparent;
+            BtnReset.ShadowOffsetX = 3;
+            BtnReset.ShadowOffsetY = 3;
+            BtnReset.Size = new Size(79, 46);
+            BtnReset.TabIndex = 18;
+            BtnReset.TextAlign = ContentAlignment.MiddleCenter;
+            BtnReset.TextPaddingBottom = 0;
+            BtnReset.TextPaddingLeft = 0;
+            BtnReset.TextPaddingRight = 0;
+            BtnReset.TextPaddingTop = 0;
+            BtnReset.TextShadowColor = Color.Transparent;
+            BtnReset.TextShadowOffsetX = 1;
+            BtnReset.TextShadowOffsetY = 1;
+            BtnReset.Click += BtnReset_Click;
             // 
             // btnFiltrerDates
             // 
@@ -560,7 +629,7 @@
             btnFiltrerDates.ImageRightMargin = 8;
             btnFiltrerDates.ImageSize = 24;
             btnFiltrerDates.IsReadOnly = false;
-            btnFiltrerDates.Location = new Point(598, 161);
+            btnFiltrerDates.Location = new Point(586, 161);
             btnFiltrerDates.MakeRadial = false;
             btnFiltrerDates.Name = "btnFiltrerDates";
             btnFiltrerDates.PressAnimationSpeed = 0.2F;
@@ -589,7 +658,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(331, 176);
+            label10.Location = new Point(320, 176);
             label10.Name = "label10";
             label10.Size = new Size(100, 27);
             label10.TabIndex = 16;
@@ -597,7 +666,7 @@
             // 
             // dtpFin
             // 
-            dtpFin.Location = new Point(437, 173);
+            dtpFin.Location = new Point(426, 173);
             dtpFin.Name = "dtpFin";
             dtpFin.Size = new Size(150, 31);
             dtpFin.TabIndex = 15;
@@ -782,5 +851,6 @@
         private DateTimePicker dtpFin;
         private DateTimePicker dtpDebut;
         private Label label9;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnReset;
     }
 }

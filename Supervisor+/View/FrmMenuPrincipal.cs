@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlX.XDevAPI.Common;
 using Supervisor.Controller;
 using Supervisor.Model;
 
@@ -69,6 +70,9 @@ namespace Supervisor.View
             // Mise à jour du DataGridView
             bdglogs.DataSource = new SortableBindingList<Logs>(liste);
             dgvlogs.DataSource = bdglogs;
+
+            StatistiquesLogs();
+
         }
 
         /// <summary>
@@ -194,13 +198,12 @@ namespace Supervisor.View
         {
             DateTime debut = dtpDebut.Value.Date;
             DateTime fin = dtpFin.Value.Date.AddDays(1).AddTicks(-1);
-            // fin = 23:59:59 pour inclure toute la journée
 
-            // Récupération de la liste complète
-            var liste = controller.GetLesLogs();
+            // Récupération de la liste ACTUELLEMENT affichée dans le DGV
+            var listeAffichee = bdglogs.List.Cast<Logs>().ToList();
 
-            // Application du filtre
-            var resultat = liste
+            // Application du filtre sur la liste affichée
+            var resultat = listeAffichee
                 .Where(l => l.Date_heure_entree >= debut && l.Date_heure_entree <= fin)
                 .ToList();
 
@@ -212,8 +215,14 @@ namespace Supervisor.View
             lblTotalTentatives.Text = resultat.Count.ToString();
             lblAccesAutorise.Text = resultat.Count(l => l.Resultat_tentative == "ACCES").ToString();
             lblAccesRefuses.Text = resultat.Count(l => l.Resultat_tentative == "REFUS").ToString();
-
         }
 
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            RemplirListeLogs();
+            StatistiquesLogs();
+
+        }
     }
 }
