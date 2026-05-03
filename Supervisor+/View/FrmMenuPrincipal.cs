@@ -47,6 +47,11 @@ namespace Supervisor.View
             // Abonnement à l'événement de changement de sélection du ComboBox
             cbResultat.SelectedIndexChanged += cbResultat_SelectedIndexChanged;
 
+
+            // Abonnement à l'événement de formatage des cellules du DataGridView pour formater la colonne "Etat de la porte"
+            dgvlogs.CellFormatting += dgvlogs_CellFormatting;
+
+
         }
 
         /// Méthode appelée lors du changement de sélection dans le ComboBox pour appliquer les filtres
@@ -58,7 +63,7 @@ namespace Supervisor.View
         /// Méthode pour appliquer les filtres sélectionnés et mettre à jour la DataGridView
         private void AppliquerFiltres()
         {
-            var liste = controller.GetLesLogs(); // ou ta liste déjà chargée
+            var liste = controller.GetLesLogs();
 
             // Filtre Résultat
             if (cbResultat.SelectedItem.ToString() != "Tous")
@@ -177,6 +182,39 @@ namespace Supervisor.View
         }
 
         /// <summary>
+        /// Méthode pour formater la colonne "Etat de la porte" en affichant "Ouverte" ou "Fermée" au lieu de 1 ou 0
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvlogs_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            string prop = dgvlogs.Columns[e.ColumnIndex].DataPropertyName;
+
+            // --- État de la porte (0 = Fermée, 1 = Ouverte)
+            if (prop == "Etat_porte")
+            {
+                if (e.Value is int etat)
+                {
+                    e.Value = etat == 1 ? "Ouverte" : "Fermée";
+                    e.FormattingApplied = true;
+                }
+            }
+
+            // --- Présence (0 = Non, 1 = Oui)
+            if (prop == "Presence")
+            {
+                if (e.Value is int presence)
+                {
+                    e.Value = presence == 1 ? "Oui" : "Non";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+
+
+
+        /// <summary>
         /// Méthode pour se déconnecter et revenir à l'écran d'authentification
         /// </summary>
         /// <param name="sender"></param>
@@ -222,7 +260,53 @@ namespace Supervisor.View
         {
             RemplirListeLogs();
             StatistiquesLogs();
+            cbResultat.SelectedIndex = 0;
+        }
 
+        private void siticoneButtonAdvanced2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Bouton Rechercher
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnRechercher_Click(object sender, EventArgs e)
+        {
+            FiltrerParUID();
+        }
+
+        /// <summary>
+        /// Méthode pour filtrer les logs par UID (contenu dans TXT) à partir de la liste actuellement affichée
+        /// </summary>
+        private void FiltrerParUID()
+        {
+            string uidRecherche = txtRechercheUID.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(uidRecherche))
+                return;
+
+            // Récupération de la liste ACTUELLEMENT affichée
+            var listeAffichee = bdglogs.List.Cast<Logs>().ToList();
+
+            // Filtre UID (contient)
+            var resultat = listeAffichee
+                .Where(l => !string.IsNullOrEmpty(l.UID) &&
+                            l.UID.Contains(uidRecherche, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            // Mise à jour du DataGridView
+            bdglogs.DataSource = new SortableBindingList<Logs>(resultat);
+            dgvlogs.DataSource = bdglogs;
+
+            // Mise à jour des compteurs
+            lblTotalTentatives.Text = resultat.Count.ToString();
+            lblAccesAutorise.Text = resultat.Count(l => l.Resultat_tentative == "ACCES").ToString();
+            lblAccesRefuses.Text = resultat.Count(l => l.Resultat_tentative == "REFUS").ToString();
+
+            txtRechercheUID.Clear();
         }
     }
 }
