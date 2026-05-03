@@ -15,7 +15,7 @@ namespace Supervisor.Model
         public string Resultat_tentative { get; set; }
 
         [DisplayName("Quantité commandé")]
-        public DateTime Date_heure_sortie { get; set; }
+        public DateTime? Date_heure_sortie { get; set; }
 
         [DisplayName("Présence")]
         public int Presence { get; set; }
@@ -39,7 +39,7 @@ namespace Supervisor.Model
         /// <param name="commandé"></param>
         /// <param name="manque"></param>
         /// <param name="motif"></param>
-        public Logs(int idacces, DateTime date_heure_entree, string resultat_tentative, DateTime date_heure_sortie, int presence, int etat_porte,int idUser, string uid)
+        public Logs(int idacces, DateTime date_heure_entree, string resultat_tentative, DateTime? date_heure_sortie, int presence, int etat_porte,int idUser, string uid)
         {
             IdAcces = idacces;
             Date_heure_entree = date_heure_entree;
