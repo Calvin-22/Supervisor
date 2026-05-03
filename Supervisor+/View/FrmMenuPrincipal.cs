@@ -36,6 +36,39 @@ namespace Supervisor.View
             controller = new FrmLogsController();
             RemplirListeLogs();
             StatistiquesLogs();
+
+            // Initialisation du ComboBox pour le filtre Résultat
+            cbResultat.Items.Add("Tous");
+            cbResultat.Items.Add("ACCES");
+            cbResultat.Items.Add("REFUS");
+            cbResultat.SelectedIndex = 0;
+
+            // Abonnement à l'événement de changement de sélection du ComboBox
+            cbResultat.SelectedIndexChanged += cbResultat_SelectedIndexChanged;
+
+        }
+
+        /// Méthode appelée lors du changement de sélection dans le ComboBox pour appliquer les filtres
+        private void cbResultat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AppliquerFiltres();
+        }
+
+        /// Méthode pour appliquer les filtres sélectionnés et mettre à jour la DataGridView
+        private void AppliquerFiltres()
+        {
+            var liste = controller.GetLesLogs(); // ou ta liste déjà chargée
+
+            // Filtre Résultat
+            if (cbResultat.SelectedItem.ToString() != "Tous")
+            {
+                string filtre = cbResultat.SelectedItem.ToString();
+                liste = liste.Where(l => l.Resultat_tentative == filtre).ToList();
+            }
+
+            // Mise à jour du DataGridView
+            bdglogs.DataSource = new SortableBindingList<Logs>(liste);
+            dgvlogs.DataSource = bdglogs;
         }
 
         /// <summary>
@@ -151,5 +184,36 @@ namespace Supervisor.View
             frm.ShowDialog(); // ouverture 
             this.Close(); // fermeture du formulaire caché 
         }
+
+        private void btnFiltrerDates_Click(object sender, EventArgs e)
+        {
+            FiltrerParDates();
+        }
+
+        private void FiltrerParDates()
+        {
+            DateTime debut = dtpDebut.Value.Date;
+            DateTime fin = dtpFin.Value.Date.AddDays(1).AddTicks(-1);
+            // fin = 23:59:59 pour inclure toute la journée
+
+            // Récupération de la liste complète
+            var liste = controller.GetLesLogs();
+
+            // Application du filtre
+            var resultat = liste
+                .Where(l => l.Date_heure_entree >= debut && l.Date_heure_entree <= fin)
+                .ToList();
+
+            // Mise à jour du DataGridView
+            bdglogs.DataSource = new SortableBindingList<Logs>(resultat);
+            dgvlogs.DataSource = bdglogs;
+
+            // Mise à jour des compteurs
+            lblTotalTentatives.Text = resultat.Count.ToString();
+            lblAccesAutorise.Text = resultat.Count(l => l.Resultat_tentative == "ACCES").ToString();
+            lblAccesRefuses.Text = resultat.Count(l => l.Resultat_tentative == "REFUS").ToString();
+
+        }
+
     }
 }
