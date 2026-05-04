@@ -39,5 +39,13 @@ namespace Supervisor.Controller
             return access.GetDerniereLog();
         }
 
+        public void AjouterLog(Logs log)
+        {
+            access.AjouterLog(log);
+        }
+
+
+
+
     }
 }

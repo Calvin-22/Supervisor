@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
@@ -61,6 +61,7 @@
             label2 = new Label();
             txtRechercheUID = new TextBox();
             siticoneGroupBox4 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            ProgressBar = new ProgressBar();
             lblDernierEvenement = new Label();
             label17 = new Label();
             lblDernierResultat = new Label();
@@ -71,6 +72,7 @@
             lblPorte = new Label();
             label12 = new Label();
             label13 = new Label();
+            AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -86,25 +88,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Padding = new Padding(1);
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new Padding(1);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle4;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -720,6 +722,7 @@
             siticoneGroupBox4.ChevronSize = 10F;
             siticoneGroupBox4.ChevronThickness = 2F;
             siticoneGroupBox4.ContentPadding = 5;
+            siticoneGroupBox4.Controls.Add(ProgressBar);
             siticoneGroupBox4.Controls.Add(lblDernierEvenement);
             siticoneGroupBox4.Controls.Add(label17);
             siticoneGroupBox4.Controls.Add(lblDernierResultat);
@@ -739,7 +742,7 @@
             siticoneGroupBox4.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             siticoneGroupBox4.GradientStartColor = Color.White;
             siticoneGroupBox4.GroupTitle = "Etat du système (en live)";
-            siticoneGroupBox4.HoveredBorderColor = Color.Crimson;
+            siticoneGroupBox4.HoveredBorderColor = Color.Gold;
             siticoneGroupBox4.HoveredTitleColor = Color.Black;
             siticoneGroupBox4.IsCollapsible = false;
             siticoneGroupBox4.Location = new Point(1383, 505);
@@ -759,6 +762,13 @@
             siticoneGroupBox4.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox4.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox4.UseGradient = false;
+            // 
+            // ProgressBar
+            // 
+            ProgressBar.Location = new Point(238, 13);
+            ProgressBar.Name = "ProgressBar";
+            ProgressBar.Size = new Size(118, 20);
+            ProgressBar.TabIndex = 20;
             // 
             // lblDernierEvenement
             // 
@@ -860,12 +870,79 @@
             label13.TabIndex = 10;
             label13.Text = "Etat porte :";
             // 
+            // AjouterLogAleatoire
+            // 
+            AjouterLogAleatoire.BackColor = Color.Transparent;
+            AjouterLogAleatoire.BadgeBackColor = Color.Red;
+            AjouterLogAleatoire.BadgeForeColor = Color.White;
+            AjouterLogAleatoire.BadgeRadius = 8;
+            AjouterLogAleatoire.BadgeRightMargin = 10;
+            AjouterLogAleatoire.BadgeValue = 0;
+            AjouterLogAleatoire.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            AjouterLogAleatoire.BorderColorEnd = Color.Gray;
+            AjouterLogAleatoire.BorderColorStart = Color.White;
+            AjouterLogAleatoire.BorderRadiusBottomLeft = 35;
+            AjouterLogAleatoire.BorderRadiusBottomRight = 35;
+            AjouterLogAleatoire.BorderRadiusTopLeft = 35;
+            AjouterLogAleatoire.BorderRadiusTopRight = 35;
+            AjouterLogAleatoire.BorderThickness = 1;
+            AjouterLogAleatoire.ButtonColorEnd = Color.DimGray;
+            AjouterLogAleatoire.ButtonColorStart = Color.LightGray;
+            AjouterLogAleatoire.ButtonImage = null;
+            AjouterLogAleatoire.CanBeep = false;
+            AjouterLogAleatoire.CanShake = false;
+            AjouterLogAleatoire.ClickSoundPath = null;
+            AjouterLogAleatoire.DisabledOverlayOpacity = 0.5F;
+            AjouterLogAleatoire.EnableBorderGradient = false;
+            AjouterLogAleatoire.EnableClickSound = false;
+            AjouterLogAleatoire.EnableFocusBorder = false;
+            AjouterLogAleatoire.EnableHoverSound = false;
+            AjouterLogAleatoire.EnablePressScale = false;
+            AjouterLogAleatoire.EnableTextShadow = false;
+            AjouterLogAleatoire.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            AjouterLogAleatoire.FocusBorderThickness = 2;
+            AjouterLogAleatoire.Font = new Font("Segoe UI", 9F);
+            AjouterLogAleatoire.ForeColor = Color.White;
+            AjouterLogAleatoire.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            AjouterLogAleatoire.HoverSoundPath = null;
+            AjouterLogAleatoire.HoverTransitionSpeed = 0.08F;
+            AjouterLogAleatoire.ImageAlign = ContentAlignment.MiddleLeft;
+            AjouterLogAleatoire.ImageLeftMargin = 5;
+            AjouterLogAleatoire.ImageRightMargin = 8;
+            AjouterLogAleatoire.ImageSize = 24;
+            AjouterLogAleatoire.IsReadOnly = false;
+            AjouterLogAleatoire.Location = new Point(1216, 709);
+            AjouterLogAleatoire.MakeRadial = false;
+            AjouterLogAleatoire.Name = "AjouterLogAleatoire";
+            AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
+            AjouterLogAleatoire.PressDepth = 1;
+            AjouterLogAleatoire.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            AjouterLogAleatoire.RippleExpandSpeedFactor = 0.05F;
+            AjouterLogAleatoire.RippleFadeSpeedFactor = 0.03F;
+            AjouterLogAleatoire.ShadowBlurFactor = 0.85F;
+            AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            AjouterLogAleatoire.ShadowOffsetX = 3;
+            AjouterLogAleatoire.ShadowOffsetY = 3;
+            AjouterLogAleatoire.Size = new Size(145, 52);
+            AjouterLogAleatoire.TabIndex = 21;
+            AjouterLogAleatoire.Text = "Chercher";
+            AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
+            AjouterLogAleatoire.TextPaddingBottom = 0;
+            AjouterLogAleatoire.TextPaddingLeft = 0;
+            AjouterLogAleatoire.TextPaddingRight = 0;
+            AjouterLogAleatoire.TextPaddingTop = 0;
+            AjouterLogAleatoire.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            AjouterLogAleatoire.TextShadowOffsetX = 1;
+            AjouterLogAleatoire.TextShadowOffsetY = 1;
+            AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
+            Controls.Add(AjouterLogAleatoire);
             Controls.Add(siticoneGroupBox4);
             Controls.Add(siticoneGroupBox3);
             Controls.Add(label1);
@@ -937,5 +1014,7 @@
         private Label label17;
         private Label lblDernierResultat;
         private Label lblDernierEvenement;
+        private ProgressBar ProgressBar;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced AjouterLogAleatoire;
     }
 }

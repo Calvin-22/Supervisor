@@ -22,6 +22,7 @@ namespace Supervisor.View
     {
         // Timer pour la supervision en temps réel
         System.Windows.Forms.Timer timerSupervision;
+        System.Windows.Forms.Timer timerProgress;
 
         // Dernière date de log connue pour détecter les nouvelles entrées automatiquement
         private DateTime derniereDateConnue = DateTime.MinValue;
@@ -78,10 +79,12 @@ namespace Supervisor.View
             // Abonnement à l'événement de formatage des cellules du DataGridView pour formater la colonne "Etat de la porte"
             dgvlogs.CellFormatting += dgvlogs_CellFormatting;
 
+            // Démarrage du timer pour la supervision en temps réel
             timerSupervision.Interval = 3000; // 3 secondes
             timerSupervision.Tick += TimerSupervision_Tick;
             timerSupervision.Start();
 
+            InitProgressBar();
         }
 
         /// <summary>
@@ -93,6 +96,10 @@ namespace Supervisor.View
         {
             var derniere = controller.GetDerniereLog();
             if (derniere == null) return;
+
+            // Message de debug pour vérifier la fréquence des requêtes SQL (visible dans la fenêtre "Sortie" de Visual Studio)
+            System.Diagnostics.Debug.WriteLine("Requête SQL envoyée : " + DateTime.Now.ToString("HH:mm:ss.fff"));
+
 
             // Si nouvelle log détectée
             if (derniere.Date_heure_entree > derniereDateConnue)
@@ -108,7 +115,33 @@ namespace Supervisor.View
                 // Mise à jour des statistiques
                 StatistiquesLogs();
             }
+
         }
+
+        private void InitProgressBar()
+        {
+            ProgressBar.Minimum = 0;
+            ProgressBar.Maximum = 100;
+            ProgressBar.Value = 0;
+
+            timerProgress = new System.Windows.Forms.Timer();
+            timerProgress.Interval = 30; // 30 ms → 100 ticks → 3 secondes
+            timerProgress.Tick += TimerProgress_Tick;
+            timerProgress.Start();
+        }
+
+        private void TimerProgress_Tick(object sender, EventArgs e)
+        {
+            if (ProgressBar.Value < 100)
+            {
+                ProgressBar.Value += 1;
+            }
+            else
+            {
+                ProgressBar.Value = 0; // reset instantané
+            }
+        }
+
 
         /// <summary>
         /// Méthode pour ajouter une nouvelle log en haut du DataGridView (pour la supervision en temps réel)
@@ -433,16 +466,56 @@ namespace Supervisor.View
                 // Colorisation selon le résultat
                 if (log.Resultat_tentative == "ACCES")
                 {
-                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
-                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
                 }
                 else if (log.Resultat_tentative == "REFUS")
                 {
-                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Firebrick;
-                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Coral;
+                    dgvlogs.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
                 }
             }
         }
 
+        /// Bouton pour ajouter une log aléatoire (pour les tests)
+        private void AjouterLogAleatoire_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+
+            int idAcces = rnd.Next(1, 999999);
+            DateTime dateEntree = DateTime.Now;
+            string resultat = rnd.Next(2) == 0 ? "ACCES" : "REFUS";
+            DateTime? dateSortie = null;
+            int presence = rnd.Next(2);
+            int etatPorte = rnd.Next(2);
+            int idUser = rnd.Next(1, 5);
+
+            // UID NFC aléatoire (8 hex)
+            string uid = "";
+            const string hex = "0123456789ABCDEF";
+            for (int i = 0; i < 8; i++)
+                uid += hex[rnd.Next(hex.Length)];
+
+            // Création du modèle Logs (respect EXACT du constructeur)
+            Logs log = new Logs(
+                idAcces,
+                dateEntree,
+                resultat,
+                dateSortie,
+                presence,
+                etatPorte,
+                idUser,
+                uid
+            );
+
+            // Envoi au controller → DAL → SQL
+            controller.AjouterLog(log);
+
+            // Mise à jour interface
+            AjouterNouvelleLog(log);
+            StatistiquesLogs();
+        }
+
+            
     }
 }

@@ -137,9 +137,44 @@ namespace Supervisor.Dal
                     Console.WriteLine("Erreur GetDerniereLog : " + e.Message);
                 }
             }
-
             return log;
         }
+
+        public Logs AjouterLog(Logs log)
+        {
+            if (access.Manager != null)
+            {
+                string req = "INSERT INTO acces_log " +
+                             "(idAcces, Date_heure_entree, Resultat_tentative, Date_heure_sortie, " +
+                             "Presence, Etat_porte, idUser, UID) " +
+                             "VALUES (@idAcces, @entree, @res, @sortie, @presence, @porte, @idUser, @uid)";
+
+                Dictionary<string, object> p = new Dictionary<string, object>()
+        {
+            { "@idAcces", log.IdAcces },
+            { "@entree", log.Date_heure_entree },
+            { "@res", log.Resultat_tentative },
+            { "@sortie", log.Date_heure_sortie },
+            { "@presence", log.Presence },
+            { "@porte", log.Etat_porte },
+            { "@idUser", log.IdUser },
+            { "@uid", log.UID }
+        };
+
+                try
+                {
+                    access.Manager.ReqUpdate(req, p);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Erreur AjouterLog : " + e.Message);
+                }
+            }
+
+            // On renvoie la log insérée
+            return log;
+        }
+
 
     }
 
