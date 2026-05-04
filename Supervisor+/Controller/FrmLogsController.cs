@@ -34,11 +34,19 @@ namespace Supervisor.Controller
             return access.GetLesLogs();
         }
 
+        /// <summary>
+        /// Récupère et retourne le dernier log
+        /// </summary>
+        /// <returns></returns>
         public Logs GetDerniereLog()
         {
             return access.GetDerniereLog();
         }
 
+        /// <summary>
+        /// Ajoute un log à la base de données
+        /// </summary>
+        /// <param name="log"></param>
         public void AjouterLog(Logs log)
         {
             access.AjouterLog(log);

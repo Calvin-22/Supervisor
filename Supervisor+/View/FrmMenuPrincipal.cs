@@ -477,7 +477,11 @@ namespace Supervisor.View
             }
         }
 
-        /// Bouton pour ajouter une log aléatoire (pour les tests)
+        /// <summary>
+        /// Bouton pour ajouter une log aléatoire (pour tester la supervision en temps réel et les statistiques)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AjouterLogAleatoire_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -496,7 +500,7 @@ namespace Supervisor.View
             for (int i = 0; i < 8; i++)
                 uid += hex[rnd.Next(hex.Length)];
 
-            // Création du modèle Logs (respect EXACT du constructeur)
+            // Création du modèle Logs
             Logs log = new Logs(
                 idAcces,
                 dateEntree,

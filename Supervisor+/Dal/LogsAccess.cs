@@ -140,6 +140,11 @@ namespace Supervisor.Dal
             return log;
         }
 
+        /// <summary>
+        /// Ajoute une log à la table acces_log
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
         public Logs AjouterLog(Logs log)
         {
             if (access.Manager != null)
