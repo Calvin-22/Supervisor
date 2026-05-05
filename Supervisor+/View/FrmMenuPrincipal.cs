@@ -19,6 +19,9 @@ namespace Supervisor.View
         System.Windows.Forms.Timer timerSupervision;
         System.Windows.Forms.Timer timerProgress;
 
+        // Variable pour éviter les notifications d'effraction multiples si plusieurs logs consécutives indiquent une effraction
+        private bool effractionEnCours = false;
+
         // Dernière date de log connue pour détecter les nouvelles entrées automatiquement
         private DateTime derniereDateConnue = DateTime.MinValue;
 
@@ -110,6 +113,22 @@ namespace Supervisor.View
                 // Mise à jour des statistiques
                 StatistiquesLogs();
             }
+
+            // Détection d’effraction avec anti-spam
+            if (EstEffraction(derniere))
+            {
+                if (!effractionEnCours)
+                {
+                    effractionEnCours = true;
+                    NotifierEffraction(derniere);
+                }
+            }
+            else
+            {
+                // Si tout est redevenu normal, on réarme le système
+                effractionEnCours = false;
+            }
+
 
         }
 
@@ -576,6 +595,50 @@ namespace Supervisor.View
             MessageBox.Show("PDF exporté avec succès !");
         }
 
+        /// <summary>
+        /// Méthode pour détecter une possible effraction : porte ouverte + badge refusé ou pas de lecture de badge
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
+        private bool EstEffraction(Logs log)
+        {
+            bool porteOuverte = log.Etat_porte == 1;
+            bool badgeRefuse = log.Resultat_tentative == "REFUS";
+            bool aucuneLectureBadge = string.IsNullOrWhiteSpace(log.UID);
+
+            return porteOuverte && (badgeRefuse || aucuneLectureBadge);
+        }
+
+        /// <summary>
+        /// Méthode pour notifier l'utilisateur en cas d'effraction détectée : affiche un message d'alerte clair et professionnel + joue un son d'alerte
+        /// </summary>
+        /// <param name="log"></param>
+        private void NotifierEffraction(Logs log)
+        {
+            // Son d’alerte
+            System.Media.SystemSounds.Exclamation.Play();
+
+            // Message clair et professionnel
+            string message =
+                "EFFRACTION DÉTECTÉE\n\n" +
+                $"Date : {log.Date_heure_entree:dd/MM/yyyy HH:mm:ss}\n" +
+                $"Porte : {(log.Etat_porte == 1 ? "Ouverte" : "Fermée")}\n" +
+                $"Résultat : {log.Resultat_tentative}\n" +
+                $"UID : {(string.IsNullOrWhiteSpace(log.UID) ? "Aucun (ou inconnu)" : log.UID)}";
+
+            MessageBox.Show(
+                message,
+                "Alerte de sécurité",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+        }
+
+        /// <summary>
+        /// Bouton pour se déconnecter : ferme le formulaire actuel et retourne à l'écran d'authentification
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnDéconnexion_Click(object sender, EventArgs e)
         {
             this.Hide(); // cacher le formulaire précédent 

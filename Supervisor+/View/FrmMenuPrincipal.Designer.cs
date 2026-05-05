@@ -130,7 +130,6 @@
             grbox.TabIndex = 1;
             grbox.TabStop = false;
             grbox.Text = "Logs";
-            grbox.Enter += grbox_Enter;
             // 
             // pictureBox1
             // 
