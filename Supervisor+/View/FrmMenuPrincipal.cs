@@ -6,6 +6,7 @@ using Supervisor.Controller;
 using Supervisor.Model;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Windows.Forms;
 
 
 
@@ -21,6 +22,21 @@ namespace Supervisor.View
 
         // Variable pour éviter les notifications d'effraction multiples si plusieurs logs consécutives indiquent une effraction
         private bool effractionEnCours = false;
+
+        /// <summary>
+        /// Variables pour la détection de porte ouverte prolongée (+10s) avec anti-spam (une seule alerte envoyée tant que la porte reste ouverte)
+        /// </summary>
+        private DateTime? heureDernierLogPorteOuverte = null;
+        private bool alertePorteOuverteEnvoyee = false;
+        private const int SEUIL_PORTE_OUVERTE_SECONDES = 10; // seuil de 10 secondes pour l'alerte de porte ouverte trop longtemps
+
+        /// <summary>
+        /// Variables pour la détection d'effraction nocturne : on considère comme suspect toute tentative d'accès avec porte ouverte entre 22h00 et 06h00
+        /// </summary>
+        private readonly TimeSpan heureDebutSuspecte = new TimeSpan(22, 0, 0); // 22h00
+        private readonly TimeSpan heureFinSuspecte = new TimeSpan(6, 0, 0);   // 06h00
+        private bool alerteComportementSuspectEnvoyee = false;
+
 
         // Dernière date de log connue pour détecter les nouvelles entrées automatiquement
         private DateTime derniereDateConnue = DateTime.MinValue;
@@ -120,16 +136,96 @@ namespace Supervisor.View
                 if (!effractionEnCours)
                 {
                     effractionEnCours = true;
+                    // Changement de couleur du header du DataGridView pour indiquer une alerte
+                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Firebrick; 
+                    dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Firebrick;
+                    // Changement de logo pour indiquer une alerte
+                    LogoSupervisor.Image = logo_rouge.Image; 
                     NotifierEffraction(derniere);
                 }
             }
-            else
+            else if (derniere.Resultat_tentative == "ACCES" || derniere.Etat_porte == 0)
             {
                 // Si tout est redevenu normal, on réarme le système
                 effractionEnCours = false;
+                dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+                dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+                LogoSupervisor.Image = logo_bleu.Image;
             }
 
+            if (!effractionEnCours)
+            {
+                // Gestion du temps d'ouverture de la porte
+                if (derniere.Etat_porte == 1) // porte ouverte
+                {
+                    if (heureDernierLogPorteOuverte == null)
+                    {
+                        // La porte vient de s'ouvrir → on enregistre l'heure du log
+                        heureDernierLogPorteOuverte = derniere.Date_heure_entree;
+                        alertePorteOuverteEnvoyee = false;
+                    }
+                    else
+                    {
+                        // Porte toujours ouverte donc calcul de la durée depuis le dernier log "ouverte"
+                        TimeSpan duree = DateTime.Now - heureDernierLogPorteOuverte.Value;
 
+                        if (!alertePorteOuverteEnvoyee &&
+                            duree.TotalSeconds >= SEUIL_PORTE_OUVERTE_SECONDES)
+                        {
+
+                            alertePorteOuverteEnvoyee = true;
+
+                            // Changement de couleur du header du DataGridView pour indiquer une méfiance
+                            dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Goldenrod;
+                            dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Goldenrod;
+                            // Changement de logo pour indiquer une méfiance
+                            LogoSupervisor.Image = logo_jaune.Image;
+
+                            NotifierPorteOuverteLongtemps(duree);
+                        }
+                    }
+                }
+                else
+                {
+                    // Porte fermée donc réarmement
+                    heureDernierLogPorteOuverte = null;
+                    alertePorteOuverteEnvoyee = false;
+
+                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+                    dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+                    LogoSupervisor.Image = logo_bleu.Image;
+                }
+            }
+            
+
+            if (!effractionEnCours)
+            {
+                // Détection comportement suspect
+                if (EstComportementSuspect(derniere))
+                {
+                    // Changement de couleur du header du DataGridView pour indiquer une méfiance
+                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Goldenrod;
+                    dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Goldenrod;
+                    // Changement de logo pour indiquer une méfiance
+                    LogoSupervisor.Image = logo_jaune.Image;
+
+                    if (!alerteComportementSuspectEnvoyee)
+                    {
+                        alerteComportementSuspectEnvoyee = true;
+                        NotifierComportementSuspect(derniere);
+                    }
+                }
+                else if (derniere.Etat_porte == 0 &&
+                    derniere.Date_heure_entree.TimeOfDay >= heureDebutSuspecte ||
+                          derniere.Date_heure_entree.TimeOfDay <= heureFinSuspecte)
+                {
+                    // Réarmement si tout redevient normal
+                    alerteComportementSuspectEnvoyee = false;
+                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+                    dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
+                    LogoSupervisor.Image = logo_bleu.Image;
+                }
+            }
         }
 
         private void InitProgressBar()
@@ -635,21 +731,122 @@ namespace Supervisor.View
         }
 
         /// <summary>
+        /// Méthode pour notifier l'utilisateur si la porte est restée ouverte depuis trop longtemps (plus de 10 secondes) : affiche un message d'alerte clair et professionnel + joue un son d'alerte
+        /// </summary>
+        /// <param name="duree"></param>
+        private void NotifierPorteOuverteLongtemps(TimeSpan duree)
+        {
+            System.Media.SystemSounds.Exclamation.Play();
+
+            string message =
+       "ALERTE : Porte ouverte depuis trop longtemps\n\n" +
+       $"Porte ouverte depuis : {FormaterDuree(duree)}\n" +
+       $"Dernier log d'ouverture : {heureDernierLogPorteOuverte:dd/MM/yyyy HH:mm:ss}";
+
+            MessageBox.Show(
+                message,
+                "Alerte de sécurité",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+        }
+
+        /// <summary>
+        /// Méthode pour formater une durée (TimeSpan) en une chaîne lisible (ex : "12 secondes", "3 min 45 s", "1 h 20 min")
+        /// </summary>
+        /// <param name="duree"></param>
+        /// <returns></returns>
+        private string FormaterDuree(TimeSpan duree)
+        {
+            if (duree.TotalSeconds < 60)
+                return $"{duree.TotalSeconds:F0} secondes";
+
+            if (duree.TotalMinutes < 60)
+                return $"{(int)duree.TotalMinutes} min {duree.Seconds} s";
+
+            return $"{(int)duree.TotalHours} h {duree.Minutes} min";
+        }
+
+        /// <summary>
+        /// Méthode pour déterminer si une tentative d'accès est suspecte en fonction de l'heure : on considère comme suspect toute tentative avec porte ouverte entre 22h00 et 06h00
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        private bool EstHeureSuspecte(DateTime date)
+        {
+            TimeSpan heure = date.TimeOfDay;
+
+            // Cas normal : 22h → minuit
+            if (heure >= heureDebutSuspecte)
+                return true;
+
+            // Cas minuit → 6h
+            if (heure <= heureFinSuspecte)
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// Méthode pour déterminer si une tentative d'accès est suspecte : porte ouverte + badge valide + présence détectée entre 22h00 et 06h00
+        /// </summary>
+        /// <param name="log"></param>
+        /// <returns></returns>
+        private bool EstComportementSuspect(Logs log)
+        {
+            bool badgeValide = log.Resultat_tentative == "ACCES";
+
+            return badgeValide && EstHeureSuspecte(log.Date_heure_entree);
+        }
+
+        /// <summary>
+        /// Méthode pour notifier l'utilisateur en cas de comportement suspect détecté : affiche un message d'alerte clair et professionnel + joue un son d'alerte
+        /// </summary>
+        /// <param name="log"></param>
+        private void NotifierComportementSuspect(Logs log)
+        {
+            System.Media.SystemSounds.Exclamation.Play();
+
+            string message =
+                "COMPORTEMENT SUSPECT\n\n" +
+                $"Accès légitime mais à une heure inhabituelle\n" +
+                $"Heure : {log.Date_heure_entree:dd/MM/yyyy HH:mm:ss}\n" +
+                $"UID : {log.UID}\n" +
+                $"Présence détectée : Oui\n" +
+                $"Porte : Ouverte";
+
+            MessageBox.Show(
+                message,
+                "Alerte comportement suspect",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+        }
+
+
+
+
+        /// <summary>
         /// Bouton pour se déconnecter : ferme le formulaire actuel et retourne à l'écran d'authentification
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnDéconnexion_Click(object sender, EventArgs e)
         {
-            this.Hide(); // cacher le formulaire précédent 
-            FrmAuthentification frm = new FrmAuthentification(); // ouvrir nouveau formulaire
-            frm.ShowDialog(); // ouverture 
-            this.Close(); // fermeture du formulaire caché 
-        }
+            DialogResult result = MessageBox.Show(
+        "Voulez-vous vraiment vous déconnecter ?",
+        "Confirmation",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question
+    );
 
-        private void grbox_Enter(object sender, EventArgs e)
-        {
-
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                FrmAuthentification frm = new FrmAuthentification();
+                frm.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

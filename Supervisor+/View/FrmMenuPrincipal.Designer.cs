@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
-            pictureBox1 = new PictureBox();
+            logo_rouge = new PictureBox();
+            LogoSupervisor = new PictureBox();
             siticoneGroupBox1 = new SiticoneNetCoreUI.SiticoneGroupBox();
             lblAccesRefuses = new Label();
             lblAccesAutorise = new Label();
@@ -42,6 +43,7 @@
             label6 = new Label();
             label5 = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            BtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnImprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label4 = new Label();
             lblidentifiant = new Label();
@@ -74,14 +76,18 @@
             label12 = new Label();
             label13 = new Label();
             AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
-            BtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            logo_bleu = new PictureBox();
+            logo_jaune = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logo_rouge).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogoSupervisor).BeginInit();
             siticoneGroupBox1.SuspendLayout();
             siticoneGroupBox2.SuspendLayout();
             siticoneGroupBox3.SuspendLayout();
             siticoneGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logo_bleu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logo_jaune).BeginInit();
             SuspendLayout();
             // 
             // dgvlogs
@@ -90,25 +96,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -131,15 +137,25 @@
             grbox.TabStop = false;
             grbox.Text = "Logs";
             // 
-            // pictureBox1
+            // logo_rouge
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1430, 39);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(409, 359);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            logo_rouge.Image = (Image)resources.GetObject("logo_rouge.Image");
+            logo_rouge.Location = new Point(1430, 39);
+            logo_rouge.Name = "logo_rouge";
+            logo_rouge.Size = new Size(409, 359);
+            logo_rouge.SizeMode = PictureBoxSizeMode.StretchImage;
+            logo_rouge.TabIndex = 22;
+            logo_rouge.TabStop = false;
+            // 
+            // LogoSupervisor
+            // 
+            LogoSupervisor.Image = (Image)resources.GetObject("LogoSupervisor.Image");
+            LogoSupervisor.Location = new Point(1430, 39);
+            LogoSupervisor.Name = "LogoSupervisor";
+            LogoSupervisor.Size = new Size(409, 359);
+            LogoSupervisor.SizeMode = PictureBoxSizeMode.StretchImage;
+            LogoSupervisor.TabIndex = 2;
+            LogoSupervisor.TabStop = false;
             // 
             // siticoneGroupBox1
             // 
@@ -305,6 +321,72 @@
             siticoneGroupBox2.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox2.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox2.UseGradient = false;
+            // 
+            // BtnDéconnexion
+            // 
+            BtnDéconnexion.BackColor = Color.Transparent;
+            BtnDéconnexion.BadgeBackColor = Color.Red;
+            BtnDéconnexion.BadgeForeColor = Color.White;
+            BtnDéconnexion.BadgeRadius = 8;
+            BtnDéconnexion.BadgeRightMargin = 10;
+            BtnDéconnexion.BadgeValue = 0;
+            BtnDéconnexion.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnDéconnexion.BorderColorEnd = Color.Gray;
+            BtnDéconnexion.BorderColorStart = Color.White;
+            BtnDéconnexion.BorderRadiusBottomLeft = 35;
+            BtnDéconnexion.BorderRadiusBottomRight = 35;
+            BtnDéconnexion.BorderRadiusTopLeft = 35;
+            BtnDéconnexion.BorderRadiusTopRight = 35;
+            BtnDéconnexion.BorderThickness = 1;
+            BtnDéconnexion.ButtonColorEnd = Color.DarkRed;
+            BtnDéconnexion.ButtonColorStart = Color.Red;
+            BtnDéconnexion.ButtonImage = null;
+            BtnDéconnexion.CanBeep = false;
+            BtnDéconnexion.CanShake = false;
+            BtnDéconnexion.ClickSoundPath = null;
+            BtnDéconnexion.DisabledOverlayOpacity = 0.5F;
+            BtnDéconnexion.EnableBorderGradient = false;
+            BtnDéconnexion.EnableClickSound = false;
+            BtnDéconnexion.EnableFocusBorder = false;
+            BtnDéconnexion.EnableHoverSound = false;
+            BtnDéconnexion.EnablePressScale = false;
+            BtnDéconnexion.EnableTextShadow = false;
+            BtnDéconnexion.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnDéconnexion.FocusBorderThickness = 2;
+            BtnDéconnexion.Font = new Font("Segoe UI", 9F);
+            BtnDéconnexion.ForeColor = Color.White;
+            BtnDéconnexion.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnDéconnexion.HoverSoundPath = null;
+            BtnDéconnexion.HoverTransitionSpeed = 0.08F;
+            BtnDéconnexion.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnDéconnexion.ImageLeftMargin = 5;
+            BtnDéconnexion.ImageRightMargin = 8;
+            BtnDéconnexion.ImageSize = 24;
+            BtnDéconnexion.IsReadOnly = false;
+            BtnDéconnexion.Location = new Point(334, 209);
+            BtnDéconnexion.MakeRadial = false;
+            BtnDéconnexion.Name = "BtnDéconnexion";
+            BtnDéconnexion.PressAnimationSpeed = 0.2F;
+            BtnDéconnexion.PressDepth = 1;
+            BtnDéconnexion.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            BtnDéconnexion.RippleExpandSpeedFactor = 0.05F;
+            BtnDéconnexion.RippleFadeSpeedFactor = 0.03F;
+            BtnDéconnexion.ShadowBlurFactor = 0.85F;
+            BtnDéconnexion.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            BtnDéconnexion.ShadowOffsetX = 3;
+            BtnDéconnexion.ShadowOffsetY = 3;
+            BtnDéconnexion.Size = new Size(145, 52);
+            BtnDéconnexion.TabIndex = 22;
+            BtnDéconnexion.Text = "Se déconnecter";
+            BtnDéconnexion.TextAlign = ContentAlignment.MiddleCenter;
+            BtnDéconnexion.TextPaddingBottom = 0;
+            BtnDéconnexion.TextPaddingLeft = 0;
+            BtnDéconnexion.TextPaddingRight = 0;
+            BtnDéconnexion.TextPaddingTop = 0;
+            BtnDéconnexion.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            BtnDéconnexion.TextShadowOffsetX = 1;
+            BtnDéconnexion.TextShadowOffsetY = 1;
+            BtnDéconnexion.Click += BtnDéconnexion_Click;
             // 
             // BtnImprimer
             // 
@@ -1006,71 +1088,25 @@
             AjouterLogAleatoire.TextShadowOffsetY = 1;
             AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
             // 
-            // BtnDéconnexion
+            // logo_bleu
             // 
-            BtnDéconnexion.BackColor = Color.Transparent;
-            BtnDéconnexion.BadgeBackColor = Color.Red;
-            BtnDéconnexion.BadgeForeColor = Color.White;
-            BtnDéconnexion.BadgeRadius = 8;
-            BtnDéconnexion.BadgeRightMargin = 10;
-            BtnDéconnexion.BadgeValue = 0;
-            BtnDéconnexion.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            BtnDéconnexion.BorderColorEnd = Color.Gray;
-            BtnDéconnexion.BorderColorStart = Color.White;
-            BtnDéconnexion.BorderRadiusBottomLeft = 35;
-            BtnDéconnexion.BorderRadiusBottomRight = 35;
-            BtnDéconnexion.BorderRadiusTopLeft = 35;
-            BtnDéconnexion.BorderRadiusTopRight = 35;
-            BtnDéconnexion.BorderThickness = 1;
-            BtnDéconnexion.ButtonColorEnd = Color.DarkRed;
-            BtnDéconnexion.ButtonColorStart = Color.Red;
-            BtnDéconnexion.ButtonImage = null;
-            BtnDéconnexion.CanBeep = false;
-            BtnDéconnexion.CanShake = false;
-            BtnDéconnexion.ClickSoundPath = null;
-            BtnDéconnexion.DisabledOverlayOpacity = 0.5F;
-            BtnDéconnexion.EnableBorderGradient = false;
-            BtnDéconnexion.EnableClickSound = false;
-            BtnDéconnexion.EnableFocusBorder = false;
-            BtnDéconnexion.EnableHoverSound = false;
-            BtnDéconnexion.EnablePressScale = false;
-            BtnDéconnexion.EnableTextShadow = false;
-            BtnDéconnexion.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            BtnDéconnexion.FocusBorderThickness = 2;
-            BtnDéconnexion.Font = new Font("Segoe UI", 9F);
-            BtnDéconnexion.ForeColor = Color.White;
-            BtnDéconnexion.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            BtnDéconnexion.HoverSoundPath = null;
-            BtnDéconnexion.HoverTransitionSpeed = 0.08F;
-            BtnDéconnexion.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnDéconnexion.ImageLeftMargin = 5;
-            BtnDéconnexion.ImageRightMargin = 8;
-            BtnDéconnexion.ImageSize = 24;
-            BtnDéconnexion.IsReadOnly = false;
-            BtnDéconnexion.Location = new Point(334, 209);
-            BtnDéconnexion.MakeRadial = false;
-            BtnDéconnexion.Name = "BtnDéconnexion";
-            BtnDéconnexion.PressAnimationSpeed = 0.2F;
-            BtnDéconnexion.PressDepth = 1;
-            BtnDéconnexion.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            BtnDéconnexion.RippleExpandSpeedFactor = 0.05F;
-            BtnDéconnexion.RippleFadeSpeedFactor = 0.03F;
-            BtnDéconnexion.ShadowBlurFactor = 0.85F;
-            BtnDéconnexion.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            BtnDéconnexion.ShadowOffsetX = 3;
-            BtnDéconnexion.ShadowOffsetY = 3;
-            BtnDéconnexion.Size = new Size(145, 52);
-            BtnDéconnexion.TabIndex = 22;
-            BtnDéconnexion.Text = "Se déconnecter";
-            BtnDéconnexion.TextAlign = ContentAlignment.MiddleCenter;
-            BtnDéconnexion.TextPaddingBottom = 0;
-            BtnDéconnexion.TextPaddingLeft = 0;
-            BtnDéconnexion.TextPaddingRight = 0;
-            BtnDéconnexion.TextPaddingTop = 0;
-            BtnDéconnexion.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            BtnDéconnexion.TextShadowOffsetX = 1;
-            BtnDéconnexion.TextShadowOffsetY = 1;
-            BtnDéconnexion.Click += BtnDéconnexion_Click;
+            logo_bleu.Image = (Image)resources.GetObject("logo_bleu.Image");
+            logo_bleu.Location = new Point(1430, 39);
+            logo_bleu.Name = "logo_bleu";
+            logo_bleu.Size = new Size(409, 359);
+            logo_bleu.SizeMode = PictureBoxSizeMode.StretchImage;
+            logo_bleu.TabIndex = 23;
+            logo_bleu.TabStop = false;
+            // 
+            // logo_jaune
+            // 
+            logo_jaune.Image = (Image)resources.GetObject("logo_jaune.Image");
+            logo_jaune.Location = new Point(1430, 39);
+            logo_jaune.Name = "logo_jaune";
+            logo_jaune.Size = new Size(409, 359);
+            logo_jaune.SizeMode = PictureBoxSizeMode.StretchImage;
+            logo_jaune.TabIndex = 24;
+            logo_jaune.TabStop = false;
             // 
             // FrmMenuPrincipal
             // 
@@ -1086,8 +1122,11 @@
             Controls.Add(lblidentifiant);
             Controls.Add(siticoneGroupBox2);
             Controls.Add(siticoneGroupBox1);
-            Controls.Add(pictureBox1);
+            Controls.Add(LogoSupervisor);
             Controls.Add(grbox);
+            Controls.Add(logo_rouge);
+            Controls.Add(logo_bleu);
+            Controls.Add(logo_jaune);
             Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMenuPrincipal";
@@ -1095,7 +1134,8 @@
             Text = "Supervisor";
             ((System.ComponentModel.ISupportInitialize)dgvlogs).EndInit();
             grbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo_rouge).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogoSupervisor).EndInit();
             siticoneGroupBox1.ResumeLayout(false);
             siticoneGroupBox1.PerformLayout();
             siticoneGroupBox2.ResumeLayout(false);
@@ -1104,6 +1144,8 @@
             siticoneGroupBox3.PerformLayout();
             siticoneGroupBox4.ResumeLayout(false);
             siticoneGroupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logo_bleu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo_jaune).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1112,7 +1154,7 @@
 
         private DataGridView dgvlogs;
         private GroupBox grbox;
-        private PictureBox pictureBox1;
+        private PictureBox LogoSupervisor;
         private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox1;
         private SiticoneNetCoreUI.SiticoneGroupBox siticoneGroupBox2;
         private Label lblidentifiant;
@@ -1154,5 +1196,8 @@
         private SiticoneNetCoreUI.SiticoneButtonAdvanced AjouterLogAleatoire;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnImprimer;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnDéconnexion;
+        private PictureBox logo_rouge;
+        private PictureBox logo_bleu;
+        private PictureBox logo_jaune;
     }
 }
