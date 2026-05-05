@@ -328,19 +328,6 @@ namespace Supervisor.View
             }
         }
 
-        /// <summary>
-        /// Méthode pour se déconnecter et revenir à l'écran d'authentification
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtnDeconnexion_Click(object sender, EventArgs e)
-        {
-            this.Hide(); // cacher le formulaire précédent 
-            FrmAuthentification frm = new FrmAuthentification(); // ouvrir nouveau formulaire
-            frm.ShowDialog(); // ouverture 
-            this.Close(); // fermeture du formulaire caché 
-        }
-
         private void btnFiltrerDates_Click(object sender, EventArgs e)
         {
             FiltrerParDates();
@@ -377,10 +364,6 @@ namespace Supervisor.View
             cbResultat.SelectedIndex = 0;
         }
 
-        private void siticoneButtonAdvanced2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// Bouton Rechercher
@@ -593,5 +576,17 @@ namespace Supervisor.View
             MessageBox.Show("PDF exporté avec succès !");
         }
 
+        private void BtnDéconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide(); // cacher le formulaire précédent 
+            FrmAuthentification frm = new FrmAuthentification(); // ouvrir nouveau formulaire
+            frm.ShowDialog(); // ouverture 
+            this.Close(); // fermeture du formulaire caché 
+        }
+
+        private void grbox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
