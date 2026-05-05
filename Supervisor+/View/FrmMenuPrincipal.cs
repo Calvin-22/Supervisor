@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySqlX.XDevAPI.Common;
 using Supervisor.Controller;
 using Supervisor.Model;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 
 
@@ -520,6 +515,83 @@ namespace Supervisor.View
             StatistiquesLogs();
         }
 
-            
+
+        /// <summary>
+        /// Bouton pour exporter les données affichées dans le DataGridView vers un fichier PDF en utilisant la bibliothèque iTextSharp
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnImprimer_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Fichiers PDF (*.pdf)|*.pdf";
+                sfd.Title = "Exporter en PDF";
+                sfd.FileName = "Export.pdf";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    ExportDataGridViewToPdf(dgvlogs, sfd.FileName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Exporte le DataGridView vers un fichier PDF.
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <param name="filePath"></param>
+        private void ExportDataGridViewToPdf(DataGridView dgv, string filePath)
+        {
+            var pdfDoc = new Document(
+                PageSize.A4.Rotate(),
+                10f, 10f, 10f, 10f
+            );
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
+                pdfDoc.Open();
+
+                // Colonnes visibles uniquement
+                var colonnesVisibles = dgv.Columns
+                    .Cast<DataGridViewColumn>()
+                    .Where(c => c.Visible)
+                    .ToList();
+
+                PdfPTable table = new PdfPTable(colonnesVisibles.Count);
+                table.WidthPercentage = 100;
+
+                // En-têtes visibles
+                foreach (var col in colonnesVisibles)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(col.HeaderText));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(cell);
+                }
+
+                // Lignes visibles
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (row.IsNewRow || !row.Visible) continue;
+
+                    foreach (var col in colonnesVisibles)
+                    {
+                        var cell = row.Cells[col.Index];
+
+                        // On prend la valeur affichée à l'écran
+                        string value = cell.FormattedValue?.ToString() ?? "";
+
+                        table.AddCell(new Phrase(value));
+                    }
+                }
+
+                pdfDoc.Add(table);
+                pdfDoc.Close();
+            }
+
+            MessageBox.Show("PDF exporté avec succès !");
+        }
+
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
@@ -73,6 +73,7 @@
             label12 = new Label();
             label13 = new Label();
             AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            BtnImprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -88,25 +89,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -271,6 +272,7 @@
             siticoneGroupBox2.ChevronSize = 10F;
             siticoneGroupBox2.ChevronThickness = 2F;
             siticoneGroupBox2.ContentPadding = 5;
+            siticoneGroupBox2.Controls.Add(BtnImprimer);
             siticoneGroupBox2.Controls.Add(label4);
             siticoneGroupBox2.CornerRadius = 15;
             siticoneGroupBox2.EnableBlinking = false;
@@ -911,7 +913,7 @@
             AjouterLogAleatoire.ImageRightMargin = 8;
             AjouterLogAleatoire.ImageSize = 24;
             AjouterLogAleatoire.IsReadOnly = false;
-            AjouterLogAleatoire.Location = new Point(1216, 709);
+            AjouterLogAleatoire.Location = new Point(1163, 709);
             AjouterLogAleatoire.MakeRadial = false;
             AjouterLogAleatoire.Name = "AjouterLogAleatoire";
             AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
@@ -923,9 +925,9 @@
             AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             AjouterLogAleatoire.ShadowOffsetX = 3;
             AjouterLogAleatoire.ShadowOffsetY = 3;
-            AjouterLogAleatoire.Size = new Size(145, 52);
+            AjouterLogAleatoire.Size = new Size(198, 52);
             AjouterLogAleatoire.TabIndex = 21;
-            AjouterLogAleatoire.Text = "Chercher";
+            AjouterLogAleatoire.Text = "Ajouter Log de test";
             AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
             AjouterLogAleatoire.TextPaddingBottom = 0;
             AjouterLogAleatoire.TextPaddingLeft = 0;
@@ -935,6 +937,72 @@
             AjouterLogAleatoire.TextShadowOffsetX = 1;
             AjouterLogAleatoire.TextShadowOffsetY = 1;
             AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
+            // 
+            // BtnImprimer
+            // 
+            BtnImprimer.BackColor = Color.Transparent;
+            BtnImprimer.BadgeBackColor = Color.Red;
+            BtnImprimer.BadgeForeColor = Color.White;
+            BtnImprimer.BadgeRadius = 8;
+            BtnImprimer.BadgeRightMargin = 10;
+            BtnImprimer.BadgeValue = 0;
+            BtnImprimer.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnImprimer.BorderColorEnd = Color.Gray;
+            BtnImprimer.BorderColorStart = Color.White;
+            BtnImprimer.BorderRadiusBottomLeft = 35;
+            BtnImprimer.BorderRadiusBottomRight = 35;
+            BtnImprimer.BorderRadiusTopLeft = 35;
+            BtnImprimer.BorderRadiusTopRight = 35;
+            BtnImprimer.BorderThickness = 1;
+            BtnImprimer.ButtonColorEnd = Color.DimGray;
+            BtnImprimer.ButtonColorStart = Color.LightGray;
+            BtnImprimer.ButtonImage = null;
+            BtnImprimer.CanBeep = false;
+            BtnImprimer.CanShake = false;
+            BtnImprimer.ClickSoundPath = null;
+            BtnImprimer.DisabledOverlayOpacity = 0.5F;
+            BtnImprimer.EnableBorderGradient = false;
+            BtnImprimer.EnableClickSound = false;
+            BtnImprimer.EnableFocusBorder = false;
+            BtnImprimer.EnableHoverSound = false;
+            BtnImprimer.EnablePressScale = false;
+            BtnImprimer.EnableTextShadow = false;
+            BtnImprimer.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnImprimer.FocusBorderThickness = 2;
+            BtnImprimer.Font = new Font("Segoe UI", 9F);
+            BtnImprimer.ForeColor = Color.White;
+            BtnImprimer.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnImprimer.HoverSoundPath = null;
+            BtnImprimer.HoverTransitionSpeed = 0.08F;
+            BtnImprimer.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnImprimer.ImageLeftMargin = 5;
+            BtnImprimer.ImageRightMargin = 8;
+            BtnImprimer.ImageSize = 24;
+            BtnImprimer.IsReadOnly = false;
+            BtnImprimer.Location = new Point(270, 84);
+            BtnImprimer.MakeRadial = false;
+            BtnImprimer.Name = "BtnImprimer";
+            BtnImprimer.PressAnimationSpeed = 0.2F;
+            BtnImprimer.PressDepth = 1;
+            BtnImprimer.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            BtnImprimer.RippleExpandSpeedFactor = 0.05F;
+            BtnImprimer.RippleFadeSpeedFactor = 0.03F;
+            BtnImprimer.ShadowBlurFactor = 0.85F;
+            BtnImprimer.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            BtnImprimer.ShadowOffsetX = 3;
+            BtnImprimer.ShadowOffsetY = 3;
+            BtnImprimer.Size = new Size(145, 52);
+            BtnImprimer.TabIndex = 21;
+            BtnImprimer.Text = "Chercher";
+            BtnImprimer.TextAlign = ContentAlignment.MiddleCenter;
+            BtnImprimer.TextPaddingBottom = 0;
+            BtnImprimer.TextPaddingLeft = 0;
+            BtnImprimer.TextPaddingRight = 0;
+            BtnImprimer.TextPaddingTop = 0;
+            BtnImprimer.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            BtnImprimer.TextShadowOffsetX = 1;
+            BtnImprimer.TextShadowOffsetY = 1;
+            BtnImprimer.Click += BtnImprimer_Click;
             // 
             // FrmMenuPrincipal
             // 
@@ -1016,5 +1084,6 @@
         private Label lblDernierEvenement;
         private ProgressBar ProgressBar;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced AjouterLogAleatoire;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnImprimer;
     }
 }
