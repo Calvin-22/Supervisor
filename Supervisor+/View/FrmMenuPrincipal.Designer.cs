@@ -36,12 +36,14 @@
             logo_rouge = new PictureBox();
             LogoSupervisor = new PictureBox();
             siticoneGroupBox1 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            BtnStatistiques = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             lblAccesRefuses = new Label();
             lblAccesAutorise = new Label();
             lblTotalTentatives = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
+            lblEtatSysteme = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
             BtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnImprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -51,6 +53,7 @@
             label1 = new Label();
             siticoneGroupBox3 = new SiticoneNetCoreUI.SiticoneGroupBox();
             label11 = new Label();
+            AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             switchCouleur = new SiticoneNetCoreUI.SiticoneiOSSwitch();
             BtnReset = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnFiltrerDates = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -75,7 +78,6 @@
             lblPorte = new Label();
             label12 = new Label();
             label13 = new Label();
-            AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             logo_bleu = new PictureBox();
             logo_jaune = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
@@ -175,6 +177,7 @@
             siticoneGroupBox1.ChevronSize = 10F;
             siticoneGroupBox1.ChevronThickness = 2F;
             siticoneGroupBox1.ContentPadding = 5;
+            siticoneGroupBox1.Controls.Add(BtnStatistiques);
             siticoneGroupBox1.Controls.Add(lblAccesRefuses);
             siticoneGroupBox1.Controls.Add(lblAccesAutorise);
             siticoneGroupBox1.Controls.Add(lblTotalTentatives);
@@ -210,6 +213,71 @@
             siticoneGroupBox1.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox1.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox1.UseGradient = false;
+            // 
+            // BtnStatistiques
+            // 
+            BtnStatistiques.BackColor = Color.Transparent;
+            BtnStatistiques.BadgeBackColor = Color.Red;
+            BtnStatistiques.BadgeForeColor = Color.White;
+            BtnStatistiques.BadgeRadius = 8;
+            BtnStatistiques.BadgeRightMargin = 10;
+            BtnStatistiques.BadgeValue = 0;
+            BtnStatistiques.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnStatistiques.BorderColorEnd = Color.Gray;
+            BtnStatistiques.BorderColorStart = Color.White;
+            BtnStatistiques.BorderRadiusBottomLeft = 35;
+            BtnStatistiques.BorderRadiusBottomRight = 35;
+            BtnStatistiques.BorderRadiusTopLeft = 35;
+            BtnStatistiques.BorderRadiusTopRight = 35;
+            BtnStatistiques.BorderThickness = 1;
+            BtnStatistiques.ButtonColorEnd = Color.DarkViolet;
+            BtnStatistiques.ButtonColorStart = Color.Violet;
+            BtnStatistiques.ButtonImage = null;
+            BtnStatistiques.CanBeep = false;
+            BtnStatistiques.CanShake = false;
+            BtnStatistiques.ClickSoundPath = null;
+            BtnStatistiques.DisabledOverlayOpacity = 0.5F;
+            BtnStatistiques.EnableBorderGradient = false;
+            BtnStatistiques.EnableClickSound = false;
+            BtnStatistiques.EnableFocusBorder = false;
+            BtnStatistiques.EnableHoverSound = false;
+            BtnStatistiques.EnablePressScale = false;
+            BtnStatistiques.EnableTextShadow = false;
+            BtnStatistiques.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnStatistiques.FocusBorderThickness = 2;
+            BtnStatistiques.Font = new Font("Segoe UI", 9F);
+            BtnStatistiques.ForeColor = Color.White;
+            BtnStatistiques.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnStatistiques.HoverSoundPath = null;
+            BtnStatistiques.HoverTransitionSpeed = 0.08F;
+            BtnStatistiques.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnStatistiques.ImageLeftMargin = 5;
+            BtnStatistiques.ImageRightMargin = 8;
+            BtnStatistiques.ImageSize = 24;
+            BtnStatistiques.IsReadOnly = false;
+            BtnStatistiques.Location = new Point(313, 202);
+            BtnStatistiques.MakeRadial = false;
+            BtnStatistiques.Name = "BtnStatistiques";
+            BtnStatistiques.PressAnimationSpeed = 0.2F;
+            BtnStatistiques.PressDepth = 1;
+            BtnStatistiques.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            BtnStatistiques.RippleExpandSpeedFactor = 0.05F;
+            BtnStatistiques.RippleFadeSpeedFactor = 0.03F;
+            BtnStatistiques.ShadowBlurFactor = 0.85F;
+            BtnStatistiques.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            BtnStatistiques.ShadowOffsetX = 3;
+            BtnStatistiques.ShadowOffsetY = 3;
+            BtnStatistiques.Size = new Size(145, 52);
+            BtnStatistiques.TabIndex = 23;
+            BtnStatistiques.Text = "Statistiques";
+            BtnStatistiques.TextAlign = ContentAlignment.MiddleCenter;
+            BtnStatistiques.TextPaddingBottom = 0;
+            BtnStatistiques.TextPaddingLeft = 0;
+            BtnStatistiques.TextPaddingRight = 0;
+            BtnStatistiques.TextPaddingTop = 0;
+            BtnStatistiques.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            BtnStatistiques.TextShadowOffsetX = 1;
+            BtnStatistiques.TextShadowOffsetY = 1;
             // 
             // lblAccesRefuses
             // 
@@ -270,6 +338,16 @@
             label5.Size = new Size(311, 27);
             label5.TabIndex = 8;
             label5.Text = "Nombre de tentatives d'accès : ";
+            // 
+            // lblEtatSysteme
+            // 
+            lblEtatSysteme.AutoSize = true;
+            lblEtatSysteme.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEtatSysteme.Location = new Point(12, 693);
+            lblEtatSysteme.Name = "lblEtatSysteme";
+            lblEtatSysteme.Size = new Size(23, 27);
+            lblEtatSysteme.TabIndex = 25;
+            lblEtatSysteme.Text = "a";
             // 
             // siticoneGroupBox2
             // 
@@ -515,6 +593,7 @@
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
             siticoneGroupBox3.Controls.Add(label11);
+            siticoneGroupBox3.Controls.Add(AjouterLogAleatoire);
             siticoneGroupBox3.Controls.Add(switchCouleur);
             siticoneGroupBox3.Controls.Add(BtnReset);
             siticoneGroupBox3.Controls.Add(btnFiltrerDates);
@@ -566,6 +645,72 @@
             label11.Size = new Size(300, 27);
             label11.TabIndex = 20;
             label11.Text = "Activer les filtres de couleurs :";
+            // 
+            // AjouterLogAleatoire
+            // 
+            AjouterLogAleatoire.BackColor = Color.Transparent;
+            AjouterLogAleatoire.BadgeBackColor = Color.Red;
+            AjouterLogAleatoire.BadgeForeColor = Color.White;
+            AjouterLogAleatoire.BadgeRadius = 8;
+            AjouterLogAleatoire.BadgeRightMargin = 10;
+            AjouterLogAleatoire.BadgeValue = 0;
+            AjouterLogAleatoire.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            AjouterLogAleatoire.BorderColorEnd = Color.Gray;
+            AjouterLogAleatoire.BorderColorStart = Color.White;
+            AjouterLogAleatoire.BorderRadiusBottomLeft = 35;
+            AjouterLogAleatoire.BorderRadiusBottomRight = 35;
+            AjouterLogAleatoire.BorderRadiusTopLeft = 35;
+            AjouterLogAleatoire.BorderRadiusTopRight = 35;
+            AjouterLogAleatoire.BorderThickness = 1;
+            AjouterLogAleatoire.ButtonColorEnd = Color.DimGray;
+            AjouterLogAleatoire.ButtonColorStart = Color.LightGray;
+            AjouterLogAleatoire.ButtonImage = null;
+            AjouterLogAleatoire.CanBeep = false;
+            AjouterLogAleatoire.CanShake = false;
+            AjouterLogAleatoire.ClickSoundPath = null;
+            AjouterLogAleatoire.DisabledOverlayOpacity = 0.5F;
+            AjouterLogAleatoire.EnableBorderGradient = false;
+            AjouterLogAleatoire.EnableClickSound = false;
+            AjouterLogAleatoire.EnableFocusBorder = false;
+            AjouterLogAleatoire.EnableHoverSound = false;
+            AjouterLogAleatoire.EnablePressScale = false;
+            AjouterLogAleatoire.EnableTextShadow = false;
+            AjouterLogAleatoire.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            AjouterLogAleatoire.FocusBorderThickness = 2;
+            AjouterLogAleatoire.Font = new Font("Segoe UI", 9F);
+            AjouterLogAleatoire.ForeColor = Color.White;
+            AjouterLogAleatoire.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            AjouterLogAleatoire.HoverSoundPath = null;
+            AjouterLogAleatoire.HoverTransitionSpeed = 0.08F;
+            AjouterLogAleatoire.ImageAlign = ContentAlignment.MiddleLeft;
+            AjouterLogAleatoire.ImageLeftMargin = 5;
+            AjouterLogAleatoire.ImageRightMargin = 8;
+            AjouterLogAleatoire.ImageSize = 24;
+            AjouterLogAleatoire.IsReadOnly = false;
+            AjouterLogAleatoire.Location = new Point(591, 215);
+            AjouterLogAleatoire.MakeRadial = false;
+            AjouterLogAleatoire.Name = "AjouterLogAleatoire";
+            AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
+            AjouterLogAleatoire.PressDepth = 1;
+            AjouterLogAleatoire.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            AjouterLogAleatoire.RippleExpandSpeedFactor = 0.05F;
+            AjouterLogAleatoire.RippleFadeSpeedFactor = 0.03F;
+            AjouterLogAleatoire.ShadowBlurFactor = 0.85F;
+            AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            AjouterLogAleatoire.ShadowOffsetX = 3;
+            AjouterLogAleatoire.ShadowOffsetY = 3;
+            AjouterLogAleatoire.Size = new Size(198, 52);
+            AjouterLogAleatoire.TabIndex = 21;
+            AjouterLogAleatoire.Text = "Ajouter Log de test";
+            AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
+            AjouterLogAleatoire.TextPaddingBottom = 0;
+            AjouterLogAleatoire.TextPaddingLeft = 0;
+            AjouterLogAleatoire.TextPaddingRight = 0;
+            AjouterLogAleatoire.TextPaddingTop = 0;
+            AjouterLogAleatoire.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            AjouterLogAleatoire.TextShadowOffsetX = 1;
+            AjouterLogAleatoire.TextShadowOffsetY = 1;
+            AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
             // 
             // switchCouleur
             // 
@@ -1022,72 +1167,6 @@
             label13.TabIndex = 10;
             label13.Text = "État porte :";
             // 
-            // AjouterLogAleatoire
-            // 
-            AjouterLogAleatoire.BackColor = Color.Transparent;
-            AjouterLogAleatoire.BadgeBackColor = Color.Red;
-            AjouterLogAleatoire.BadgeForeColor = Color.White;
-            AjouterLogAleatoire.BadgeRadius = 8;
-            AjouterLogAleatoire.BadgeRightMargin = 10;
-            AjouterLogAleatoire.BadgeValue = 0;
-            AjouterLogAleatoire.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            AjouterLogAleatoire.BorderColorEnd = Color.Gray;
-            AjouterLogAleatoire.BorderColorStart = Color.White;
-            AjouterLogAleatoire.BorderRadiusBottomLeft = 35;
-            AjouterLogAleatoire.BorderRadiusBottomRight = 35;
-            AjouterLogAleatoire.BorderRadiusTopLeft = 35;
-            AjouterLogAleatoire.BorderRadiusTopRight = 35;
-            AjouterLogAleatoire.BorderThickness = 1;
-            AjouterLogAleatoire.ButtonColorEnd = Color.DimGray;
-            AjouterLogAleatoire.ButtonColorStart = Color.LightGray;
-            AjouterLogAleatoire.ButtonImage = null;
-            AjouterLogAleatoire.CanBeep = false;
-            AjouterLogAleatoire.CanShake = false;
-            AjouterLogAleatoire.ClickSoundPath = null;
-            AjouterLogAleatoire.DisabledOverlayOpacity = 0.5F;
-            AjouterLogAleatoire.EnableBorderGradient = false;
-            AjouterLogAleatoire.EnableClickSound = false;
-            AjouterLogAleatoire.EnableFocusBorder = false;
-            AjouterLogAleatoire.EnableHoverSound = false;
-            AjouterLogAleatoire.EnablePressScale = false;
-            AjouterLogAleatoire.EnableTextShadow = false;
-            AjouterLogAleatoire.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            AjouterLogAleatoire.FocusBorderThickness = 2;
-            AjouterLogAleatoire.Font = new Font("Segoe UI", 9F);
-            AjouterLogAleatoire.ForeColor = Color.White;
-            AjouterLogAleatoire.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            AjouterLogAleatoire.HoverSoundPath = null;
-            AjouterLogAleatoire.HoverTransitionSpeed = 0.08F;
-            AjouterLogAleatoire.ImageAlign = ContentAlignment.MiddleLeft;
-            AjouterLogAleatoire.ImageLeftMargin = 5;
-            AjouterLogAleatoire.ImageRightMargin = 8;
-            AjouterLogAleatoire.ImageSize = 24;
-            AjouterLogAleatoire.IsReadOnly = false;
-            AjouterLogAleatoire.Location = new Point(1163, 709);
-            AjouterLogAleatoire.MakeRadial = false;
-            AjouterLogAleatoire.Name = "AjouterLogAleatoire";
-            AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
-            AjouterLogAleatoire.PressDepth = 1;
-            AjouterLogAleatoire.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            AjouterLogAleatoire.RippleExpandSpeedFactor = 0.05F;
-            AjouterLogAleatoire.RippleFadeSpeedFactor = 0.03F;
-            AjouterLogAleatoire.ShadowBlurFactor = 0.85F;
-            AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            AjouterLogAleatoire.ShadowOffsetX = 3;
-            AjouterLogAleatoire.ShadowOffsetY = 3;
-            AjouterLogAleatoire.Size = new Size(198, 52);
-            AjouterLogAleatoire.TabIndex = 21;
-            AjouterLogAleatoire.Text = "Ajouter Log de test";
-            AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
-            AjouterLogAleatoire.TextPaddingBottom = 0;
-            AjouterLogAleatoire.TextPaddingLeft = 0;
-            AjouterLogAleatoire.TextPaddingRight = 0;
-            AjouterLogAleatoire.TextPaddingTop = 0;
-            AjouterLogAleatoire.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            AjouterLogAleatoire.TextShadowOffsetX = 1;
-            AjouterLogAleatoire.TextShadowOffsetY = 1;
-            AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
-            // 
             // logo_bleu
             // 
             logo_bleu.Image = (Image)resources.GetObject("logo_bleu.Image");
@@ -1114,7 +1193,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
-            Controls.Add(AjouterLogAleatoire);
+            Controls.Add(lblEtatSysteme);
             Controls.Add(siticoneGroupBox4);
             Controls.Add(siticoneGroupBox3);
             Controls.Add(label1);
@@ -1199,5 +1278,7 @@
         private PictureBox logo_rouge;
         private PictureBox logo_bleu;
         private PictureBox logo_jaune;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnStatistiques;
+        private Label lblEtatSysteme;
     }
 }

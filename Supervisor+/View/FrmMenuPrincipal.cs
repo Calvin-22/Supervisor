@@ -98,6 +98,8 @@ namespace Supervisor.View
             timerSupervision.Tick += TimerSupervision_Tick;
             timerSupervision.Start();
 
+            lblEtatSysteme.Text = "Système opérationnel et sécurisé";
+            lblEtatSysteme.ForeColor = Color.Green;
             InitProgressBar();
         }
 
@@ -140,18 +142,27 @@ namespace Supervisor.View
                     dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Firebrick; 
                     dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Firebrick;
                     // Changement de logo pour indiquer une alerte
-                    LogoSupervisor.Image = logo_rouge.Image; 
+                    LogoSupervisor.Image = logo_rouge.Image;
+                    // Mise à jour du label d'état du système
+                    lblEtatSysteme.Text = "Effraction détectée !";
+                    lblEtatSysteme.ForeColor = Color.Firebrick;
                     NotifierEffraction(derniere);
                 }
             }
-            else if (derniere.Resultat_tentative == "ACCES" || derniere.Etat_porte == 0)
+
+            else if (derniere.Etat_porte == 0)
             {
                 // Si tout est redevenu normal, on réarme le système
                 effractionEnCours = false;
                 dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
                 dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
                 LogoSupervisor.Image = logo_bleu.Image;
+
+                // Mise à jour du label d'état du système
+                lblEtatSysteme.Text = "Système opérationnel et sécurisé";
+                lblEtatSysteme.ForeColor = Color.Green;
             }
+
 
             if (!effractionEnCours)
             {
@@ -181,11 +192,14 @@ namespace Supervisor.View
                             // Changement de logo pour indiquer une méfiance
                             LogoSupervisor.Image = logo_jaune.Image;
 
+                            lblEtatSysteme.Text = "Comportement suspect détecté";
+                            lblEtatSysteme.ForeColor = Color.Goldenrod;
+
                             NotifierPorteOuverteLongtemps(duree);
                         }
                     }
                 }
-                else
+                else if (derniere.Etat_porte == 0)
                 {
                     // Porte fermée donc réarmement
                     heureDernierLogPorteOuverte = null;
@@ -194,6 +208,10 @@ namespace Supervisor.View
                     dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
                     dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
                     LogoSupervisor.Image = logo_bleu.Image;
+
+                    // Mise à jour du label d'état du système
+                    lblEtatSysteme.Text = "Système opérationnel et sécurisé";
+                    lblEtatSysteme.ForeColor = Color.Green;
                 }
             }
             
@@ -208,6 +226,9 @@ namespace Supervisor.View
                     dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Goldenrod;
                     // Changement de logo pour indiquer une méfiance
                     LogoSupervisor.Image = logo_jaune.Image;
+
+                    lblEtatSysteme.Text = "Comportement suspect détecté";
+                    lblEtatSysteme.ForeColor = Color.Goldenrod;
 
                     if (!alerteComportementSuspectEnvoyee)
                     {
@@ -224,6 +245,10 @@ namespace Supervisor.View
                     dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
                     dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.DarkBlue;
                     LogoSupervisor.Image = logo_bleu.Image;
+
+                    // Mise à jour du label d'état du système
+                    lblEtatSysteme.Text = "Système opérationnel et sécurisé";
+                    lblEtatSysteme.ForeColor = Color.Green;
                 }
             }
         }
