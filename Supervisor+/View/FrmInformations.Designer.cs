@@ -106,7 +106,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.logo_bleu;
             pictureBox1.ImeMode = ImeMode.NoControl;
             pictureBox1.Location = new Point(430, 55);
             pictureBox1.Name = "pictureBox1";

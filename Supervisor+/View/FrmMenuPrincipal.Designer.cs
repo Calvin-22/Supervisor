@@ -113,7 +113,7 @@
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new Padding(1);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -144,8 +144,8 @@
             // 
             // logo_rouge
             // 
-            logo_rouge.Image = (Image)resources.GetObject("logo_rouge.Image");
-            logo_rouge.Location = new Point(1430, 39);
+            logo_rouge.Image = Properties.Resources.logo_rouge;
+            logo_rouge.Location = new Point(1430, 27);
             logo_rouge.Name = "logo_rouge";
             logo_rouge.Size = new Size(409, 359);
             logo_rouge.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -154,8 +154,8 @@
             // 
             // LogoSupervisor
             // 
-            LogoSupervisor.Image = (Image)resources.GetObject("LogoSupervisor.Image");
-            LogoSupervisor.Location = new Point(1430, 28);
+            LogoSupervisor.Image = Properties.Resources.logo_bleu;
+            LogoSupervisor.Location = new Point(1430, 27);
             LogoSupervisor.Name = "LogoSupervisor";
             LogoSupervisor.Size = new Size(409, 359);
             LogoSupervisor.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1252,8 +1252,8 @@
             // 
             // logo_bleu
             // 
-            logo_bleu.Image = (Image)resources.GetObject("logo_bleu.Image");
-            logo_bleu.Location = new Point(1430, 39);
+            logo_bleu.Image = Properties.Resources.logo_bleu;
+            logo_bleu.Location = new Point(1430, 27);
             logo_bleu.Name = "logo_bleu";
             logo_bleu.Size = new Size(409, 359);
             logo_bleu.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1262,8 +1262,8 @@
             // 
             // logo_jaune
             // 
-            logo_jaune.Image = (Image)resources.GetObject("logo_jaune.Image");
-            logo_jaune.Location = new Point(1430, 39);
+            logo_jaune.Image = Properties.Resources.logo_jaune;
+            logo_jaune.Location = new Point(1430, 27);
             logo_jaune.Name = "logo_jaune";
             logo_jaune.Size = new Size(409, 359);
             logo_jaune.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1361,7 +1361,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Supervisor";
+            Text = "Supervisor+";
             ((System.ComponentModel.ISupportInitialize)dgvlogs).EndInit();
             grbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo_rouge).EndInit();

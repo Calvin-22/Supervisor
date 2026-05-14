@@ -387,6 +387,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmSystemHealth";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "État de santé du système";
             GrboxSystem.ResumeLayout(false);
             GrboxSystem.PerformLayout();
