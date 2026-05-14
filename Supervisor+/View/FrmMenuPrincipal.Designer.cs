@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
@@ -45,6 +45,8 @@
             label5 = new Label();
             lblEtatSysteme = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            label16 = new Label();
+            AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnRasberry = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnImprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -54,7 +56,6 @@
             label1 = new Label();
             siticoneGroupBox3 = new SiticoneNetCoreUI.SiticoneGroupBox();
             label11 = new Label();
-            AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             switchCouleur = new SiticoneNetCoreUI.SiticoneiOSSwitch();
             BtnReset = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             btnFiltrerDates = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -81,7 +82,7 @@
             label13 = new Label();
             logo_bleu = new PictureBox();
             logo_jaune = new PictureBox();
-            label16 = new Label();
+            BtnInformations = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo_rouge).BeginInit();
@@ -100,25 +101,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle5.Padding = new Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.Padding = new Padding(1);
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -405,6 +406,82 @@
             siticoneGroupBox2.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox2.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox2.UseGradient = false;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(34, 161);
+            label16.Name = "label16";
+            label16.Size = new Size(252, 27);
+            label16.TabIndex = 24;
+            label16.Text = "Vérifier état du matériel :";
+            // 
+            // AjouterLogAleatoire
+            // 
+            AjouterLogAleatoire.BackColor = Color.Transparent;
+            AjouterLogAleatoire.BadgeBackColor = Color.Red;
+            AjouterLogAleatoire.BadgeForeColor = Color.White;
+            AjouterLogAleatoire.BadgeRadius = 8;
+            AjouterLogAleatoire.BadgeRightMargin = 10;
+            AjouterLogAleatoire.BadgeValue = 0;
+            AjouterLogAleatoire.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            AjouterLogAleatoire.BorderColorEnd = Color.Gray;
+            AjouterLogAleatoire.BorderColorStart = Color.White;
+            AjouterLogAleatoire.BorderRadiusBottomLeft = 35;
+            AjouterLogAleatoire.BorderRadiusBottomRight = 35;
+            AjouterLogAleatoire.BorderRadiusTopLeft = 35;
+            AjouterLogAleatoire.BorderRadiusTopRight = 35;
+            AjouterLogAleatoire.BorderThickness = 1;
+            AjouterLogAleatoire.ButtonColorEnd = Color.DimGray;
+            AjouterLogAleatoire.ButtonColorStart = Color.LightGray;
+            AjouterLogAleatoire.ButtonImage = null;
+            AjouterLogAleatoire.CanBeep = false;
+            AjouterLogAleatoire.CanShake = false;
+            AjouterLogAleatoire.ClickSoundPath = null;
+            AjouterLogAleatoire.DisabledOverlayOpacity = 0.5F;
+            AjouterLogAleatoire.EnableBorderGradient = false;
+            AjouterLogAleatoire.EnableClickSound = false;
+            AjouterLogAleatoire.EnableFocusBorder = false;
+            AjouterLogAleatoire.EnableHoverSound = false;
+            AjouterLogAleatoire.EnablePressScale = false;
+            AjouterLogAleatoire.EnableTextShadow = false;
+            AjouterLogAleatoire.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            AjouterLogAleatoire.FocusBorderThickness = 2;
+            AjouterLogAleatoire.Font = new Font("Segoe UI", 9F);
+            AjouterLogAleatoire.ForeColor = Color.White;
+            AjouterLogAleatoire.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            AjouterLogAleatoire.HoverSoundPath = null;
+            AjouterLogAleatoire.HoverTransitionSpeed = 0.08F;
+            AjouterLogAleatoire.ImageAlign = ContentAlignment.MiddleLeft;
+            AjouterLogAleatoire.ImageLeftMargin = 5;
+            AjouterLogAleatoire.ImageRightMargin = 8;
+            AjouterLogAleatoire.ImageSize = 24;
+            AjouterLogAleatoire.IsReadOnly = false;
+            AjouterLogAleatoire.Location = new Point(34, 215);
+            AjouterLogAleatoire.MakeRadial = false;
+            AjouterLogAleatoire.Name = "AjouterLogAleatoire";
+            AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
+            AjouterLogAleatoire.PressDepth = 1;
+            AjouterLogAleatoire.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            AjouterLogAleatoire.RippleExpandSpeedFactor = 0.05F;
+            AjouterLogAleatoire.RippleFadeSpeedFactor = 0.03F;
+            AjouterLogAleatoire.ShadowBlurFactor = 0.85F;
+            AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            AjouterLogAleatoire.ShadowOffsetX = 3;
+            AjouterLogAleatoire.ShadowOffsetY = 3;
+            AjouterLogAleatoire.Size = new Size(259, 52);
+            AjouterLogAleatoire.TabIndex = 21;
+            AjouterLogAleatoire.Text = "Ajouter un faux log (test)";
+            AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
+            AjouterLogAleatoire.TextPaddingBottom = 0;
+            AjouterLogAleatoire.TextPaddingLeft = 0;
+            AjouterLogAleatoire.TextPaddingRight = 0;
+            AjouterLogAleatoire.TextPaddingTop = 0;
+            AjouterLogAleatoire.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            AjouterLogAleatoire.TextShadowOffsetX = 1;
+            AjouterLogAleatoire.TextShadowOffsetY = 1;
+            AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
             // 
             // BtnRasberry
             // 
@@ -716,72 +793,6 @@
             label11.Size = new Size(300, 27);
             label11.TabIndex = 20;
             label11.Text = "Activer les filtres de couleurs :";
-            // 
-            // AjouterLogAleatoire
-            // 
-            AjouterLogAleatoire.BackColor = Color.Transparent;
-            AjouterLogAleatoire.BadgeBackColor = Color.Red;
-            AjouterLogAleatoire.BadgeForeColor = Color.White;
-            AjouterLogAleatoire.BadgeRadius = 8;
-            AjouterLogAleatoire.BadgeRightMargin = 10;
-            AjouterLogAleatoire.BadgeValue = 0;
-            AjouterLogAleatoire.BorderColor = Color.FromArgb(150, 255, 255, 255);
-            AjouterLogAleatoire.BorderColorEnd = Color.Gray;
-            AjouterLogAleatoire.BorderColorStart = Color.White;
-            AjouterLogAleatoire.BorderRadiusBottomLeft = 35;
-            AjouterLogAleatoire.BorderRadiusBottomRight = 35;
-            AjouterLogAleatoire.BorderRadiusTopLeft = 35;
-            AjouterLogAleatoire.BorderRadiusTopRight = 35;
-            AjouterLogAleatoire.BorderThickness = 1;
-            AjouterLogAleatoire.ButtonColorEnd = Color.DimGray;
-            AjouterLogAleatoire.ButtonColorStart = Color.LightGray;
-            AjouterLogAleatoire.ButtonImage = null;
-            AjouterLogAleatoire.CanBeep = false;
-            AjouterLogAleatoire.CanShake = false;
-            AjouterLogAleatoire.ClickSoundPath = null;
-            AjouterLogAleatoire.DisabledOverlayOpacity = 0.5F;
-            AjouterLogAleatoire.EnableBorderGradient = false;
-            AjouterLogAleatoire.EnableClickSound = false;
-            AjouterLogAleatoire.EnableFocusBorder = false;
-            AjouterLogAleatoire.EnableHoverSound = false;
-            AjouterLogAleatoire.EnablePressScale = false;
-            AjouterLogAleatoire.EnableTextShadow = false;
-            AjouterLogAleatoire.FocusBorderColor = Color.FromArgb(100, 150, 255);
-            AjouterLogAleatoire.FocusBorderThickness = 2;
-            AjouterLogAleatoire.Font = new Font("Segoe UI", 9F);
-            AjouterLogAleatoire.ForeColor = Color.White;
-            AjouterLogAleatoire.HoverColor = Color.FromArgb(20, 0, 0, 0);
-            AjouterLogAleatoire.HoverSoundPath = null;
-            AjouterLogAleatoire.HoverTransitionSpeed = 0.08F;
-            AjouterLogAleatoire.ImageAlign = ContentAlignment.MiddleLeft;
-            AjouterLogAleatoire.ImageLeftMargin = 5;
-            AjouterLogAleatoire.ImageRightMargin = 8;
-            AjouterLogAleatoire.ImageSize = 24;
-            AjouterLogAleatoire.IsReadOnly = false;
-            AjouterLogAleatoire.Location = new Point(34, 215);
-            AjouterLogAleatoire.MakeRadial = false;
-            AjouterLogAleatoire.Name = "AjouterLogAleatoire";
-            AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
-            AjouterLogAleatoire.PressDepth = 1;
-            AjouterLogAleatoire.RippleColor = Color.FromArgb(60, 255, 255, 255);
-            AjouterLogAleatoire.RippleExpandSpeedFactor = 0.05F;
-            AjouterLogAleatoire.RippleFadeSpeedFactor = 0.03F;
-            AjouterLogAleatoire.ShadowBlurFactor = 0.85F;
-            AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
-            AjouterLogAleatoire.ShadowOffsetX = 3;
-            AjouterLogAleatoire.ShadowOffsetY = 3;
-            AjouterLogAleatoire.Size = new Size(259, 52);
-            AjouterLogAleatoire.TabIndex = 21;
-            AjouterLogAleatoire.Text = "Ajouter un faux log (test)";
-            AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
-            AjouterLogAleatoire.TextPaddingBottom = 0;
-            AjouterLogAleatoire.TextPaddingLeft = 0;
-            AjouterLogAleatoire.TextPaddingRight = 0;
-            AjouterLogAleatoire.TextPaddingTop = 0;
-            AjouterLogAleatoire.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
-            AjouterLogAleatoire.TextShadowOffsetX = 1;
-            AjouterLogAleatoire.TextShadowOffsetY = 1;
-            AjouterLogAleatoire.Click += AjouterLogAleatoire_Click;
             // 
             // switchCouleur
             // 
@@ -1258,15 +1269,72 @@
             logo_jaune.TabIndex = 24;
             logo_jaune.TabStop = false;
             // 
-            // label16
+            // BtnInformations
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(34, 161);
-            label16.Name = "label16";
-            label16.Size = new Size(252, 27);
-            label16.TabIndex = 24;
-            label16.Text = "Vérifier état du matériel :";
+            BtnInformations.BackColor = Color.Transparent;
+            BtnInformations.BackgroundImage = (Image)resources.GetObject("BtnInformations.BackgroundImage");
+            BtnInformations.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnInformations.BadgeBackColor = Color.Red;
+            BtnInformations.BadgeForeColor = Color.White;
+            BtnInformations.BadgeRadius = 8;
+            BtnInformations.BadgeRightMargin = 10;
+            BtnInformations.BadgeValue = 0;
+            BtnInformations.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnInformations.BorderColorEnd = Color.Gray;
+            BtnInformations.BorderColorStart = Color.White;
+            BtnInformations.BorderRadiusBottomLeft = 35;
+            BtnInformations.BorderRadiusBottomRight = 35;
+            BtnInformations.BorderRadiusTopLeft = 35;
+            BtnInformations.BorderRadiusTopRight = 35;
+            BtnInformations.BorderThickness = 1;
+            BtnInformations.ButtonColorEnd = Color.Transparent;
+            BtnInformations.ButtonColorStart = Color.Transparent;
+            BtnInformations.ButtonImage = null;
+            BtnInformations.CanBeep = false;
+            BtnInformations.CanShake = false;
+            BtnInformations.ClickSoundPath = null;
+            BtnInformations.DisabledOverlayOpacity = 0.5F;
+            BtnInformations.EnableBorderGradient = false;
+            BtnInformations.EnableClickSound = false;
+            BtnInformations.EnableFocusBorder = false;
+            BtnInformations.EnableHoverSound = false;
+            BtnInformations.EnablePressScale = false;
+            BtnInformations.EnableTextShadow = false;
+            BtnInformations.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnInformations.FocusBorderThickness = 2;
+            BtnInformations.Font = new Font("Segoe UI", 9F);
+            BtnInformations.ForeColor = Color.White;
+            BtnInformations.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnInformations.HoverSoundPath = null;
+            BtnInformations.HoverTransitionSpeed = 0.08F;
+            BtnInformations.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnInformations.ImageLeftMargin = 5;
+            BtnInformations.ImageRightMargin = 8;
+            BtnInformations.ImageSize = 24;
+            BtnInformations.IsReadOnly = false;
+            BtnInformations.Location = new Point(1792, 12);
+            BtnInformations.MakeRadial = false;
+            BtnInformations.Name = "BtnInformations";
+            BtnInformations.PressAnimationSpeed = 0.2F;
+            BtnInformations.PressDepth = 1;
+            BtnInformations.RippleColor = Color.Transparent;
+            BtnInformations.RippleExpandSpeedFactor = 0.05F;
+            BtnInformations.RippleFadeSpeedFactor = 0.03F;
+            BtnInformations.ShadowBlurFactor = 0.85F;
+            BtnInformations.ShadowColor = Color.Transparent;
+            BtnInformations.ShadowOffsetX = 3;
+            BtnInformations.ShadowOffsetY = 3;
+            BtnInformations.Size = new Size(94, 85);
+            BtnInformations.TabIndex = 21;
+            BtnInformations.TextAlign = ContentAlignment.MiddleCenter;
+            BtnInformations.TextPaddingBottom = 0;
+            BtnInformations.TextPaddingLeft = 0;
+            BtnInformations.TextPaddingRight = 0;
+            BtnInformations.TextPaddingTop = 0;
+            BtnInformations.TextShadowColor = Color.Transparent;
+            BtnInformations.TextShadowOffsetX = 1;
+            BtnInformations.TextShadowOffsetY = 1;
+            BtnInformations.Click += BtnInformations_Click;
             // 
             // FrmMenuPrincipal
             // 
@@ -1274,6 +1342,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
+            Controls.Add(BtnInformations);
             Controls.Add(lblEtatSysteme);
             Controls.Add(siticoneGroupBox4);
             Controls.Add(siticoneGroupBox3);
@@ -1363,5 +1432,6 @@
         private Label lblEtatSysteme;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnRasberry;
         private Label label16;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnInformations;
     }
 }

@@ -975,5 +975,11 @@ namespace Supervisor.View
             FrmSystemHealth frm = new FrmSystemHealth();
             frm.Show();
         }
+
+        private void BtnInformations_Click(object sender, EventArgs e)
+        {
+            FrmInformations frm = new FrmInformations();
+            frm.Show();
+        }
     }
 }
