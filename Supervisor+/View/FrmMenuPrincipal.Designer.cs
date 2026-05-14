@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
             logo_rouge = new PictureBox();
             LogoSupervisor = new PictureBox();
             siticoneGroupBox1 = new SiticoneNetCoreUI.SiticoneGroupBox();
-            BtnStatistiques = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
+            lblEtatSysteme = new Label();
             lblAccesRefuses = new Label();
             lblAccesAutorise = new Label();
             lblTotalTentatives = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
-            lblEtatSysteme = new Label();
+            BtnStatistiques = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
             label16 = new Label();
             AjouterLogAleatoire = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
@@ -101,25 +101,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Padding = new Padding(1);
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new Padding(1);
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new Padding(1);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -155,7 +155,7 @@
             // LogoSupervisor
             // 
             LogoSupervisor.Image = (Image)resources.GetObject("LogoSupervisor.Image");
-            LogoSupervisor.Location = new Point(1430, 39);
+            LogoSupervisor.Location = new Point(1430, 28);
             LogoSupervisor.Name = "LogoSupervisor";
             LogoSupervisor.Size = new Size(409, 359);
             LogoSupervisor.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -180,7 +180,7 @@
             siticoneGroupBox1.ChevronSize = 10F;
             siticoneGroupBox1.ChevronThickness = 2F;
             siticoneGroupBox1.ContentPadding = 5;
-            siticoneGroupBox1.Controls.Add(BtnStatistiques);
+            siticoneGroupBox1.Controls.Add(lblEtatSysteme);
             siticoneGroupBox1.Controls.Add(lblAccesRefuses);
             siticoneGroupBox1.Controls.Add(lblAccesAutorise);
             siticoneGroupBox1.Controls.Add(lblTotalTentatives);
@@ -216,6 +216,76 @@
             siticoneGroupBox1.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox1.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox1.UseGradient = false;
+            // 
+            // lblEtatSysteme
+            // 
+            lblEtatSysteme.AutoSize = true;
+            lblEtatSysteme.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEtatSysteme.Location = new Point(26, 75);
+            lblEtatSysteme.Name = "lblEtatSysteme";
+            lblEtatSysteme.Size = new Size(23, 27);
+            lblEtatSysteme.TabIndex = 25;
+            lblEtatSysteme.Text = "a";
+            // 
+            // lblAccesRefuses
+            // 
+            lblAccesRefuses.AutoSize = true;
+            lblAccesRefuses.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAccesRefuses.Location = new Point(265, 212);
+            lblAccesRefuses.Name = "lblAccesRefuses";
+            lblAccesRefuses.Size = new Size(23, 27);
+            lblAccesRefuses.TabIndex = 12;
+            lblAccesRefuses.Text = "a";
+            // 
+            // lblAccesAutorise
+            // 
+            lblAccesAutorise.AutoSize = true;
+            lblAccesAutorise.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAccesAutorise.Location = new Point(282, 170);
+            lblAccesAutorise.Name = "lblAccesAutorise";
+            lblAccesAutorise.Size = new Size(23, 27);
+            lblAccesAutorise.TabIndex = 11;
+            lblAccesAutorise.Text = "a";
+            // 
+            // lblTotalTentatives
+            // 
+            lblTotalTentatives.AutoSize = true;
+            lblTotalTentatives.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalTentatives.Location = new Point(329, 127);
+            lblTotalTentatives.Name = "lblTotalTentatives";
+            lblTotalTentatives.Size = new Size(23, 27);
+            lblTotalTentatives.TabIndex = 8;
+            lblTotalTentatives.Text = "a";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(26, 212);
+            label7.Name = "label7";
+            label7.Size = new Size(240, 27);
+            label7.TabIndex = 10;
+            label7.Text = "Nombre d'accès refusé :";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(26, 170);
+            label6.Name = "label6";
+            label6.Size = new Size(258, 27);
+            label6.TabIndex = 9;
+            label6.Text = "Nombre d'accès autorisé :";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(26, 128);
+            label5.Name = "label5";
+            label5.Size = new Size(311, 27);
+            label5.TabIndex = 8;
+            label5.Text = "Nombre de tentatives d'accès : ";
             // 
             // BtnStatistiques
             // 
@@ -258,7 +328,7 @@
             BtnStatistiques.ImageRightMargin = 8;
             BtnStatistiques.ImageSize = 24;
             BtnStatistiques.IsReadOnly = false;
-            BtnStatistiques.Location = new Point(313, 202);
+            BtnStatistiques.Location = new Point(586, 215);
             BtnStatistiques.MakeRadial = false;
             BtnStatistiques.Name = "BtnStatistiques";
             BtnStatistiques.PressAnimationSpeed = 0.2F;
@@ -270,7 +340,7 @@
             BtnStatistiques.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             BtnStatistiques.ShadowOffsetX = 3;
             BtnStatistiques.ShadowOffsetY = 3;
-            BtnStatistiques.Size = new Size(145, 52);
+            BtnStatistiques.Size = new Size(203, 52);
             BtnStatistiques.TabIndex = 23;
             BtnStatistiques.Text = "Statistiques";
             BtnStatistiques.TextAlign = ContentAlignment.MiddleCenter;
@@ -282,76 +352,6 @@
             BtnStatistiques.TextShadowOffsetX = 1;
             BtnStatistiques.TextShadowOffsetY = 1;
             BtnStatistiques.Click += BtnStatistiques_Click;
-            // 
-            // lblAccesRefuses
-            // 
-            lblAccesRefuses.AutoSize = true;
-            lblAccesRefuses.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAccesRefuses.Location = new Point(265, 145);
-            lblAccesRefuses.Name = "lblAccesRefuses";
-            lblAccesRefuses.Size = new Size(23, 27);
-            lblAccesRefuses.TabIndex = 12;
-            lblAccesRefuses.Text = "a";
-            // 
-            // lblAccesAutorise
-            // 
-            lblAccesAutorise.AutoSize = true;
-            lblAccesAutorise.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAccesAutorise.Location = new Point(282, 109);
-            lblAccesAutorise.Name = "lblAccesAutorise";
-            lblAccesAutorise.Size = new Size(23, 27);
-            lblAccesAutorise.TabIndex = 11;
-            lblAccesAutorise.Text = "a";
-            // 
-            // lblTotalTentatives
-            // 
-            lblTotalTentatives.AutoSize = true;
-            lblTotalTentatives.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalTentatives.Location = new Point(329, 70);
-            lblTotalTentatives.Name = "lblTotalTentatives";
-            lblTotalTentatives.Size = new Size(23, 27);
-            lblTotalTentatives.TabIndex = 8;
-            lblTotalTentatives.Text = "a";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(26, 145);
-            label7.Name = "label7";
-            label7.Size = new Size(240, 27);
-            label7.TabIndex = 10;
-            label7.Text = "Nombre d'accès refusé :";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(26, 109);
-            label6.Name = "label6";
-            label6.Size = new Size(258, 27);
-            label6.TabIndex = 9;
-            label6.Text = "Nombre d'accès autorisé :";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(26, 71);
-            label5.Name = "label5";
-            label5.Size = new Size(311, 27);
-            label5.TabIndex = 8;
-            label5.Text = "Nombre de tentatives d'accès : ";
-            // 
-            // lblEtatSysteme
-            // 
-            lblEtatSysteme.AutoSize = true;
-            lblEtatSysteme.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEtatSysteme.Location = new Point(12, 693);
-            lblEtatSysteme.Name = "lblEtatSysteme";
-            lblEtatSysteme.Size = new Size(23, 27);
-            lblEtatSysteme.TabIndex = 25;
-            lblEtatSysteme.Text = "a";
             // 
             // siticoneGroupBox2
             // 
@@ -695,7 +695,7 @@
             // 
             lblidentifiant.AutoSize = true;
             lblidentifiant.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblidentifiant.Location = new Point(1502, 408);
+            lblidentifiant.Location = new Point(1502, 397);
             lblidentifiant.Name = "lblidentifiant";
             lblidentifiant.Size = new Size(266, 27);
             lblidentifiant.TabIndex = 5;
@@ -706,7 +706,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.LightSlateGray;
-            label3.Location = new Point(1430, 439);
+            label3.Location = new Point(1430, 428);
             label3.Name = "label3";
             label3.Size = new Size(302, 27);
             label3.TabIndex = 6;
@@ -717,7 +717,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.LightSlateGray;
-            label1.Location = new Point(1430, 466);
+            label1.Location = new Point(1430, 455);
             label1.Name = "label1";
             label1.Size = new Size(427, 27);
             label1.TabIndex = 7;
@@ -741,6 +741,7 @@
             siticoneGroupBox3.ChevronSize = 10F;
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
+            siticoneGroupBox3.Controls.Add(BtnStatistiques);
             siticoneGroupBox3.Controls.Add(label11);
             siticoneGroupBox3.Controls.Add(switchCouleur);
             siticoneGroupBox3.Controls.Add(BtnReset);
@@ -1124,7 +1125,7 @@
             siticoneGroupBox4.HoveredBorderColor = Color.Gold;
             siticoneGroupBox4.HoveredTitleColor = Color.Black;
             siticoneGroupBox4.IsCollapsible = false;
-            siticoneGroupBox4.Location = new Point(1383, 505);
+            siticoneGroupBox4.Location = new Point(1383, 494);
             siticoneGroupBox4.MaxBlinkCount = 3;
             siticoneGroupBox4.Name = "siticoneGroupBox4";
             siticoneGroupBox4.PressedBorderColor = Color.FromArgb(0, 84, 153);
@@ -1343,7 +1344,6 @@
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
             Controls.Add(BtnInformations);
-            Controls.Add(lblEtatSysteme);
             Controls.Add(siticoneGroupBox4);
             Controls.Add(siticoneGroupBox3);
             Controls.Add(label1);
