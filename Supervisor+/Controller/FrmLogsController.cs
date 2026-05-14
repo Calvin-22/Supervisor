@@ -51,9 +51,5 @@ namespace Supervisor.Controller
         {
             access.AjouterLog(log);
         }
-
-
-
-
     }
 }

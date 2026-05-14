@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             dgvlogs = new DataGridView();
             grbox = new GroupBox();
@@ -45,6 +45,7 @@
             label5 = new Label();
             lblEtatSysteme = new Label();
             siticoneGroupBox2 = new SiticoneNetCoreUI.SiticoneGroupBox();
+            BtnRasberry = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnDéconnexion = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             BtnImprimer = new SiticoneNetCoreUI.SiticoneButtonAdvanced();
             label4 = new Label();
@@ -80,6 +81,7 @@
             label13 = new Label();
             logo_bleu = new PictureBox();
             logo_jaune = new PictureBox();
+            label16 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo_rouge).BeginInit();
@@ -98,25 +100,25 @@
             dgvlogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvlogs.BackgroundColor = Color.White;
             dgvlogs.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Padding = new Padding(1);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.DarkBlue;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle5.Padding = new Padding(1);
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkBlue;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvlogs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvlogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new Padding(1);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvlogs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new Padding(1);
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvlogs.DefaultCellStyle = dataGridViewCellStyle6;
             dgvlogs.EnableHeadersVisualStyles = false;
             dgvlogs.Location = new Point(6, 33);
             dgvlogs.MultiSelect = false;
@@ -278,6 +280,7 @@
             BtnStatistiques.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
             BtnStatistiques.TextShadowOffsetX = 1;
             BtnStatistiques.TextShadowOffsetY = 1;
+            BtnStatistiques.Click += BtnStatistiques_Click;
             // 
             // lblAccesRefuses
             // 
@@ -367,6 +370,9 @@
             siticoneGroupBox2.ChevronSize = 10F;
             siticoneGroupBox2.ChevronThickness = 2F;
             siticoneGroupBox2.ContentPadding = 5;
+            siticoneGroupBox2.Controls.Add(label16);
+            siticoneGroupBox2.Controls.Add(AjouterLogAleatoire);
+            siticoneGroupBox2.Controls.Add(BtnRasberry);
             siticoneGroupBox2.Controls.Add(BtnDéconnexion);
             siticoneGroupBox2.Controls.Add(BtnImprimer);
             siticoneGroupBox2.Controls.Add(label4);
@@ -399,6 +405,72 @@
             siticoneGroupBox2.TitlePadding = new Padding(10, 8, 10, 12);
             siticoneGroupBox2.TitlePos = SiticoneNetCoreUI.TitlePosition.TopLeft;
             siticoneGroupBox2.UseGradient = false;
+            // 
+            // BtnRasberry
+            // 
+            BtnRasberry.BackColor = Color.Transparent;
+            BtnRasberry.BadgeBackColor = Color.Red;
+            BtnRasberry.BadgeForeColor = Color.White;
+            BtnRasberry.BadgeRadius = 8;
+            BtnRasberry.BadgeRightMargin = 10;
+            BtnRasberry.BadgeValue = 0;
+            BtnRasberry.BorderColor = Color.FromArgb(150, 255, 255, 255);
+            BtnRasberry.BorderColorEnd = Color.Gray;
+            BtnRasberry.BorderColorStart = Color.White;
+            BtnRasberry.BorderRadiusBottomLeft = 35;
+            BtnRasberry.BorderRadiusBottomRight = 35;
+            BtnRasberry.BorderRadiusTopLeft = 35;
+            BtnRasberry.BorderRadiusTopRight = 35;
+            BtnRasberry.BorderThickness = 1;
+            BtnRasberry.ButtonColorEnd = Color.DarkOrange;
+            BtnRasberry.ButtonColorStart = Color.SandyBrown;
+            BtnRasberry.ButtonImage = null;
+            BtnRasberry.CanBeep = false;
+            BtnRasberry.CanShake = false;
+            BtnRasberry.ClickSoundPath = null;
+            BtnRasberry.DisabledOverlayOpacity = 0.5F;
+            BtnRasberry.EnableBorderGradient = false;
+            BtnRasberry.EnableClickSound = false;
+            BtnRasberry.EnableFocusBorder = false;
+            BtnRasberry.EnableHoverSound = false;
+            BtnRasberry.EnablePressScale = false;
+            BtnRasberry.EnableTextShadow = false;
+            BtnRasberry.FocusBorderColor = Color.FromArgb(100, 150, 255);
+            BtnRasberry.FocusBorderThickness = 2;
+            BtnRasberry.Font = new Font("Segoe UI", 9F);
+            BtnRasberry.ForeColor = Color.White;
+            BtnRasberry.HoverColor = Color.FromArgb(20, 0, 0, 0);
+            BtnRasberry.HoverSoundPath = null;
+            BtnRasberry.HoverTransitionSpeed = 0.08F;
+            BtnRasberry.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnRasberry.ImageLeftMargin = 5;
+            BtnRasberry.ImageRightMargin = 8;
+            BtnRasberry.ImageSize = 24;
+            BtnRasberry.IsReadOnly = false;
+            BtnRasberry.Location = new Point(302, 151);
+            BtnRasberry.MakeRadial = false;
+            BtnRasberry.Name = "BtnRasberry";
+            BtnRasberry.PressAnimationSpeed = 0.2F;
+            BtnRasberry.PressDepth = 1;
+            BtnRasberry.RippleColor = Color.FromArgb(60, 255, 255, 255);
+            BtnRasberry.RippleExpandSpeedFactor = 0.05F;
+            BtnRasberry.RippleFadeSpeedFactor = 0.03F;
+            BtnRasberry.ShadowBlurFactor = 0.85F;
+            BtnRasberry.ShadowColor = Color.FromArgb(70, 0, 0, 0);
+            BtnRasberry.ShadowOffsetX = 3;
+            BtnRasberry.ShadowOffsetY = 3;
+            BtnRasberry.Size = new Size(172, 52);
+            BtnRasberry.TabIndex = 23;
+            BtnRasberry.Text = "État Rasberry Pi";
+            BtnRasberry.TextAlign = ContentAlignment.MiddleCenter;
+            BtnRasberry.TextPaddingBottom = 0;
+            BtnRasberry.TextPaddingLeft = 0;
+            BtnRasberry.TextPaddingRight = 0;
+            BtnRasberry.TextPaddingTop = 0;
+            BtnRasberry.TextShadowColor = Color.FromArgb(100, 0, 0, 0);
+            BtnRasberry.TextShadowOffsetX = 1;
+            BtnRasberry.TextShadowOffsetY = 1;
+            BtnRasberry.Click += BtnRasberry_Click;
             // 
             // BtnDéconnexion
             // 
@@ -441,7 +513,7 @@
             BtnDéconnexion.ImageRightMargin = 8;
             BtnDéconnexion.ImageSize = 24;
             BtnDéconnexion.IsReadOnly = false;
-            BtnDéconnexion.Location = new Point(334, 209);
+            BtnDéconnexion.Location = new Point(302, 215);
             BtnDéconnexion.MakeRadial = false;
             BtnDéconnexion.Name = "BtnDéconnexion";
             BtnDéconnexion.PressAnimationSpeed = 0.2F;
@@ -453,7 +525,7 @@
             BtnDéconnexion.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             BtnDéconnexion.ShadowOffsetX = 3;
             BtnDéconnexion.ShadowOffsetY = 3;
-            BtnDéconnexion.Size = new Size(145, 52);
+            BtnDéconnexion.Size = new Size(177, 52);
             BtnDéconnexion.TabIndex = 22;
             BtnDéconnexion.Text = "Se déconnecter";
             BtnDéconnexion.TextAlign = ContentAlignment.MiddleCenter;
@@ -593,7 +665,6 @@
             siticoneGroupBox3.ChevronThickness = 2F;
             siticoneGroupBox3.ContentPadding = 5;
             siticoneGroupBox3.Controls.Add(label11);
-            siticoneGroupBox3.Controls.Add(AjouterLogAleatoire);
             siticoneGroupBox3.Controls.Add(switchCouleur);
             siticoneGroupBox3.Controls.Add(BtnReset);
             siticoneGroupBox3.Controls.Add(btnFiltrerDates);
@@ -687,7 +758,7 @@
             AjouterLogAleatoire.ImageRightMargin = 8;
             AjouterLogAleatoire.ImageSize = 24;
             AjouterLogAleatoire.IsReadOnly = false;
-            AjouterLogAleatoire.Location = new Point(591, 215);
+            AjouterLogAleatoire.Location = new Point(34, 215);
             AjouterLogAleatoire.MakeRadial = false;
             AjouterLogAleatoire.Name = "AjouterLogAleatoire";
             AjouterLogAleatoire.PressAnimationSpeed = 0.2F;
@@ -699,9 +770,9 @@
             AjouterLogAleatoire.ShadowColor = Color.FromArgb(70, 0, 0, 0);
             AjouterLogAleatoire.ShadowOffsetX = 3;
             AjouterLogAleatoire.ShadowOffsetY = 3;
-            AjouterLogAleatoire.Size = new Size(198, 52);
+            AjouterLogAleatoire.Size = new Size(259, 52);
             AjouterLogAleatoire.TabIndex = 21;
-            AjouterLogAleatoire.Text = "Ajouter Log de test";
+            AjouterLogAleatoire.Text = "Ajouter un faux log (test)";
             AjouterLogAleatoire.TextAlign = ContentAlignment.MiddleCenter;
             AjouterLogAleatoire.TextPaddingBottom = 0;
             AjouterLogAleatoire.TextPaddingLeft = 0;
@@ -934,8 +1005,8 @@
             BtnRechercher.BorderRadiusTopLeft = 35;
             BtnRechercher.BorderRadiusTopRight = 35;
             BtnRechercher.BorderThickness = 1;
-            BtnRechercher.ButtonColorEnd = Color.DimGray;
-            BtnRechercher.ButtonColorStart = Color.LightGray;
+            BtnRechercher.ButtonColorEnd = Color.DarkBlue;
+            BtnRechercher.ButtonColorStart = Color.Blue;
             BtnRechercher.ButtonImage = null;
             BtnRechercher.CanBeep = false;
             BtnRechercher.CanShake = false;
@@ -1187,6 +1258,16 @@
             logo_jaune.TabIndex = 24;
             logo_jaune.TabStop = false;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(34, 161);
+            label16.Name = "label16";
+            label16.Size = new Size(252, 27);
+            label16.TabIndex = 24;
+            label16.Text = "Vérifier état du matériel :";
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
@@ -1280,5 +1361,7 @@
         private PictureBox logo_jaune;
         private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnStatistiques;
         private Label lblEtatSysteme;
+        private SiticoneNetCoreUI.SiticoneButtonAdvanced BtnRasberry;
+        private Label label16;
     }
 }

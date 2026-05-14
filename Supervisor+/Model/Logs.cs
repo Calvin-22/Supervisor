@@ -20,7 +20,7 @@ namespace Supervisor.Model
         [DisplayName("Présence")]
         public int Presence { get; set; }
 
-        [DisplayName("Etat de la porte")]
+        [DisplayName("État de la porte")]
         public int Etat_porte { get; set; }
 
         [DisplayName("Identifiant de l'utilisateur")]

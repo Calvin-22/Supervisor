@@ -7,6 +7,8 @@ using Supervisor.Model;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
 
 
 
@@ -139,7 +141,7 @@ namespace Supervisor.View
                 {
                     effractionEnCours = true;
                     // Changement de couleur du header du DataGridView pour indiquer une alerte
-                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Firebrick; 
+                    dgvlogs.ColumnHeadersDefaultCellStyle.BackColor = Color.Firebrick;
                     dgvlogs.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.Firebrick;
                     // Changement de logo pour indiquer une alerte
                     LogoSupervisor.Image = logo_rouge.Image;
@@ -214,7 +216,7 @@ namespace Supervisor.View
                     lblEtatSysteme.ForeColor = Color.Green;
                 }
             }
-            
+
 
             if (!effractionEnCours)
             {
@@ -848,9 +850,6 @@ namespace Supervisor.View
             );
         }
 
-
-
-
         /// <summary>
         /// Bouton pour se déconnecter : ferme le formulaire actuel et retourne à l'écran d'authentification
         /// </summary>
@@ -872,6 +871,109 @@ namespace Supervisor.View
                 frm.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void BtnStatistiques_Click(object sender, EventArgs e)
+        {
+            OuvrirStats();
+        }
+
+        private void OuvrirStats()
+        {
+            // Création de la popup Statistiques
+            Form popup = new Form();
+            popup.Text = "Statistiques Supervisor+";
+            popup.FormBorderStyle = FormBorderStyle.FixedDialog;
+            popup.StartPosition = FormStartPosition.CenterScreen;
+            popup.Size = new Size(1100, 1100);
+            popup.TopMost = true;
+            popup.Icon = this.Icon;
+
+            // Layout principal : 2 colonnes, 2 lignes
+            TableLayoutPanel layout = new TableLayoutPanel();
+            layout.Dock = DockStyle.Fill;
+            layout.ColumnCount = 2;
+            layout.RowCount = 2;
+
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 60));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 40));
+
+            popup.Controls.Add(layout);
+
+            // Récupération des données
+            var logs = bdglogs.List.Cast<Logs>().ToList();
+
+            int autorises = logs.Count(l => l.Resultat_tentative == "ACCES");
+            int refuses = logs.Count(l => l.Resultat_tentative == "REFUS");
+
+            var parUtilisateur = logs
+                .GroupBy(l => l.IdUser)
+                .ToDictionary(g => "User " + g.Key, g => g.Count());
+
+            var parHeure = logs
+                .GroupBy(l => l.Date_heure_entree.Hour)
+                .ToDictionary(g => g.Key + "h", g => g.Count());
+
+            // 1) Camembert Répartition
+            var chartPie = new Chart();
+            chartPie.Dock = DockStyle.Fill;
+            chartPie.ChartAreas.Add(new ChartArea("A"));
+            var s1 = new Series("Répartition");
+            s1.ChartType = SeriesChartType.Pie;
+            s1.Points.AddXY("Autorisés", autorises);
+            s1.Points.AddXY("Refusés", refuses);
+            chartPie.Series.Add(s1);
+            chartPie.Titles.Add("Répartition des accès");
+            chartPie.Titles[0].Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+            chartPie.Legends.Add(new Legend("L"));
+            layout.Controls.Add(chartPie, 0, 0);
+
+            // 2) Histogramme par utilisateur
+            var chartUsers = new Chart();
+            chartUsers.Dock = DockStyle.Fill;
+            chartUsers.ChartAreas.Add(new ChartArea("A"));
+            var s2 = new Series("Par utilisateur");
+            s2.ChartType = SeriesChartType.Column;
+            s2.BorderWidth = 2;
+
+            foreach (var kvp in parUtilisateur)
+                s2.Points.AddXY(kvp.Key, kvp.Value);
+
+            chartUsers.Series.Add(s2);
+            chartUsers.Titles.Add("Tentatives par utilisateur");
+            chartUsers.Titles[0].Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+            chartUsers.Legends.Add(new Legend("L"));
+            layout.Controls.Add(chartUsers, 1, 0);
+
+            // 3) Courbe par heure (large en bas)
+            var chartHeure = new Chart();
+            chartHeure.Dock = DockStyle.Fill;
+            chartHeure.ChartAreas.Add(new ChartArea("A"));
+            var s3 = new Series("Par heure");
+            s3.ChartType = SeriesChartType.Line;
+            s3.BorderWidth = 3;
+            s3.MarkerStyle = MarkerStyle.Circle;
+            s3.MarkerSize = 7;
+
+            foreach (var kvp in parHeure.OrderBy(k => k.Key))
+                s3.Points.AddXY(kvp.Key, kvp.Value);
+
+            chartHeure.Series.Add(s3);
+            chartHeure.Titles.Add("Activité par heure (globale)");
+            chartHeure.Titles[0].Font = new System.Drawing.Font("Segoe UI", 12, FontStyle.Bold);
+            chartHeure.Legends.Add(new Legend("L"));
+            layout.Controls.Add(chartHeure, 0, 1);
+            layout.SetColumnSpan(chartHeure, 2); // >>> Le graphique du bas prend toute la largeur
+
+            popup.Show();
+        }
+
+        private void BtnRasberry_Click(object sender, EventArgs e)
+        {
+            FrmSystemHealth frm = new FrmSystemHealth();
+            frm.Show();
         }
     }
 }
