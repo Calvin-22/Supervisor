@@ -384,6 +384,7 @@
             Controls.Add(lblidentifiant);
             Controls.Add(label6);
             Controls.Add(lblGlobalState);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmSystemHealth";
             Text = "État de santé du système";

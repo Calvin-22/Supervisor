@@ -150,6 +150,7 @@
             Controls.Add(ligne2);
             Controls.Add(ligne1);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmInformations";
             StartPosition = FormStartPosition.CenterScreen;

@@ -188,6 +188,7 @@
             Controls.Add(txtMdp);
             Controls.Add(txtIdentifiant);
             Controls.Add(BtnSeConnecter);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAuthentification";
             StartPosition = FormStartPosition.CenterScreen;

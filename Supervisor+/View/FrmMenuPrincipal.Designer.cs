@@ -1357,6 +1357,7 @@
             Controls.Add(logo_bleu);
             Controls.Add(logo_jaune);
             Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
