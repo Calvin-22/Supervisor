@@ -48,8 +48,8 @@
             label8 = new Label();
             lblCaseTemp = new Label();
             label10 = new Label();
-            BtnRafraîchir = new Button();
             GrboxSystem = new GroupBox();
+            BtnRechercher = new ModernButton();
             GrboxSystem.SuspendLayout();
             SuspendLayout();
             // 
@@ -127,7 +127,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(25, 469);
+            label6.Location = new Point(25, 461);
             label6.Name = "label6";
             label6.Size = new Size(151, 32);
             label6.TabIndex = 17;
@@ -197,7 +197,7 @@
             // 
             lblGlobalState.AutoSize = true;
             lblGlobalState.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGlobalState.Location = new Point(182, 469);
+            lblGlobalState.Location = new Point(182, 461);
             lblGlobalState.Name = "lblGlobalState";
             lblGlobalState.Size = new Size(26, 32);
             lblGlobalState.TabIndex = 25;
@@ -243,17 +243,6 @@
             label10.TabIndex = 28;
             label10.Text = "Température du boîtier : ";
             // 
-            // BtnRafraîchir
-            // 
-            BtnRafraîchir.Font = new Font("Segoe UI Variable Text", 10F);
-            BtnRafraîchir.Location = new Point(323, 517);
-            BtnRafraîchir.Name = "BtnRafraîchir";
-            BtnRafraîchir.Size = new Size(112, 34);
-            BtnRafraîchir.TabIndex = 31;
-            BtnRafraîchir.Text = "Rafraîchir";
-            BtnRafraîchir.UseVisualStyleBackColor = true;
-            BtnRafraîchir.Click += btnRefresh_Click;
-            // 
             // GrboxSystem
             // 
             GrboxSystem.Controls.Add(label13);
@@ -275,18 +264,37 @@
             GrboxSystem.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GrboxSystem.Location = new Point(25, 59);
             GrboxSystem.Name = "GrboxSystem";
-            GrboxSystem.Size = new Size(414, 398);
+            GrboxSystem.Size = new Size(414, 377);
             GrboxSystem.TabIndex = 32;
             GrboxSystem.TabStop = false;
+            // 
+            // BtnRechercher
+            // 
+            BtnRechercher.BorderRadius = 20;
+            BtnRechercher.EndColor = Color.DarkGreen;
+            BtnRechercher.FlatAppearance.BorderSize = 0;
+            BtnRechercher.FlatAppearance.MouseDownBackColor = Color.White;
+            BtnRechercher.FlatAppearance.MouseOverBackColor = Color.White;
+            BtnRechercher.FlatStyle = FlatStyle.Flat;
+            BtnRechercher.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnRechercher.ForeColor = Color.White;
+            BtnRechercher.Location = new Point(248, 506);
+            BtnRechercher.Name = "BtnRechercher";
+            BtnRechercher.Size = new Size(191, 39);
+            BtnRechercher.StartColor = Color.LimeGreen;
+            BtnRechercher.TabIndex = 37;
+            BtnRechercher.Text = "Rafraîchir";
+            BtnRechercher.UseVisualStyleBackColor = true;
+            BtnRechercher.Click += btnRefresh_Click;
             // 
             // FrmSystemHealth
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(460, 588);
+            ClientSize = new Size(460, 568);
+            Controls.Add(BtnRechercher);
             Controls.Add(GrboxSystem);
-            Controls.Add(BtnRafraîchir);
             Controls.Add(lblidentifiant);
             Controls.Add(label6);
             Controls.Add(lblGlobalState);
@@ -322,7 +330,7 @@
         private Label label8;
         private Label lblCaseTemp;
         private Label label10;
-        private Button BtnRafraîchir;
         private GroupBox GrboxSystem;
+        private ModernButton BtnRechercher;
     }
 }

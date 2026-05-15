@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supervisor", "Supervisor+\Supervisor.csproj", "{9BFEBA9F-31C5-424A-968B-39D3F03FFC8C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup Supervisor+", "Setup Supervisor+\Setup Supervisor+.vdproj", "{FE8C547B-25F9-16DA-CC64-A90AEF7A19C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{9BFEBA9F-31C5-424A-968B-39D3F03FFC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BFEBA9F-31C5-424A-968B-39D3F03FFC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BFEBA9F-31C5-424A-968B-39D3F03FFC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8C547B-25F9-16DA-CC64-A90AEF7A19C4}.Debug|Any CPU.ActiveCfg = Debug
+		{FE8C547B-25F9-16DA-CC64-A90AEF7A19C4}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

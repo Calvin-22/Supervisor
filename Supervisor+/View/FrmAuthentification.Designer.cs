@@ -36,7 +36,7 @@
             label3 = new Label();
             fakebutton = new Button();
             pictureBox1 = new PictureBox();
-            BtnSeConnecter = new Button();
+            modernButton1 = new ModernButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -107,16 +107,23 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
-            // BtnSeConnecter
+            // modernButton1
             // 
-            BtnSeConnecter.Font = new Font("Segoe UI Variable Text", 10F);
-            BtnSeConnecter.Location = new Point(275, 398);
-            BtnSeConnecter.Name = "BtnSeConnecter";
-            BtnSeConnecter.Size = new Size(151, 43);
-            BtnSeConnecter.TabIndex = 26;
-            BtnSeConnecter.Text = "Se connecter";
-            BtnSeConnecter.UseVisualStyleBackColor = true;
-            BtnSeConnecter.Click += BtnSeConnecter_Click;
+            modernButton1.BorderRadius = 20;
+            modernButton1.EndColor = Color.MidnightBlue;
+            modernButton1.FlatAppearance.BorderSize = 0;
+            modernButton1.FlatAppearance.MouseDownBackColor = Color.White;
+            modernButton1.FlatAppearance.MouseOverBackColor = Color.White;
+            modernButton1.FlatStyle = FlatStyle.Flat;
+            modernButton1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            modernButton1.ForeColor = Color.White;
+            modernButton1.Location = new Point(266, 392);
+            modernButton1.Name = "modernButton1";
+            modernButton1.Size = new Size(160, 39);
+            modernButton1.StartColor = Color.Blue;
+            modernButton1.TabIndex = 38;
+            modernButton1.Text = "Se connecter";
+            modernButton1.UseVisualStyleBackColor = true;
             // 
             // FrmAuthentification
             // 
@@ -125,7 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(449, 453);
-            Controls.Add(BtnSeConnecter);
+            Controls.Add(modernButton1);
             Controls.Add(pictureBox1);
             Controls.Add(fakebutton);
             Controls.Add(label3);
@@ -151,6 +158,7 @@
         private Label label3;
         private Button fakebutton;
         private PictureBox pictureBox1;
+        private ModernButton modernButton1;
         private Button BtnSeConnecter;
     }
 }
