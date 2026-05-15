@@ -87,18 +87,15 @@ namespace Supervisor.View
             {
                 case "OK":
                     lblGlobalState.BackColor = Color.LightGreen;
-                    GrboxSystem.HoveredBorderColor = Color.Green;
                     break;
 
                 case "Warning":
                     lblGlobalState.BackColor = Color.Orange;
-                    GrboxSystem.HoveredBorderColor = Color.Orange;
+                   
                     ColorizeWarning(health);
                     break;
-
                 case "Critical":
                     lblGlobalState.BackColor = Color.Red;
-                    GrboxSystem.HoveredBorderColor = Color.Red;
                     ColorizeCritical(health);
                     break;
             }
@@ -112,7 +109,7 @@ namespace Supervisor.View
             lblDisk.BackColor = Color.White;
             lblNetwork.BackColor = Color.White;
             lblVoltage.BackColor = Color.White;
-            lblCaseTemp.BackColor = Color.White;    
+            lblCaseTemp.BackColor = Color.White;
         }
 
         private void ColorizeWarning(SystemHealth h)
@@ -129,7 +126,7 @@ namespace Supervisor.View
             if (h.DiskUsage > 90)
                 lblDisk.BackColor = Color.Orange;
 
-            if (h.NetworkState == 2) 
+            if (h.NetworkState == 2)
                 lblNetwork.BackColor = Color.Orange;
 
             if (h.Voltage < 4.8)

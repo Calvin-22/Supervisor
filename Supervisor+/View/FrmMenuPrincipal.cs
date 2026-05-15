@@ -548,31 +548,37 @@ namespace Supervisor.View
             txtRechercheUID.Clear();
         }
 
-        private void switchCouleur_StateChanged(object sender, SiticoneNetCoreUI.StateChangedEventArgs e)
+        private void BtnRadioYes_CheckedChanged(object sender, EventArgs e)
         {
-            if (switchCouleur.Checked)
-            {
-                // Active la colorisation
-                dgvlogs.CellFormatting += dgvlogs_CellFormatting_Couleurs;
-
-                // Force un redraw
-                dgvlogs.Refresh();
-            }
-            else
-            {
-                // Désactive la colorisation
-                dgvlogs.CellFormatting -= dgvlogs_CellFormatting_Couleurs;
-
-                // Remet tout en blanc
-                foreach (DataGridViewRow row in dgvlogs.Rows)
-                {
-                    row.DefaultCellStyle.BackColor = Color.White;
-                    row.DefaultCellStyle.ForeColor = Color.Black;
-                }
-
-                dgvlogs.Refresh();
-            }
+            if (BtnRadioYes.Checked)
+                ActiverCouleurs();
         }
+
+        private void BtnRadioNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BtnRadioNo.Checked)
+                DesactiverCouleurs();
+        }
+
+        private void ActiverCouleurs()
+        {
+            dgvlogs.CellFormatting += dgvlogs_CellFormatting_Couleurs;
+            dgvlogs.Refresh();
+        }
+
+        private void DesactiverCouleurs()
+        {
+            dgvlogs.CellFormatting -= dgvlogs_CellFormatting_Couleurs;
+
+            foreach (DataGridViewRow row in dgvlogs.Rows)
+            {
+                row.DefaultCellStyle.BackColor = Color.White;
+                row.DefaultCellStyle.ForeColor = Color.Black;
+            }
+
+            dgvlogs.Refresh();
+        }
+
 
         /// <summary>
         /// Méthode pour coloriser les lignes du DataGridView selon le résultat de la tentative d'accès (ACCES en vert, REFUS en rouge)
