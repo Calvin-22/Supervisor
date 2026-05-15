@@ -115,7 +115,7 @@
             modernButton1.FlatAppearance.MouseDownBackColor = Color.White;
             modernButton1.FlatAppearance.MouseOverBackColor = Color.White;
             modernButton1.FlatStyle = FlatStyle.Flat;
-            modernButton1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            modernButton1.Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             modernButton1.ForeColor = Color.White;
             modernButton1.Location = new Point(266, 392);
             modernButton1.Name = "modernButton1";

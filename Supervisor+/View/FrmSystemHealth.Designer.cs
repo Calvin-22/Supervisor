@@ -276,7 +276,7 @@
             BtnRechercher.FlatAppearance.MouseDownBackColor = Color.White;
             BtnRechercher.FlatAppearance.MouseOverBackColor = Color.White;
             BtnRechercher.FlatStyle = FlatStyle.Flat;
-            BtnRechercher.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnRechercher.Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnRechercher.ForeColor = Color.White;
             BtnRechercher.Location = new Point(248, 506);
             BtnRechercher.Name = "BtnRechercher";

@@ -527,6 +527,7 @@
             BtnStats.FlatAppearance.MouseDownBackColor = Color.White;
             BtnStats.FlatAppearance.MouseOverBackColor = Color.White;
             BtnStats.FlatStyle = FlatStyle.Flat;
+            BtnStats.Font = new Font("Segoe UI Variable Text", 10F);
             BtnStats.ForeColor = Color.White;
             BtnStats.Location = new Point(581, 202);
             BtnStats.Name = "BtnStats";
@@ -545,6 +546,7 @@
             BtnFiltrerParDates.FlatAppearance.MouseDownBackColor = Color.White;
             BtnFiltrerParDates.FlatAppearance.MouseOverBackColor = Color.White;
             BtnFiltrerParDates.FlatStyle = FlatStyle.Flat;
+            BtnFiltrerParDates.Font = new Font("Segoe UI Variable Text", 10F);
             BtnFiltrerParDates.ForeColor = Color.White;
             BtnFiltrerParDates.Location = new Point(581, 150);
             BtnFiltrerParDates.Name = "BtnFiltrerParDates";
@@ -563,6 +565,7 @@
             BtnRechercher.FlatAppearance.MouseDownBackColor = Color.White;
             BtnRechercher.FlatAppearance.MouseOverBackColor = Color.White;
             BtnRechercher.FlatStyle = FlatStyle.Flat;
+            BtnRechercher.Font = new Font("Segoe UI Variable Text", 10F);
             BtnRechercher.ForeColor = Color.White;
             BtnRechercher.Location = new Point(581, 44);
             BtnRechercher.Name = "BtnRechercher";
@@ -656,6 +659,7 @@
             BtnAjouterFauxLog.FlatAppearance.MouseDownBackColor = Color.White;
             BtnAjouterFauxLog.FlatAppearance.MouseOverBackColor = Color.White;
             BtnAjouterFauxLog.FlatStyle = FlatStyle.Flat;
+            BtnAjouterFauxLog.Font = new Font("Segoe UI Variable Text", 10F);
             BtnAjouterFauxLog.ForeColor = Color.White;
             BtnAjouterFauxLog.Location = new Point(15, 186);
             BtnAjouterFauxLog.Name = "BtnAjouterFauxLog";
@@ -674,6 +678,7 @@
             BtnSeDeconnecter.FlatAppearance.MouseDownBackColor = Color.White;
             BtnSeDeconnecter.FlatAppearance.MouseOverBackColor = Color.White;
             BtnSeDeconnecter.FlatStyle = FlatStyle.Flat;
+            BtnSeDeconnecter.Font = new Font("Segoe UI Variable Text", 10F);
             BtnSeDeconnecter.ForeColor = Color.White;
             BtnSeDeconnecter.Location = new Point(283, 186);
             BtnSeDeconnecter.Name = "BtnSeDeconnecter";
@@ -692,6 +697,7 @@
             BtnRasberry.FlatAppearance.MouseDownBackColor = Color.White;
             BtnRasberry.FlatAppearance.MouseOverBackColor = Color.White;
             BtnRasberry.FlatStyle = FlatStyle.Flat;
+            BtnRasberry.Font = new Font("Segoe UI Variable Text", 10F);
             BtnRasberry.ForeColor = Color.White;
             BtnRasberry.Location = new Point(279, 119);
             BtnRasberry.Name = "BtnRasberry";
@@ -710,6 +716,7 @@
             BtnImprimer.FlatAppearance.MouseDownBackColor = Color.White;
             BtnImprimer.FlatAppearance.MouseOverBackColor = Color.White;
             BtnImprimer.FlatStyle = FlatStyle.Flat;
+            BtnImprimer.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BtnImprimer.ForeColor = Color.White;
             BtnImprimer.Location = new Point(279, 47);
             BtnImprimer.Name = "BtnImprimer";
