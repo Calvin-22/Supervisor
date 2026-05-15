@@ -166,7 +166,7 @@
             // 
             lblEtatSysteme.AutoSize = true;
             lblEtatSysteme.Font = new Font("Segoe UI Variable Display", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEtatSysteme.Location = new Point(19, 37);
+            lblEtatSysteme.Location = new Point(6, 49);
             lblEtatSysteme.Name = "lblEtatSysteme";
             lblEtatSysteme.Size = new Size(23, 27);
             lblEtatSysteme.TabIndex = 25;
@@ -176,7 +176,7 @@
             // 
             lblAccesRefuses.AutoSize = true;
             lblAccesRefuses.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAccesRefuses.Location = new Point(258, 174);
+            lblAccesRefuses.Location = new Point(245, 186);
             lblAccesRefuses.Name = "lblAccesRefuses";
             lblAccesRefuses.Size = new Size(23, 27);
             lblAccesRefuses.TabIndex = 12;
@@ -186,7 +186,7 @@
             // 
             lblAccesAutorise.AutoSize = true;
             lblAccesAutorise.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAccesAutorise.Location = new Point(275, 132);
+            lblAccesAutorise.Location = new Point(262, 144);
             lblAccesAutorise.Name = "lblAccesAutorise";
             lblAccesAutorise.Size = new Size(23, 27);
             lblAccesAutorise.TabIndex = 11;
@@ -196,7 +196,7 @@
             // 
             lblTotalTentatives.AutoSize = true;
             lblTotalTentatives.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotalTentatives.Location = new Point(326, 90);
+            lblTotalTentatives.Location = new Point(313, 102);
             lblTotalTentatives.Name = "lblTotalTentatives";
             lblTotalTentatives.Size = new Size(23, 27);
             lblTotalTentatives.TabIndex = 8;
@@ -206,7 +206,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(19, 174);
+            label7.Location = new Point(6, 186);
             label7.Name = "label7";
             label7.Size = new Size(240, 27);
             label7.TabIndex = 10;
@@ -216,7 +216,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(19, 132);
+            label6.Location = new Point(6, 144);
             label6.Name = "label6";
             label6.Size = new Size(258, 27);
             label6.TabIndex = 9;
@@ -226,7 +226,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(19, 90);
+            label5.Location = new Point(6, 102);
             label5.Name = "label5";
             label5.Size = new Size(311, 27);
             label5.TabIndex = 8;
@@ -236,7 +236,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(22, 117);
+            label16.Location = new Point(15, 123);
             label16.Name = "label16";
             label16.Size = new Size(252, 27);
             label16.TabIndex = 24;
@@ -246,7 +246,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(22, 51);
+            label4.Location = new Point(15, 53);
             label4.Name = "label4";
             label4.Size = new Size(192, 27);
             label4.TabIndex = 10;
@@ -288,7 +288,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(15, 189);
+            label11.Location = new Point(15, 206);
             label11.Name = "label11";
             label11.Size = new Size(300, 27);
             label11.TabIndex = 20;
@@ -298,7 +298,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(307, 138);
+            label10.Location = new Point(307, 155);
             label10.Name = "label10";
             label10.Size = new Size(100, 27);
             label10.TabIndex = 16;
@@ -307,7 +307,7 @@
             // dtpFin
             // 
             dtpFin.Font = new Font("Segoe UI Variable Text", 10F);
-            dtpFin.Location = new Point(413, 135);
+            dtpFin.Location = new Point(413, 152);
             dtpFin.Name = "dtpFin";
             dtpFin.Size = new Size(150, 34);
             dtpFin.TabIndex = 15;
@@ -315,7 +315,7 @@
             // dtpDebut
             // 
             dtpDebut.Font = new Font("Segoe UI Variable Text", 10F);
-            dtpDebut.Location = new Point(149, 135);
+            dtpDebut.Location = new Point(149, 152);
             dtpDebut.Name = "dtpDebut";
             dtpDebut.Size = new Size(150, 34);
             dtpDebut.TabIndex = 14;
@@ -324,7 +324,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(15, 135);
+            label9.Location = new Point(15, 152);
             label9.Name = "label9";
             label9.Size = new Size(129, 27);
             label9.TabIndex = 13;
@@ -334,7 +334,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(15, 83);
+            label8.Location = new Point(15, 100);
             label8.Name = "label8";
             label8.Size = new Size(117, 27);
             label8.TabIndex = 12;
@@ -344,7 +344,7 @@
             // 
             cbResultat.Font = new Font("Segoe UI Variable Text", 10F);
             cbResultat.FormattingEnabled = true;
-            cbResultat.Location = new Point(149, 82);
+            cbResultat.Location = new Point(149, 99);
             cbResultat.Name = "cbResultat";
             cbResultat.Size = new Size(150, 35);
             cbResultat.TabIndex = 11;
@@ -353,7 +353,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(15, 33);
+            label2.Location = new Point(15, 50);
             label2.Name = "label2";
             label2.Size = new Size(315, 27);
             label2.TabIndex = 8;
@@ -362,7 +362,7 @@
             // txtRechercheUID
             // 
             txtRechercheUID.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRechercheUID.Location = new Point(336, 33);
+            txtRechercheUID.Location = new Point(336, 50);
             txtRechercheUID.Name = "txtRechercheUID";
             txtRechercheUID.Size = new Size(227, 34);
             txtRechercheUID.TabIndex = 2;
@@ -378,7 +378,7 @@
             // 
             lblDernierEvenement.AutoSize = true;
             lblDernierEvenement.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDernierEvenement.Location = new Point(253, 161);
+            lblDernierEvenement.Location = new Point(251, 174);
             lblDernierEvenement.Name = "lblDernierEvenement";
             lblDernierEvenement.Size = new Size(23, 27);
             lblDernierEvenement.TabIndex = 19;
@@ -388,7 +388,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(8, 161);
+            label17.Location = new Point(6, 174);
             label17.Name = "label17";
             label17.Size = new Size(239, 27);
             label17.TabIndex = 18;
@@ -398,7 +398,7 @@
             // 
             lblDernierResultat.AutoSize = true;
             lblDernierResultat.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDernierResultat.Location = new Point(285, 127);
+            lblDernierResultat.Location = new Point(283, 140);
             lblDernierResultat.Name = "lblDernierResultat";
             lblDernierResultat.Size = new Size(23, 27);
             lblDernierResultat.TabIndex = 17;
@@ -408,7 +408,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(7, 127);
+            label15.Location = new Point(5, 140);
             label15.Name = "label15";
             label15.Size = new Size(272, 27);
             label15.TabIndex = 16;
@@ -418,7 +418,7 @@
             // 
             lblDernierUID.AutoSize = true;
             lblDernierUID.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDernierUID.Location = new Point(225, 93);
+            lblDernierUID.Location = new Point(223, 106);
             lblDernierUID.Name = "lblDernierUID";
             lblDernierUID.Size = new Size(23, 27);
             lblDernierUID.TabIndex = 15;
@@ -428,7 +428,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(7, 93);
+            label14.Location = new Point(5, 106);
             label14.Name = "label14";
             label14.Size = new Size(212, 27);
             label14.TabIndex = 14;
@@ -438,7 +438,7 @@
             // 
             lblPresence.AutoSize = true;
             lblPresence.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPresence.Location = new Point(121, 60);
+            lblPresence.Location = new Point(119, 73);
             lblPresence.Name = "lblPresence";
             lblPresence.Size = new Size(23, 27);
             lblPresence.TabIndex = 13;
@@ -448,7 +448,7 @@
             // 
             lblPorte.AutoSize = true;
             lblPorte.Font = new Font("Segoe UI Variable Small", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPorte.Location = new Point(131, 29);
+            lblPorte.Location = new Point(129, 42);
             lblPorte.Name = "lblPorte";
             lblPorte.Size = new Size(23, 27);
             lblPorte.TabIndex = 12;
@@ -458,7 +458,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(8, 60);
+            label12.Location = new Point(6, 73);
             label12.Name = "label12";
             label12.Size = new Size(107, 27);
             label12.TabIndex = 11;
@@ -468,7 +468,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(7, 29);
+            label13.Location = new Point(5, 42);
             label13.Name = "label13";
             label13.Size = new Size(118, 27);
             label13.TabIndex = 10;
@@ -528,7 +528,7 @@
             BtnStats.FlatAppearance.MouseOverBackColor = Color.White;
             BtnStats.FlatStyle = FlatStyle.Flat;
             BtnStats.ForeColor = Color.White;
-            BtnStats.Location = new Point(581, 185);
+            BtnStats.Location = new Point(581, 202);
             BtnStats.Name = "BtnStats";
             BtnStats.Size = new Size(191, 39);
             BtnStats.StartColor = Color.MediumOrchid;
@@ -546,7 +546,7 @@
             BtnFiltrerParDates.FlatAppearance.MouseOverBackColor = Color.White;
             BtnFiltrerParDates.FlatStyle = FlatStyle.Flat;
             BtnFiltrerParDates.ForeColor = Color.White;
-            BtnFiltrerParDates.Location = new Point(581, 133);
+            BtnFiltrerParDates.Location = new Point(581, 150);
             BtnFiltrerParDates.Name = "BtnFiltrerParDates";
             BtnFiltrerParDates.Size = new Size(191, 39);
             BtnFiltrerParDates.StartColor = Color.LimeGreen;
@@ -564,7 +564,7 @@
             BtnRechercher.FlatAppearance.MouseOverBackColor = Color.White;
             BtnRechercher.FlatStyle = FlatStyle.Flat;
             BtnRechercher.ForeColor = Color.White;
-            BtnRechercher.Location = new Point(581, 27);
+            BtnRechercher.Location = new Point(581, 44);
             BtnRechercher.Name = "BtnRechercher";
             BtnRechercher.Size = new Size(191, 39);
             BtnRechercher.StartColor = Color.Blue;
@@ -582,7 +582,7 @@
             BtnReset.FlatAppearance.MouseOverBackColor = Color.White;
             BtnReset.FlatStyle = FlatStyle.Flat;
             BtnReset.ForeColor = Color.White;
-            BtnReset.Location = new Point(787, 125);
+            BtnReset.Location = new Point(787, 142);
             BtnReset.Name = "BtnReset";
             BtnReset.Size = new Size(81, 54);
             BtnReset.TabIndex = 35;
@@ -594,7 +594,7 @@
             BtnRadioNo.AutoSize = true;
             BtnRadioNo.Checked = true;
             BtnRadioNo.Font = new Font("Segoe UI Variable Text", 10F);
-            BtnRadioNo.Location = new Point(395, 189);
+            BtnRadioNo.Location = new Point(395, 206);
             BtnRadioNo.Name = "BtnRadioNo";
             BtnRadioNo.Size = new Size(75, 31);
             BtnRadioNo.TabIndex = 34;
@@ -607,7 +607,7 @@
             // 
             BtnRadioYes.AutoSize = true;
             BtnRadioYes.Font = new Font("Segoe UI Variable Text", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnRadioYes.Location = new Point(321, 189);
+            BtnRadioYes.Location = new Point(321, 206);
             BtnRadioYes.Name = "BtnRadioYes";
             BtnRadioYes.Size = new Size(68, 31);
             BtnRadioYes.TabIndex = 33;
@@ -657,7 +657,7 @@
             BtnAjouterFauxLog.FlatAppearance.MouseOverBackColor = Color.White;
             BtnAjouterFauxLog.FlatStyle = FlatStyle.Flat;
             BtnAjouterFauxLog.ForeColor = Color.White;
-            BtnAjouterFauxLog.Location = new Point(22, 174);
+            BtnAjouterFauxLog.Location = new Point(15, 186);
             BtnAjouterFauxLog.Name = "BtnAjouterFauxLog";
             BtnAjouterFauxLog.Size = new Size(248, 39);
             BtnAjouterFauxLog.StartColor = Color.FromArgb(224, 224, 224);
@@ -675,7 +675,7 @@
             BtnSeDeconnecter.FlatAppearance.MouseOverBackColor = Color.White;
             BtnSeDeconnecter.FlatStyle = FlatStyle.Flat;
             BtnSeDeconnecter.ForeColor = Color.White;
-            BtnSeDeconnecter.Location = new Point(286, 174);
+            BtnSeDeconnecter.Location = new Point(283, 186);
             BtnSeDeconnecter.Name = "BtnSeDeconnecter";
             BtnSeDeconnecter.Size = new Size(191, 39);
             BtnSeDeconnecter.StartColor = Color.Red;
@@ -693,7 +693,7 @@
             BtnRasberry.FlatAppearance.MouseOverBackColor = Color.White;
             BtnRasberry.FlatStyle = FlatStyle.Flat;
             BtnRasberry.ForeColor = Color.White;
-            BtnRasberry.Location = new Point(286, 113);
+            BtnRasberry.Location = new Point(279, 119);
             BtnRasberry.Name = "BtnRasberry";
             BtnRasberry.Size = new Size(191, 39);
             BtnRasberry.StartColor = Color.FromArgb(255, 128, 0);
@@ -711,7 +711,7 @@
             BtnImprimer.FlatAppearance.MouseOverBackColor = Color.White;
             BtnImprimer.FlatStyle = FlatStyle.Flat;
             BtnImprimer.ForeColor = Color.White;
-            BtnImprimer.Location = new Point(286, 47);
+            BtnImprimer.Location = new Point(279, 47);
             BtnImprimer.Name = "BtnImprimer";
             BtnImprimer.Size = new Size(191, 39);
             BtnImprimer.StartColor = Color.FromArgb(224, 224, 224);
