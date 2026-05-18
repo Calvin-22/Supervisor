@@ -80,7 +80,7 @@
             label1.Name = "label1";
             label1.Size = new Size(145, 25);
             label1.TabIndex = 13;
-            label1.Text = "Build : 20260515";
+            label1.Text = "Build : 20260518";
             // 
             // ligne2
             // 
@@ -90,7 +90,7 @@
             ligne2.Name = "ligne2";
             ligne2.Size = new Size(104, 25);
             ligne2.TabIndex = 12;
-            ligne2.Text = "Version : 31";
+            ligne2.Text = "Version : 34";
             // 
             // ligne1
             // 
