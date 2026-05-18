@@ -124,6 +124,7 @@
             modernButton1.TabIndex = 38;
             modernButton1.Text = "Se connecter";
             modernButton1.UseVisualStyleBackColor = true;
+            modernButton1.Click += BtnSeConnecter_Click;
             // 
             // FrmAuthentification
             // 
@@ -142,6 +143,7 @@
             Controls.Add(txtIdentifiant);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmAuthentification";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Supervisor+";

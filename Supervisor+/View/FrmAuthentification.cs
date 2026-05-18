@@ -65,5 +65,7 @@ namespace Supervisor.View
         {
             BtnSeConnecter_Click(BtnSeConnecter, EventArgs.Empty);
         }
+
+
     }
 }

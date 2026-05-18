@@ -300,6 +300,7 @@
             Controls.Add(lblGlobalState);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmSystemHealth";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "État de santé du système";
