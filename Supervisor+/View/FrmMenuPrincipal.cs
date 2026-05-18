@@ -885,6 +885,13 @@ namespace Supervisor.View
 
         private void OuvrirStats()
         {
+            // Fermer toute fenêtre "Statistiques Supervisor+" déjà ouverte
+            foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (f.Text == "Statistiques Supervisor+")
+                    f.Close();
+            }
+
             // Création de la popup Statistiques
             Form popup = new Form();
             popup.Text = "Statistiques Supervisor+";
