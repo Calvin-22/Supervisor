@@ -12,7 +12,8 @@ namespace Supervisor.Dal
         /// <summary>
         /// chaine de connexion à la bdd
         /// </summary>
-        private static readonly string connectionString = "server=localhost; user id=supervisor_admin@; password=D5-66jdlqoa!%okà@d*; database=dbca25; SslMode=Required;";
+        private static readonly string connectionString = "server=localhost; user id=supervisor_admin@; " +
+            "password=D5-66jdlqoa!%okà@d*; database=dbca25; SslMode=Required;";
         /// <summary>
         /// instance unique de la classe
         /// </summary>

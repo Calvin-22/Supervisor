@@ -83,6 +83,7 @@
             BtnRasberry = new ModernButton();
             BtnImprimer = new ModernButton();
             groupBox4 = new GroupBox();
+            BtnInformations = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvlogs).BeginInit();
             grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo_rouge).BeginInit();
@@ -748,12 +749,29 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "État du système (en live)";
             // 
+            // BtnInformations
+            // 
+            BtnInformations.BackgroundImage = Properties.Resources.bouton_interro;
+            BtnInformations.BackgroundImageLayout = ImageLayout.Stretch;
+            BtnInformations.FlatAppearance.BorderColor = Color.White;
+            BtnInformations.FlatAppearance.MouseDownBackColor = Color.White;
+            BtnInformations.FlatAppearance.MouseOverBackColor = Color.White;
+            BtnInformations.FlatStyle = FlatStyle.Flat;
+            BtnInformations.ForeColor = Color.White;
+            BtnInformations.Location = new Point(1811, 6);
+            BtnInformations.Name = "BtnInformations";
+            BtnInformations.Size = new Size(81, 75);
+            BtnInformations.TabIndex = 39;
+            BtnInformations.UseVisualStyleBackColor = true;
+            BtnInformations.Click += BtnInformations_Click;
+            // 
             // FrmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(11F, 27F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1898, 1024);
+            Controls.Add(BtnInformations);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -849,5 +867,6 @@
         private ModernButton BtnRasberry;
         private ModernButton BtnSeDeconnecter;
         private ModernButton BtnAjouterFauxLog;
+        private Button BtnInformations;
     }
 }

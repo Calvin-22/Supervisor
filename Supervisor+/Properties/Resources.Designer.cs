@@ -63,6 +63,16 @@ namespace Supervisor.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bouton_interro {
+            get {
+                object obj = ResourceManager.GetObject("bouton_interro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flèchequitourne2 {
             get {
                 object obj = ResourceManager.GetObject("flèchequitourne2", resourceCulture);

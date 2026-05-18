@@ -864,20 +864,19 @@ namespace Supervisor.View
         private void BtnDéconnexion_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-        "Voulez-vous vraiment vous déconnecter ?",
-        "Confirmation",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question
-    );
+                "Voulez-vous vraiment vous déconnecter ?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
             if (result == DialogResult.Yes)
             {
-                this.Hide();
-                FrmAuthentification frm = new FrmAuthentification();
-                frm.ShowDialog();
-                this.Close();
+                Application.Restart();
             }
         }
+
+
 
         private void BtnStatistiques_Click(object sender, EventArgs e)
         {
@@ -978,14 +977,34 @@ namespace Supervisor.View
 
         private void BtnRasberry_Click(object sender, EventArgs e)
         {
+
+            // Vérifier si une fenêtre FrmSystemHealth est déjà ouverte
+            foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (f is FrmSystemHealth)
+                {
+                    f.Close();   // On la ferme
+                }
+            }
+
+            // Ouvrir une nouvelle instance
             FrmSystemHealth frm = new FrmSystemHealth();
             frm.Show();
         }
 
         private void BtnInformations_Click(object sender, EventArgs e)
         {
+            // Fermer toute fenêtre FrmInformations déjà ouverte
+            foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
+            {
+                if (f is FrmInformations)
+                    f.Close();
+            }
+
+            // Ouvrir une nouvelle instance
             FrmInformations frm = new FrmInformations();
             frm.Show();
         }
+
     }
 }

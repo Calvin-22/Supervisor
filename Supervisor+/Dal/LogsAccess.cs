@@ -98,7 +98,6 @@ namespace Supervisor.Dal
                              "FROM acces_log " +
                              "ORDER BY Date_heure_entree DESC " +
                              "LIMIT 1";
-
                 try
                 {
                     List<object[]> records = access.Manager.ReqSelect(req);
